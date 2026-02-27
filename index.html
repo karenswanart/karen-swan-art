@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karen Swan Art</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Karen Swan Art</h1>
+    <p>Artwork Collection</p>
+  </header>
+
+  <main>
+    <section id="gallery" class="gallery"></section>
+  </main>
+
+  <script>
+    const gallery = document.getElementById("gallery");
+    const totalImages = 63;
+
+    for (let i = 1; i <= totalImages; i++) {
+      const img = document.createElement("img");
+      img.src = `KSA/img${i}.jpg`;
+      img.alt = `Artwork ${i}`;
+      img.loading = "lazy";
+      gallery.appendChild(img);
+    }
+  </script>
+</body>
+</html>
