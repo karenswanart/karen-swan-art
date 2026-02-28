@@ -7,26 +7,28 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
+  <nav class="topnav">
+    <div class="nav-brand">Karen Swan Art</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About the Author</a>
+      <a href="projects.html">Projects</a>
+      <a href="inquiry.html">Project Inquiry</a>
+    </div>
+  </nav>
+
+  <header class="hero">
     <h1>Karen Swan Art</h1>
-    <p>Artwork Collection</p>
+    <p>Original artwork and creative projects</p>
+    <a class="button" href="projects.html">View Projects</a>
   </header>
 
-  <main>
-    <section id="gallery" class="gallery"></section>
-  </main>
-
-  <script>
-    const gallery = document.getElementById("gallery");
-    const totalImages = 63;
-
-    for (let i = 1; i <= totalImages; i++) {
-      const img = document.createElement("img");
-      img.src = `KSA/img${i}.jpg`;
-      img.alt = `Artwork ${i}`;
-      img.loading = "lazy";
-      gallery.appendChild(img);
-    }
-  </script>
+  <section class="home-intro">
+    <h2>Welcome</h2>
+    <p>
+      Welcome to Karen Swan Art. Explore original artwork, learn more about the artist,
+      and reach out for project inquiries or commissions.
+    </p>
+  </section>
 </body>
 </html>
