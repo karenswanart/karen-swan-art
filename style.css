@@ -259,6 +259,7 @@ img {
   font-size: 1.04rem;
 }
 
+/* This is the part that controls the 3-photo row */
 .more-photos {
   max-width: 1280px;
   margin: 0 auto 90px;
@@ -273,18 +274,17 @@ img {
 
 .more-photos-grid {
   display: flex;
-  gap: 18px;
+  gap: 16px;
   flex-wrap: nowrap;
-  align-items: flex-start;
   justify-content: space-between;
-  overflow-x: auto;
+  align-items: flex-start;
 }
 
 .more-photos-grid img {
-  flex: 0 0 calc((100% - 36px) / 3);
-  width: calc((100% - 36px) / 3);
-  max-width: calc((100% - 36px) / 3);
-  height: 160px;
+  width: 32%;
+  max-width: 32%;
+  min-width: 0;
+  height: 140px;
   object-fit: contain;
   border-radius: 20px;
   border: 1px solid rgba(31, 26, 23, 0.08);
@@ -308,7 +308,6 @@ img {
   font-size: 1.05rem;
 }
 
-/* Separate page layout */
 .page-shell {
   max-width: 1280px;
   margin: 0 auto;
@@ -338,7 +337,6 @@ img {
   padding: 10px 0 20px;
 }
 
-/* Commissions page */
 .inquiry-layout {
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -534,13 +532,12 @@ img {
   }
 
   .more-photos-grid {
-    gap: 12px;
+    gap: 10px;
   }
 
   .more-photos-grid img {
-    flex: 0 0 calc((100% - 24px) / 3);
-    width: calc((100% - 24px) / 3);
-    max-width: calc((100% - 24px) / 3);
-    height: 110px;
+    width: 32%;
+    max-width: 32%;
+    height: 90px;
   }
 }
