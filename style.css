@@ -446,6 +446,56 @@ img {
   justify-self: start;
 }
 
+/* LIGHTBOX */
+.lightbox {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(0, 0, 0, 0.88) !important;
+  display: none !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 24px !important;
+  z-index: 99999 !important;
+}
+
+.lightbox.open {
+  display: flex !important;
+}
+
+.lightbox img {
+  max-width: 92vw !important;
+  max-height: 92vh !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  border-radius: 12px !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45) !important;
+  background: transparent !important;
+}
+
+.lightbox-close {
+  position: absolute !important;
+  top: 16px !important;
+  right: 22px !important;
+  background: transparent !important;
+  border: none !important;
+  color: white !important;
+  font-size: 42px !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  z-index: 100000 !important;
+}
+
+.art-card img,
+.about-images img,
+.more-photos-grid img,
+.inquiry-image {
+  cursor: zoom-in;
+}
+
 @media (max-width: 1100px) {
   .art-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -542,49 +592,4 @@ img {
     height: auto;
     object-fit: contain;
   }
-
-  .lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.82);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
-  z-index: 5000;
-}
-
-.lightbox.open {
-  display: flex;
-}
-
-.lightbox img {
-  max-width: 90vw;
-  max-height: 90vh;
-  width: auto;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-  background: white;
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 18px;
-  right: 24px;
-  background: transparent;
-  border: none;
-  color: white;
-  font-size: 2.2rem;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.art-card img,
-.about-images img,
-.more-photos-grid img,
-.inquiry-image {
-  cursor: zoom-in;
-}
-  
 }
