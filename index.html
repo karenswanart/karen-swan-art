@@ -25,12 +25,13 @@
     </div>
   </header>
 
+  <main>
     <section id="gallery-start" class="projects-wrap">
       <div id="projects-container"></div>
     </section>
   </main>
 
-  <div class="lightbox" id="lightbox">
+  <div class="lightbox" id="lightbox" hidden>
     <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
     <img id="lightboxImg" src="" alt="">
   </div>
@@ -64,63 +65,61 @@
       }
     ];
 
+    const imageTitles = {
+      6: "Treasure Source Fabric",
+      8: "Octopus's Garden",
+      12: "Asian Mermaids",
+      13: "Swan Mandala I",
+      14: "Swan Mandala II",
+      15: "Swan Mandala III",
+      17: "Pirate Octopus",
+      19: "Title for Image 19",
+      25: "Title for Image 25",
+      26: "Title for Image 26",
+      27: "Title for Image 27",
+      37: "Title for Image 37",
+      38: "Title for Image 38",
+      39: "Title for Image 39",
+      49: "Title for Image 49",
+      50: "Title for Image 50",
+      51: "Title for Image 51",
+      52: "Title for Image 52",
+      53: "Title for Image 53",
+      54: "Title for Image 54",
+      55: "Title for Image 55",
+      56: "Title for Image 56",
+      57: "Title for Image 57",
+      58: "Title for Image 58",
+      59: "Title for Image 59",
+      60: "Title for Image 60",
+      61: "Title for Image 61",
+      62: "Title for Image 62",
+      63: "Title for Image 63"
+    };
+
     const imageDescriptions = {
-      8: "Octopus's Garden: Created for her grandnephew - a scene straight from the brain of Ringo Starr. Fun Fact: Octopus collect shiny objects, leading to this particular octopu's garden being its collection..",
       6: "Depicted is the source fabric showing where the octopus found some of its treasure!",
+      8: "Octopus's Garden: Created for her grandnephew - a scene straight from the brain of Ringo Starr. Fun fact: octopuses collect shiny objects, leading to this particular octopus garden being built from its collection.",
       12: "Asian mermaids... why not?!",
-      17: "Yar, I've got 8 arms and 3 hearts.",
-      19: "Short description for image 5.",
-      32: "Short description for image 6.",
-      54: "Short description for image 7.",
-      56: "Short description for image 8.",
-      9: "Short description for image 9.",
-      10: "Short description for image 10.",
-      11: "Short description for image 11.",
-      3: "Short description for image 12.",
       13: "Short description for image 13.",
       14: "Short description for image 14.",
       15: "Short description for image 15.",
-      16: "Short description for image 16.",
-      4: "Short description for image 17.",
-      18: "Short description for image 18.",
-      5: "Short description for image 19.",
-      20: "Short description for image 20.",
-      21: "Short description for image 21.",
-      22: "Short description for image 22.",
-      23: "Short description for image 23.",
-      24: "Short description for image 24.",
+      17: "Yar, I've got 8 arms and 3 hearts.",
+      19: "Short description for image 19.",
       25: "Short description for image 25.",
       26: "Short description for image 26.",
       27: "Short description for image 27.",
-      28: "Short description for image 28.",
-      29: "Short description for image 29.",
-      30: "Short description for image 30.",
-      31: "Short description for image 31.",
-      400: "Short description for image 32.",
-      33: "Short description for image 33.",
-      34: "Short description for image 34.",
-      35: "Short description for image 35.",
-      36: "Short description for image 36.",
       37: "Short description for image 37.",
       38: "Short description for image 38.",
       39: "Short description for image 39.",
-      40: "Short description for image 40.",
-      41: "Short description for image 41.",
-      42: "Short description for image 42.",
-      43: "Short description for image 43.",
-      44: "Short description for image 44.",
-      45: "Short description for image 45.",
-      46: "Short description for image 46.",
-      47: "Short description for image 47.",
-      48: "Short description for image 48.",
       49: "Short description for image 49.",
       50: "Short description for image 50.",
       51: "Short description for image 51.",
       52: "Short description for image 52.",
       53: "Short description for image 53.",
-      7: "Short description for image 54.",
+      54: "Short description for image 54.",
       55: "Short description for image 55.",
-      8: "Short description for image 56.",
+      56: "Short description for image 56.",
       57: "Short description for image 57.",
       58: "Short description for image 58.",
       59: "Short description for image 59.",
@@ -157,14 +156,14 @@
 
         const img = document.createElement("img");
         img.src = `KSA/img${num}.jpg`;
-        img.alt = `${project.title} image ${num}`;
+        img.alt = imageTitles[num] || `${project.title} image ${num}`;
         img.loading = "lazy";
 
         const caption = document.createElement("div");
         caption.className = "art-caption";
 
         const imageTitle = document.createElement("h3");
-        imageTitle.textContent = `Image ${num}`;
+        imageTitle.textContent = imageTitles[num] || `Image ${num}`;
 
         const imageDesc = document.createElement("p");
         imageDesc.textContent = imageDescriptions[num] || "Add a short description here.";
@@ -187,20 +186,25 @@
     const lightboxImg = document.getElementById("lightboxImg");
     const lightboxClose = document.getElementById("lightboxClose");
 
-    clickableImages.forEach((img) => {
-      img.addEventListener("click", () => {
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt || "";
-        lightbox.classList.add("open");
-        document.body.style.overflow = "hidden";
-      });
-    });
+    function openLightbox(img) {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt || "";
+      lightbox.hidden = false;
+      lightbox.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
 
     function closeLightbox() {
       lightbox.classList.remove("open");
+      lightbox.hidden = true;
       lightboxImg.src = "";
+      lightboxImg.alt = "";
       document.body.style.overflow = "";
     }
+
+    clickableImages.forEach((img) => {
+      img.addEventListener("click", () => openLightbox(img));
+    });
 
     lightboxClose.addEventListener("click", closeLightbox);
 
@@ -211,7 +215,7 @@
     });
 
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
+      if (e.key === "Escape" && !lightbox.hidden) {
         closeLightbox();
       }
     });
