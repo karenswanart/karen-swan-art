@@ -1,32 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Inquiry | Karen Swan Art</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Commission Inquiries | Karen Swan Art</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav class="topnav">
-    <div class="nav-brand">Karen Swan Art</div>
+  <nav class="site-nav">
+    <div class="brand">Karen Swan Art</div>
     <div class="nav-links">
       <a href="index.html">Home</a>
-      <a href="about.html">About the Author</a>
-      <a href="projects.html">Projects</a>
-      <a href="commissions.html">Project Inquiry</a>
+      <a href="about.html">About the Artist</a>
+      <a href="commissions.html">Commission Inquiries</a>
     </div>
   </nav>
 
-  <main class="page inquiry-page">
-    <h1>Project Inquiry</h1>
-    <p>
-      For questions about a piece, commissions, collaborations, or pricing,
-      please reach out using the contact button below.
-    </p>
+  <main class="page-shell">
+    <section class="page-hero">
+      <p class="eyebrow">Commissions</p>
+      <h1>Commission Inquiries</h1>
+      <p class="page-intro">
+        Interested in a custom piece, collaboration, or asking about an existing work?
+        Submit an inquiry below.
+      </p>
+    </section>
 
-    <a class="button" href="mailto:youremail@example.com?subject=Project Inquiry for Karen Swan Art">
-      Contact Here
-    </a>
+    <section class="inquiry-layout">
+      <div class="inquiry-image-wrap">
+        <img src="KSA/mom3.jpg" alt="Karen Swan portrait" class="inquiry-image" />
+      </div>
+
+      <div class="inquiry-copy">
+        <h2>Work With Karen Swan</h2>
+        <p>
+          Karen welcomes thoughtful commission inquiries and project conversations.
+          Whether you are interested in a custom work, discussing a piece shown on the site,
+          or exploring a creative collaboration, please share the details below.
+        </p>
+        <p>
+          Include as much information as you can about what you are looking for, preferred
+          timing, dimensions, style, and any inspiration or reference ideas.
+        </p>
+      </div>
+    </section>
+
+    <section class="form-section">
+      <div class="form-card">
+        <h2>Submit an Inquiry</h2>
+
+        <form
+          action="https://formsubmit.co/ksa@karenswanart.com"
+          method="POST"
+          class="inquiry-form"
+        >
+          <!-- FormSubmit settings -->
+          <input type="hidden" name="_subject" value="New Commission Inquiry - Karen Swan Art">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://www.karenswanart.com/thank-you.html">
+
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              required
+              maxlength="100"
+              placeholder="Your full name"
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              maxlength="150"
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="phone">Phone</label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              required
+              maxlength="30"
+              placeholder="Your phone number"
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="request">Request Description</label>
+            <textarea
+              id="request"
+              name="request_description"
+              required
+              maxlength="1000"
+              rows="10"
+              placeholder="Please describe what you are looking for. You can include size, subject matter, timeline, budget range, inspiration, or any other details."
+            ></textarea>
+            <div class="field-note">Maximum 1000 characters.</div>
+          </div>
+
+          <button type="submit" class="primary-button submit-button">Submit Inquiry</button>
+        </form>
+      </div>
+    </section>
   </main>
 </body>
 </html>
