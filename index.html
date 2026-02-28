@@ -1,34 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Karen Swan Art</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav class="topnav">
-    <div class="nav-brand">Karen Swan Art</div>
+  <nav class="site-nav">
+    <div class="brand">Karen Swan Art</div>
     <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About the Author</a>
-      <a href="projects.html">Projects</a>
-      <a href="commissions.html">Project Inquiry</a>
+      <a href="#top">Home</a>
+      <a href="#about">About the Artist</a>
+      <a href="#inquiry">Project Inquiry</a>
     </div>
   </nav>
 
-  <header class="hero">
-    <h1>Karen Swan Art</h1>
-    <p>Original artwork and creative projects</p>
-    <a class="button" href="projects.html">View Projects</a>
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <p class="eyebrow">Original Works</p>
+      <h1>Karen Swan Art</h1>
+      <p class="hero-copy">
+        A curated collection of projects, studies, and works in progress.
+      </p>
+      <a class="primary-button" href="#gallery-start">View Collection</a>
+    </div>
   </header>
 
-  <section class="home-intro">
-    <h2>Welcome</h2>
-    <p>
-      Welcome to Karen Swan Art. Explore original artwork, learn more about the artist,
-      and reach out for project inquiries or commissions.
-    </p>
-  </section>
+  <main>
+    <section class="intro-block">
+      <div class="intro-card">
+        <h2>Selected Projects</h2>
+        <p>
+          This collection is organized by project, with each section presenting
+          a series of related works. Descriptions can be updated below each image
+          at any time.
+        </p>
+      </div>
+    </section>
+
+    <section id="gallery-start" class="projects-wrap">
+      <div id="projects-container"></div>
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="section-heading">
+        <p class="section-kicker">About</p>
+        <h2>About the Artist</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-images">
+          <img src="KSA/mom1.jpg" alt="Karen Swan portrait 1" />
+          <img src="KSA/mom2.jpg" alt="Karen Swan portrait 2" />
+        </div>
+
+        <div class="about-copy">
+          <p>
+            Karen Swan is an artist whose work reflects a thoughtful eye for
+            composition, color, and emotional texture. Her pieces explore visual
+            storytelling through a personal and expressive lens, balancing detail,
+            mood, and experimentation.
+          </p>
+
+          <p>
+            Across projects, her work moves between polished finished pieces and
+            more exploratory studies, always with a clear artistic voice. This site
+            gathers those works into a single archive so visitors can experience the
+            range and continuity of her creative process.
+          </p>
+
+          <p>
+            For questions about specific pieces, collaborations, commissions, or
+            general inquiries, please use the inquiry section below.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="inquiry" class="inquiry-section">
+      <div class="section-heading centered">
+        <p class="section-kicker">Contact</p>
+        <h2>Project Inquiry</h2>
+        <p class="inquiry-text">
+          For commissions, collaborations, or questions about a specific work,
+          please get in touch.
+        </p>
+        <a class="primary-button" href="mailto:youremail@example.com?subject=Karen%20Swan%20Art%20Inquiry">
+          Contact Here
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const projects = [
+      {
+        title: "Project 1",
+        description: "A cohesive series exploring form, color, and visual rhythm.",
+        images: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      },
+      {
+        title: "Project 2",
+        description: "A related body of work with a distinct mood and internal dialogue.",
+        images: [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+      },
+      {
+        title: "Project 3",
+        description: "A continuation of the collection with emphasis on variation and detail.",
+        images: [25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
+      },
+      {
+        title: "Project 4",
+        description: "Works connected by a shared visual language and developing themes.",
+        images: [37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48]
+      },
+      {
+        title: "Misc Projects",
+        description: "A broader collection of additional works, studies, and standalone pieces.",
+        images: [49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63]
+      }
+    ];
+
+    const imageDescriptions = {
+      1: "Short description for image 1.",
+      2: "Short description for image 2.",
+      3: "Short description for image 3.",
+      4: "Short description for image 4.",
+      5: "Short description for image 5.",
+      6: "Short description for image 6.",
+      7: "Short description for image 7.",
+      8: "Short description for image 8.",
+      9: "Short description for image 9.",
+      10: "Short description for image 10.",
+      11: "Short description for image 11.",
+      12: "Short description for image 12.",
+      13: "Short description for image 13.",
+      14: "Short description for image 14.",
+      15: "Short description for image 15.",
+      16: "Short description for image 16.",
+      17: "Short description for image 17.",
+      18: "Short description for image 18.",
+      19: "Short description for image 19.",
+      20: "Short description for image 20.",
+      21: "Short description for image 21.",
+      22: "Short description for image 22.",
+      23: "Short description for image 23.",
+      24: "Short description for image 24.",
+      25: "Short description for image 25.",
+      26: "Short description for image 26.",
+      27: "Short description for image 27.",
+      28: "Short description for image 28.",
+      29: "Short description for image 29.",
+      30: "Short description for image 30.",
+      31: "Short description for image 31.",
+      32: "Short description for image 32.",
+      33: "Short description for image 33.",
+      34: "Short description for image 34.",
+      35: "Short description for image 35.",
+      36: "Short description for image 36.",
+      37: "Short description for image 37.",
+      38: "Short description for image 38.",
+      39: "Short description for image 39.",
+      40: "Short description for image 40.",
+      41: "Short description for image 41.",
+      42: "Short description for image 42.",
+      43: "Short description for image 43.",
+      44: "Short description for image 44.",
+      45: "Short description for image 45.",
+      46: "Short description for image 46.",
+      47: "Short description for image 47.",
+      48: "Short description for image 48.",
+      49: "Short description for image 49.",
+      50: "Short description for image 50.",
+      51: "Short description for image 51.",
+      52: "Short description for image 52.",
+      53: "Short description for image 53.",
+      54: "Short description for image 54.",
+      55: "Short description for image 55.",
+      56: "Short description for image 56.",
+      57: "Short description for image 57.",
+      58: "Short description for image 58.",
+      59: "Short description for image 59.",
+      60: "Short description for image 60.",
+      61: "Short description for image 61.",
+      62: "Short description for image 62.",
+      63: "Short description for image 63."
+    };
+
+    const container = document.getElementById("projects-container");
+
+    projects.forEach(project => {
+      const section = document.createElement("section");
+      section.className = "project-section";
+
+      const header = document.createElement("div");
+      header.className = "project-header";
+
+      const title = document.createElement("h2");
+      title.textContent = project.title;
+
+      const desc = document.createElement("p");
+      desc.textContent = project.description;
+
+      header.appendChild(title);
+      header.appendChild(desc);
+
+      const grid = document.createElement("div");
+      grid.className = "art-grid";
+
+      project.images.forEach(num => {
+        const card = document.createElement("article");
+        card.className = "art-card";
+
+        const img = document.createElement("img");
+        img.src = `KSA/img${num}.jpg`;
+        img.alt = `${project.title} image ${num}`;
+        img.loading = "lazy";
+
+        const caption = document.createElement("div");
+        caption.className = "art-caption";
+
+        const imageTitle = document.createElement("h3");
+        imageTitle.textContent = `Image ${num}`;
+
+        const imageDesc = document.createElement("p");
+        imageDesc.textContent = imageDescriptions[num] || "Add a short description here.";
+
+        caption.appendChild(imageTitle);
+        caption.appendChild(imageDesc);
+
+        card.appendChild(img);
+        card.appendChild(caption);
+        grid.appendChild(card);
+      });
+
+      section.appendChild(header);
+      section.appendChild(grid);
+      container.appendChild(section);
+    });
+  </script>
 </body>
 </html>
