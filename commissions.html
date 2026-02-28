@@ -97,6 +97,19 @@ Submit a request below to start the conversation.
           </div>
 
           <div class="form-row">
+            <label for="budget">Request Description</label>
+            <textarea
+              id="budget"
+              name="budget"
+              required
+              maxlength="100"
+              rows="3"
+              placeholder="Please provide some information about your budget expectations for this project."
+            ></textarea>
+            <div class="field-note">Maximum 1000 characters.</div>
+          </div>
+          
+          <div class="form-row">
             <label for="request">Request Description</label>
             <textarea
               id="request"
@@ -106,7 +119,6 @@ Submit a request below to start the conversation.
               rows="10"
               placeholder="Please describe what you are looking for. You can include size, subject matter, timeline, budget range, inspiration, or any other details."
             ></textarea>
-            <div class="field-note">Maximum 1000 characters.</div>
           </div>
 
           <button type="submit" class="primary-button submit-button">Submit Inquiry</button>
