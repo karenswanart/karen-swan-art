@@ -202,7 +202,7 @@ img {
 .about-section {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 20px 20px 90px;
+  padding: 20px 20px 40px;
 }
 
 .section-heading {
@@ -257,6 +257,39 @@ img {
   margin: 0 0 16px;
   color: #4f433a;
   font-size: 1.04rem;
+}
+
+.more-photos {
+  max-width: 1280px;
+  margin: 0 auto 90px;
+  padding: 0 20px;
+}
+
+.more-photos h2 {
+  margin: 0 0 18px;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.more-photos-grid {
+  display: flex;
+  gap: 18px;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  overflow-x: auto;
+}
+
+.more-photos-grid img {
+  flex: 0 0 calc((100% - 36px) / 3);
+  width: calc((100% - 36px) / 3);
+  max-width: calc((100% - 36px) / 3);
+  height: 160px;
+  object-fit: contain;
+  border-radius: 20px;
+  border: 1px solid rgba(31, 26, 23, 0.08);
+  box-shadow: 0 10px 30px rgba(31, 26, 23, 0.06);
+  background: #e9e1d6;
 }
 
 .inquiry-section {
@@ -498,5 +531,16 @@ img {
   .inquiry-image {
     max-width: 260px;
     max-height: 42vh;
+  }
+
+  .more-photos-grid {
+    gap: 12px;
+  }
+
+  .more-photos-grid img {
+    flex: 0 0 calc((100% - 24px) / 3);
+    width: calc((100% - 24px) / 3);
+    max-width: calc((100% - 24px) / 3);
+    height: 110px;
   }
 }
