@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Karen Swan Art</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="topnav">
+    <div class="nav-brand">Karen Swan Art</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About the Author</a>
+      <a href="projects.html">Projects</a>
+      <a href="inquiry.html">Project Inquiry</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <h1>Projects</h1>
+    <p class="page-subtitle">A collection of original artwork and creative pieces.</p>
+
+    <section id="gallery" class="gallery"></section>
+  </main>
+
+  <script>
+    const gallery = document.getElementById("gallery");
+    const totalImages = 63;
+
+    for (let i = 1; i <= totalImages; i++) {
+      const card = document.createElement("div");
+      card.className = "art-card";
+
+      const img = document.createElement("img");
+      img.src = `KSA/img${i}.jpg`;
+      img.alt = `Project ${i}`;
+      img.loading = "lazy";
+
+      const title = document.createElement("h3");
+      title.textContent = `Project ${i}`;
+
+      const desc = document.createElement("p");
+      desc.textContent = "Add your project title and description here.";
+
+      card.appendChild(img);
+      card.appendChild(title);
+      card.appendChild(desc);
+      gallery.appendChild(card);
+    }
+  </script>
+</body>
+</html>
