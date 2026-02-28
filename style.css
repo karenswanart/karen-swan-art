@@ -283,11 +283,13 @@ img {
   width: 32%;
   max-width: 32%;
   min-width: 0;
-  height: 220px;
-  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  object-fit: contain;
   border-radius: 20px;
   border: 1px solid rgba(31, 26, 23, 0.08);
   box-shadow: 0 10px 30px rgba(31, 26, 23, 0.06);
+  background: transparent;
 }
 
 .inquiry-section {
@@ -536,7 +538,8 @@ img {
   .more-photos-grid img {
     width: 32%;
     max-width: 32%;
-    height: 120px;
-    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    object-fit: contain;
   }
 }
