@@ -259,7 +259,6 @@ img {
   font-size: 1.04rem;
 }
 
-/* This is the part that controls the 3-photo row */
 .more-photos {
   max-width: 1280px;
   margin: 0 auto 90px;
@@ -277,19 +276,18 @@ img {
   gap: 16px;
   flex-wrap: nowrap;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 .more-photos-grid img {
   width: 32%;
   max-width: 32%;
   min-width: 0;
-  height: 140px;
-  object-fit: contain;
+  height: 220px;
+  object-fit: cover;
   border-radius: 20px;
   border: 1px solid rgba(31, 26, 23, 0.08);
   box-shadow: 0 10px 30px rgba(31, 26, 23, 0.06);
-  background: #e9e1d6;
 }
 
 .inquiry-section {
@@ -538,6 +536,7 @@ img {
   .more-photos-grid img {
     width: 32%;
     max-width: 32%;
-    height: 90px;
+    height: 120px;
+    object-fit: cover;
   }
 }
