@@ -57,6 +57,7 @@ img {
 
 .hero {
   padding: 90px 20px 70px;
+  text-align: center;
 }
 
 .hero-inner {
@@ -78,6 +79,7 @@ img {
   font-size: clamp(3rem, 7vw, 5.6rem);
   line-height: 0.95;
   font-weight: 600;
+  text-align: center;
 }
 
 .hero-copy {
@@ -85,6 +87,7 @@ img {
   margin: 20px auto 0;
   font-size: 1.15rem;
   color: #5f5147;
+  text-align: center;
 }
 
 .primary-button {
@@ -115,6 +118,7 @@ img {
   background: rgba(255, 255, 255, 0.5);
   border: 1px solid rgba(31, 26, 23, 0.08);
   border-radius: 22px;
+  text-align: center;
 }
 
 .intro-card h2 {
@@ -147,6 +151,7 @@ img {
 
 .project-header {
   margin-bottom: 24px;
+  text-align: center;
 }
 
 .project-header h2 {
@@ -156,9 +161,10 @@ img {
 }
 
 .project-header p {
-  margin: 8px 0 0;
+  margin: 8px auto 0;
   color: #67584d;
   max-width: 760px;
+  text-align: center;
 }
 
 .art-grid {
@@ -269,6 +275,7 @@ img {
   margin: 0 0 18px;
   font-size: 1.7rem;
   font-weight: 600;
+  text-align: center;
 }
 
 .more-photos-grid {
@@ -306,6 +313,7 @@ img {
   margin: 14px auto 0;
   color: #5f5147;
   font-size: 1.05rem;
+  text-align: center;
 }
 
 .page-shell {
@@ -317,6 +325,8 @@ img {
 .page-hero {
   max-width: 900px;
   padding: 70px 0 30px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .page-hero h1 {
@@ -324,13 +334,15 @@ img {
   font-size: clamp(2.4rem, 5vw, 4.2rem);
   line-height: 1;
   font-weight: 600;
+  text-align: center;
 }
 
 .page-intro {
   max-width: 680px;
-  margin-top: 16px;
+  margin: 16px auto 0;
   color: #5f5147;
   font-size: 1.08rem;
+  text-align: center;
 }
 
 .standalone-page {
@@ -394,6 +406,7 @@ img {
   margin-top: 0;
   margin-bottom: 22px;
   font-size: 1.8rem;
+  text-align: center;
 }
 
 .inquiry-form {
@@ -446,47 +459,47 @@ img {
   justify-self: start;
 }
 
-/* LIGHTBOX */
-.lightbox {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  background: rgba(0, 0, 0, 0.88) !important;
+.lightbox[hidden] {
   display: none !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 24px !important;
-  z-index: 99999 !important;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 99999;
 }
 
 .lightbox.open {
-  display: flex !important;
+  display: flex;
 }
 
 .lightbox img {
-  max-width: 92vw !important;
-  max-height: 92vh !important;
-  width: auto !important;
-  height: auto !important;
-  object-fit: contain !important;
-  border-radius: 12px !important;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45) !important;
-  background: transparent !important;
+  max-width: 92vw;
+  max-height: 92vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  background: transparent;
 }
 
 .lightbox-close {
-  position: absolute !important;
-  top: 16px !important;
-  right: 22px !important;
-  background: transparent !important;
-  border: none !important;
-  color: white !important;
-  font-size: 42px !important;
-  line-height: 1 !important;
-  cursor: pointer !important;
-  z-index: 100000 !important;
+  position: absolute;
+  top: 16px;
+  right: 22px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 42px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 100000;
 }
 
 .art-card img,
