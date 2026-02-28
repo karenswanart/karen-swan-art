@@ -20,6 +20,8 @@
     <section class="page-hero">
       <h1>Commission Inquiries</h1>
       <p class="page-intro">
+        Start the conversation about a custom piece, a meaningful gift, or a one-of-a-kind work made just for you.
+      </p>
     </section>
 
     <section class="inquiry-layout">
@@ -30,17 +32,16 @@
       <div class="inquiry-copy">
         <h2>Work With Karen Swan</h2>
         <p>
-          Creating art for someone else is one of Karen’s favorite things to do. She loves the chance to step into someone’s story and bring something personal, meaningful, and lasting to life; something you’ll treasure in your own home or give as a gift to someone you love.
-
-For her, this has never been about the money. It’s about making something beautiful for another person. If all you had to offer was a song, then a song would be the price.
-
-That said, each piece takes an immense amount of time, care, and attention. Every commission starts with a conversation so she can understand your idea and create something truly special.
-
-Submit a request below to start the conversation.
+          Creating art for someone else is one of Karen’s favorite things to do. She loves the chance to step into someone’s story and bring something personal, meaningful, and lasting to life—something you will treasure in your own home or give as a gift to someone you love.
         </p>
         <p>
-          Include as much information as you can about what you are looking for, preferred
-          timing, dimensions, style, and any inspiration or reference ideas.
+          For her, this has never been about the money. It is about making something beautiful for another person. If all you had to offer was a song, then a song would be the price.
+        </p>
+        <p>
+          That said, each piece takes an immense amount of time, care, and attention. Every commission starts with a conversation so she can understand your idea and create something truly special.
+        </p>
+        <p>
+          Submit a request below to start the conversation, and include as much information as you can about what you are looking for, timing, dimensions, style, inspiration, or reference ideas.
         </p>
       </div>
     </section>
@@ -54,7 +55,6 @@ Submit a request below to start the conversation.
           method="POST"
           class="inquiry-form"
         >
-          <!-- FormSubmit settings -->
           <input type="hidden" name="_subject" value="New Commission Inquiry - Karen Swan Art">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
@@ -108,7 +108,7 @@ Submit a request below to start the conversation.
             ></textarea>
             <div class="field-note">Maximum 100 characters.</div>
           </div>
-          
+
           <div class="form-row">
             <label for="request">Request Description</label>
             <textarea
@@ -119,6 +119,7 @@ Submit a request below to start the conversation.
               rows="10"
               placeholder="Please describe what you are looking for. You can include size, subject matter, timeline, budget range, inspiration, or any other details."
             ></textarea>
+            <div class="field-note">Maximum 1000 characters.</div>
           </div>
 
           <button type="submit" class="primary-button submit-button">Submit Inquiry</button>
@@ -126,46 +127,46 @@ Submit a request below to start the conversation.
       </div>
     </section>
   </main>
+
   <div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
-  <img id="lightboxImg" src="" alt="">
-</div>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+    <img id="lightboxImg" src="" alt="">
+  </div>
 
-<script>
-  const clickableImages = document.querySelectorAll(
-    ".art-card img, .about-images img, .more-photos-grid img, .inquiry-image"
-  );
+  <script>
+    const clickableImages = document.querySelectorAll(".inquiry-image");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxClose = document.getElementById("lightboxClose");
 
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightboxImg");
-  const lightboxClose = document.getElementById("lightboxClose");
-
-  clickableImages.forEach((img) => {
-    img.addEventListener("click", () => {
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt || "";
-      lightbox.classList.add("open");
+    clickableImages.forEach((img) => {
+      img.addEventListener("click", () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || "";
+        lightbox.classList.add("open");
+        document.body.style.overflow = "hidden";
+      });
     });
-  });
 
-  function closeLightbox() {
-    lightbox.classList.remove("open");
-    lightboxImg.src = "";
-  }
-
-  lightboxClose.addEventListener("click", closeLightbox);
-
-  lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) {
-      closeLightbox();
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightboxImg.src = "";
+      document.body.style.overflow = "";
     }
-  });
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      closeLightbox();
-    }
-  });
-</script>
+    lightboxClose.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeLightbox();
+      }
+    });
+  </script>
 </body>
 </html>
