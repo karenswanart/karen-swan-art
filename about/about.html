@@ -10,9 +10,9 @@
   <nav class="site-nav">
     <div class="brand">Karen Swan Art</div>
     <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about">About the Artist</a>
-      <a href="commissions.html">Commission Inquiries</a>
+      <a href="/">Home</a>
+      <a href="/about">About the Artist</a>
+      <a href="/commissions">Commission Inquiries</a>
     </div>
   </nav>
 
@@ -20,6 +20,8 @@
     <section class="page-hero">
       <h1>About the Artist</h1>
       <p class="page-intro">
+        A lifelong maker, teacher, and artist whose work is rooted in texture, storytelling, and imagination.
+      </p>
     </section>
 
     <section class="about-section standalone-page">
@@ -32,7 +34,6 @@
         <div class="about-copy">
           <p>
             Art has always been part of Karen’s life. Creativity runs deep in her family: her father, Thomas Swan, was an artist across many mediums, including metal and wood sculpting, and her mother, Julia Swan, is an accomplished quilter, sculptor, painter, and more.
-
           </p>
 
           <p>
@@ -42,60 +43,70 @@
           <p>
             After retiring from her career as an art teacher, Karen began casually sharing photos of her creations on social media. Before long, her work started gaining attention within her own circle, and requests from friends and family soon followed.
           </p>
-        
+
+          <p>
+            When she’s not creating, Karen enjoys swimming, reading, chopping wood, spending time with close friends, and, of course, reading. She is also the proud mother of three beautiful children: Blue, Anna, and Ben.
           </p>
-            When she’s not creating, Karen enjoys swimming, reading, chopping wood, reading, spending time with close friends, and, of course, reading. She is also the proud mother of three beautiful children: Blue, Anna, and Ben.
-          </p></div>
+        </div>
       </div>
     </section>
+
     <section class="more-photos">
-  <div class="more-photos-grid">
-    <img src="KSA/img95.jpeg" alt="Karen Swan photo 3" />
-    <img src="KSA/img91.jpg" alt="Karen Swan photo 4" />
-    <img src="KSA/img90.jpg" alt="Karen Swan photo 5" />
-  </div>
-</section>
+      <div class="more-photos-grid">
+        <img src="KSA/img95.jpeg" alt="Karen Swan photo 3" />
+        <img src="KSA/img91.jpg" alt="Karen Swan photo 4" />
+        <img src="KSA/img90.jpg" alt="Karen Swan photo 5" />
+      </div>
+    </section>
   </main>
-  <div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
-  <img id="lightboxImg" src="" alt="">
-</div>
 
-<script>
-  const clickableImages = document.querySelectorAll(
-    ".art-card img, .about-images img, .more-photos-grid img, .inquiry-image"
-  );
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+    <img id="lightboxImg" src="" alt="" />
+  </div>
 
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightboxImg");
-  const lightboxClose = document.getElementById("lightboxClose");
+  <script>
+    const clickableImages = document.querySelectorAll(
+      ".about-images img, .more-photos-grid img"
+    );
 
-  clickableImages.forEach((img) => {
-    img.addEventListener("click", () => {
-      lightboxImg.src = img.src;
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxClose = document.getElementById("lightboxClose");
+
+    function openLightbox(img) {
+      lightboxImg.src = img.currentSrc || img.src;
       lightboxImg.alt = img.alt || "";
+      lightbox.hidden = false;
       lightbox.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightbox.hidden = true;
+      lightboxImg.src = "";
+      lightboxImg.alt = "";
+      document.body.style.overflow = "";
+    }
+
+    clickableImages.forEach((img) => {
+      img.addEventListener("click", () => openLightbox(img));
     });
-  });
 
-  function closeLightbox() {
-    lightbox.classList.remove("open");
-    lightboxImg.src = "";
-  }
+    lightboxClose.addEventListener("click", closeLightbox);
 
-  lightboxClose.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
 
-  lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) {
-      closeLightbox();
-    }
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      closeLightbox();
-    }
-  });
-</script>
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !lightbox.hidden) {
+        closeLightbox();
+      }
+    });
+  </script>
 </body>
 </html>
