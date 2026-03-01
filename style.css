@@ -658,5 +658,10 @@ img {
     aspect-ratio: 1 / 1;
     height: auto;
     object-fit: contain;
+
+    .short-textarea {
+  min-height: 72px !important;
+  height: 72px !important;
+}
   }
 }
