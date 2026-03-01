@@ -6,9 +6,82 @@
   <title>Karen Swan Art</title>
   <link rel="stylesheet" href="style.css" />
   <style>
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 2000;
+    }
+
+    .nav-inner {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-menu-wrap {
+      position: relative;
+    }
+
+    .menu-toggle {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+      width: 54px;
+      height: 54px;
+      padding: 0 14px;
+      background: rgba(255, 248, 242, 0.92);
+      border: 1px solid rgba(140, 48, 76, 0.14);
+      border-radius: 16px;
+      cursor: pointer;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--ink);
+    }
+
+    .nav-dropdown {
+      position: absolute;
+      top: calc(100% + 12px);
+      right: 0;
+      min-width: 250px;
+      padding: 10px;
+      background: rgba(255, 248, 242, 0.98);
+      border: 1px solid rgba(140, 48, 76, 0.14);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-dropdown.open {
+      display: flex;
+    }
+
+    .nav-dropdown a {
+      text-decoration: none;
+      color: var(--ink);
+      padding: 12px 14px;
+      border-radius: 12px;
+      transition: background 0.18s ease, color 0.18s ease;
+    }
+
+    .nav-dropdown a:hover {
+      background: rgba(140, 48, 76, 0.08);
+      color: var(--accent-deep);
+    }
+
     .featured-projects {
       max-width: 1280px;
-      margin: 0 auto 50px;
+      margin: 0 auto 80px;
       padding: 0 20px;
     }
 
@@ -93,46 +166,66 @@
       .featured-project-image-wrap {
         padding: 0 18px 18px;
       }
+
+      .nav-dropdown {
+        min-width: 220px;
+      }
     }
   </style>
 </head>
 <body>
-<nav class="site-nav">
-  <a href="index.html" class="brand">
-    <img src="KSA/img111.png" alt="Karen Swan Art logo" class="site-logo">
-  </a>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About the Artist</a>
-    <a href="commissions.html">Commission Inquiries</a>
-    <a href="testimonials.html">Testimonials</a>
-  </div>
-</nav>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="KSA/img111.png" alt="Karen Swan Art logo" class="site-logo">
+      </a>
 
-  <header class="hero">
-  <div class="hero-inner">
-    <h1>Karen Swan Art</h1>
-    <p class="hero-copy">
-      A curated collection of fabric collages designed and created by Karen.
-    </p>
-  </div>
+      <div class="nav-menu-wrap">
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navDropdown">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-  <div class="hero-swan-wrap" aria-hidden="true">
-    <div class="hero-swan-track">
-      <div class="hero-swan">
-        <img src="KSA/swan.png" alt="" />
-        <div class="swan-ripple ripple-1"></div>
-        <div class="swan-ripple ripple-2"></div>
-        <div class="swan-ripple ripple-3"></div>
+        <div class="nav-dropdown" id="navDropdown">
+          <a href="index.html">Home</a>
+          <a href="about.html">About the Artist</a>
+          <a href="commissions.html">Commission Inquiries</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="swan-mandala.html">Swan Mandala</a>
+          <a href="eragon-triptych.html">Eragon Triptych</a>
+          <a href="octopuss-garden.html">Octopus's Garden</a>
+          <a href="other-fabric-projects.html">Other Fabric Projects</a>
+          <a href="other-mediums.html">Other Mediums</a>
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <h1>Karen Swan Art</h1>
+      <p class="hero-copy">
+        A curated collection of fabric collages designed and created by Karen.
+      </p>
+    </div>
+
+    <div class="hero-swan-wrap" aria-hidden="true">
+      <div class="hero-swan-track">
+        <div class="hero-swan">
+          <img src="KSA/swan.png" alt="" />
+          <div class="swan-ripple ripple-1"></div>
+          <div class="swan-ripple ripple-2"></div>
+          <div class="swan-ripple ripple-3"></div>
+        </div>
+      </div>
+    </div>
+  </header>
 
   <main>
     <section class="featured-projects">
       <div class="featured-projects-grid">
-        <a href="#project-swan-mandala" class="featured-project-card">
+        <a href="swan-mandala.html" class="featured-project-card">
           <div class="featured-project-caption">
             <h3>Swan Mandala</h3>
             <p>Click to view The Swan Mandala project.</p>
@@ -142,7 +235,7 @@
           </div>
         </a>
 
-        <a href="#project-eragon-triptych" class="featured-project-card">
+        <a href="eragon-triptych.html" class="featured-project-card">
           <div class="featured-project-caption">
             <h3>Eragon Triptych</h3>
             <p>Click here to view The Eragon Triptych.</p>
@@ -152,7 +245,7 @@
           </div>
         </a>
 
-        <a href="#project-under-the-sea" class="featured-project-card">
+        <a href="octopuss-garden.html" class="featured-project-card">
           <div class="featured-project-caption">
             <h3>Octopus's Garden</h3>
             <p>Click here to view Under the Sea themed projects.</p>
@@ -164,17 +257,17 @@
       </div>
 
       <div class="featured-projects-grid two-up">
-        <a href="#project-more-fabric-pieces" class="featured-project-card">
+        <a href="other-fabric-projects.html" class="featured-project-card">
           <div class="featured-project-caption">
-            <h3>More Fabric Pieces</h3>
+            <h3>Other Fabric Projects</h3>
             <p>Click here to view many more fabric projects.</p>
           </div>
           <div class="featured-project-image-wrap">
-            <img src="KSA/img29.jpg" alt="More Fabric Pieces" />
+            <img src="KSA/img29.jpg" alt="Other Fabric Projects" />
           </div>
         </a>
 
-        <a href="#project-other-mediums" class="featured-project-card">
+        <a href="other-mediums.html" class="featured-project-card">
           <div class="featured-project-caption">
             <h3>Other Mediums</h3>
             <p>Click here to view projects in other mediums.</p>
@@ -185,241 +278,28 @@
         </a>
       </div>
     </section>
-
-    <section id="gallery-start" class="projects-wrap">
-      <div id="projects-container"></div>
-    </section>
   </main>
 
-  <div class="lightbox" id="lightbox" hidden>
-    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
-    <img id="lightboxImg" src="" alt="">
-  </div>
-
   <script>
-    const projects = [
-      {
-        id: "project-swan-mandala",
-        title: "Swan Mandala",
-        images: [70, 33, 34, 35, 71, 31]
-      },
-      {
-        id: "project-eragon-triptych",
-        title: "Eragon Triptych",
-        images: [59, 81, 82, 83, 84, 4]
-      },
-      {
-        id: "project-under-the-sea",
-        title: "Under The Sea",
-        images: [8, 6, 12, 17, 19, 56]
-      },
-      {
-        id: "project-more-fabric-pieces",
-        title: "More Fabric Pieces",
-        images: [28, 29, 32, 10, 13, 68, 41, 42, 44, 43, 47, 57, 9, 16, 1, 2, 11, 20, 24, 25, 26, 27, 30, 37, 38, 39, 55]
-      },
-      {
-        id: "project-other-mediums",
-        title: "Other Mediums",
-        images: [46, 48, 58, 66]
-      }
-    ];
+    const menuToggle = document.getElementById("menuToggle");
+    const navDropdown = document.getElementById("navDropdown");
 
-    const imageTitles = {
-      4: "Eragon Triptych",
-      6: "Source Fabric - Treasure",
-      8: "Octopus's Garden",
-      12: "Asian Mermaids",
-      13: "Swan Mandala I",
-      14: "Swan Mandala II",
-      15: "Swan Mandala III",
-      17: "Octopus Pirates",
-      19: "Just Keep Swimming",
-      25: "Title for Image 25",
-      26: "Title for Image 26",
-      31: "Finished Swan Mandala",
-      33: "Swan Sketch",
-      34: "Mandala Sketch",
-      35: "Swan/Mandala - Blending",
-      49: "Title for Image 49",
-      50: "Title for Image 50",
-      51: "Title for Image 51",
-      52: "Title for Image 52",
-      54: "Title for Image 54",
-      55: "Title for Image 55",
-      56: "Mermaid Fun",
-      57: "Title for Image 57",
-      58: "Title for Image 58",
-      59: "Eragon Triptych - The Original Sketch",
-      60: "Title for Image 60",
-      61: "Title for Image 61",
-      62: "Title for Image 62",
-      63: "Title for Image 63",
-      64: "Title for Image 64",
-      65: "Title for Image 65",
-      66: "Title for Image 66",
-      67: "Title for Image 67",
-      68: "Title for Image 68",
-      69: "Title for Image 69",
-      70: "Swan Source AKA Inspiraswan",
-      71: "Tight Mandala",
-      72: "Title for Image 72",
-      73: "Title for Image 73",
-      74: "Title for Image 74",
-      75: "Title for Image 75",
-      76: "Title for Image 76",
-      80: "Title for Image 80",
-      81: "Headless",
-      82: "Finding the Fabric",
-      83: "Tupac Twins",
-      84: "Et Voila!"
-    };
-
-    const imageDescriptions = {
-      6: "Depicted is the source fabric showing where the octopus found some of its treasure!",
-      8: "Octopus's Garden: Created for her grandnephew - a scene straight from the brain of Ringo Starr. Fun fact: octopuses collect shiny objects, leading to this particular octopus garden being built from its collection.",
-      12: "Asian mermaids... why not?!",
-      13: "Short description for image 13.",
-      14: "Short description for image 14.",
-      15: "Short description for image 15.",
-      17: "Yar, I've got 8 arms and 3 hearts.",
-      19: "Short description for image 19.",
-      25: "Short description for image 25.",
-      26: "Short description for image 26.",
-      27: "Short description for image 27.",
-      37: "Short description for image 37.",
-      38: "Short description for image 38.",
-      39: "Short description for image 39.",
-      49: "Short description for image 49.",
-      50: "Short description for image 50.",
-      51: "Short description for image 51.",
-      52: "Short description for image 52.",
-      53: "Short description for image 53.",
-      54: "Short description for image 54.",
-      55: "Short description for image 55.",
-      56: "Short description for image 56.",
-      57: "Short description for image 57.",
-      58: "Short description for image 58.",
-      59: "Short description for image 59.",
-      60: "Short description for image 60.",
-      61: "Short description for image 61.",
-      62: "Short description for image 62.",
-      63: "Short description for image 63.",
-      70: "Short description for image 70.",
-      71: "Short description for image 71.",
-      80: "Short description for image 80.",
-      81: "Short description for image 81.",
-      82: "Short description for image 82.",
-      83: "Short description for image 83.",
-      84: "Short description for image 84."
-    };
-
-    const container = document.getElementById("projects-container");
-
-    function setImageSource(img, num) {
-      img.dataset.num = num;
-      img.dataset.extIndex = "0";
-      img.src = `KSA/img${num}.jpg`;
-
-      img.onerror = function () {
-        const exts = ["jpg", "jpeg", "png", "webp"];
-        const currentIndex = Number(this.dataset.extIndex || "0");
-        const nextIndex = currentIndex + 1;
-
-        if (nextIndex < exts.length) {
-          this.dataset.extIndex = String(nextIndex);
-          this.src = `KSA/img${num}.${exts[nextIndex]}`;
-        } else {
-          this.onerror = null;
-        }
-      };
-    }
-
-    projects.forEach(project => {
-      const section = document.createElement("section");
-      section.className = "project-section";
-      section.id = project.id;
-
-      const header = document.createElement("div");
-      header.className = "project-header";
-
-      const title = document.createElement("h2");
-      title.textContent = project.title;
-
-      header.appendChild(title);
-
-      const grid = document.createElement("div");
-      grid.className = "art-grid";
-
-      project.images.forEach(num => {
-        const card = document.createElement("article");
-        card.className = "art-card";
-
-        const img = document.createElement("img");
-        setImageSource(img, num);
-        img.alt = imageTitles[num] || `${project.title} image ${num}`;
-        img.loading = "lazy";
-
-        const caption = document.createElement("div");
-        caption.className = "art-caption";
-
-        const imageTitle = document.createElement("h3");
-        imageTitle.textContent = imageTitles[num] || `Image ${num}`;
-
-        const imageDesc = document.createElement("p");
-        imageDesc.textContent = imageDescriptions[num] || "Add a short description here.";
-
-        caption.appendChild(imageTitle);
-        caption.appendChild(imageDesc);
-
-        card.appendChild(img);
-        card.appendChild(caption);
-        grid.appendChild(card);
-      });
-
-      section.appendChild(header);
-      section.appendChild(grid);
-      container.appendChild(section);
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navDropdown.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
-
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightboxImg");
-    const lightboxClose = document.getElementById("lightboxClose");
-
-    function openLightbox(img) {
-      lightboxImg.src = img.currentSrc || img.src;
-      lightboxImg.alt = img.alt || "";
-      lightbox.hidden = false;
-      lightbox.classList.add("open");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeLightbox() {
-      lightbox.classList.remove("open");
-      lightbox.hidden = true;
-      lightboxImg.src = "";
-      lightboxImg.alt = "";
-      document.body.style.overflow = "";
-    }
 
     document.addEventListener("click", (e) => {
-      const clickedImage = e.target.closest(".art-card img");
-      if (clickedImage) {
-        openLightbox(clickedImage);
-      }
-    });
-
-    lightboxClose.addEventListener("click", closeLightbox);
-
-    lightbox.addEventListener("click", (e) => {
-      if (e.target === lightbox) {
-        closeLightbox();
+      if (!e.target.closest(".nav-menu-wrap")) {
+        navDropdown.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
       }
     });
 
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && !lightbox.hidden) {
-        closeLightbox();
+      if (e.key === "Escape") {
+        navDropdown.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
       }
     });
   </script>
