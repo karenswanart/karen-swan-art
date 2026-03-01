@@ -1,1 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonials | Karen Swan Art</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .testimonials-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 20px 90px;
+    }
 
+    .testimonial-block {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 34px;
+      align-items: center;
+      margin-bottom: 46px;
+      padding: 28px;
+      background: linear-gradient(180deg, rgba(255,250,244,0.92), rgba(245,235,223,0.84));
+      border: 1px solid rgba(184, 139, 74, 0.16);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .testimonial-block.reverse {
+      grid-template-columns: 1fr 360px;
+    }
+
+    .testimonial-block.reverse .testimonial-photo-wrap {
+      order: 2;
+    }
+
+    .testimonial-block.reverse .testimonial-copy {
+      order: 1;
+    }
+
+    .testimonial-photo-wrap img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 22px;
+      border: 1px solid rgba(184, 139, 74, 0.14);
+      box-shadow: var(--shadow-soft);
+      cursor: zoom-in;
+    }
+
+    .testimonial-copy h2 {
+      margin: 0 0 10px;
+      font-size: 1.7rem;
+      line-height: 1.1;
+    }
+
+    .testimonial-quote {
+      margin: 0 0 16px;
+      font-size: 1.08rem;
+      color: var(--ink-soft);
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .testimonial-name {
+      margin: 0;
+      font-size: 0.98rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+
+    .testimonial-name strong {
+      color: var(--ink);
+      font-style: normal;
+    }
+
+    @media (max-width: 900px) {
+      .testimonial-block,
+      .testimonial-block.reverse {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonial-block.reverse .testimonial-photo-wrap,
+      .testimonial-block.reverse .testimonial-copy {
+        order: initial;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="brand">Karen Swan Art</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About the Artist</a>
+      <a href="commissions.html">Commission Inquiries</a>
+      <a href="testimonials.html">Testimonials</a>
+    </div>
+  </nav>
+
+  <main class="page-shell">
+    <section class="page-hero">
+      <h1>Testimonials</h1>
+      <p class="page-intro">
+        Kind words, happy clients, and a few of the special pieces Karen has created for others.
+      </p>
+    </section>
+
+    <section class="testimonials-wrap">
+      <article class="testimonial-block">
+        <div class="testimonial-photo-wrap">
+          <img src="KSA/img101.jpg" alt="Happy customer piece 1" class="testimonial-image" />
+        </div>
+        <div class="testimonial-copy">
+          <h2>A Piece Full of Heart</h2>
+          <p class="testimonial-quote">
+            “Karen created something so personal and meaningful for our family. The detail, texture,
+            and thoughtfulness in the piece were incredible. It felt like she truly understood the
+            story we wanted it to tell.”
+          </p>
+          <p class="testimonial-name"><strong>— Client Name</strong>, City or Relationship</p>
+        </div>
+      </article>
+
+      <article class="testimonial-block reverse">
+        <div class="testimonial-photo-wrap">
+          <img src="KSA/img102.jpg" alt="Happy customer piece 2" class="testimonial-image" />
+        </div>
+        <div class="testimonial-copy">
+          <h2>Even Better Than We Imagined</h2>
+          <p class="testimonial-quote">
+            “The finished piece exceeded every expectation. Karen brought warmth, character, and
+            imagination to the project, and the final result feels completely one-of-a-kind.”
+          </p>
+          <p class="testimonial-name"><strong>— Client Name</strong>, City or Relationship</p>
+        </div>
+      </article>
+
+      <article class="testimonial-block">
+        <div class="testimonial-photo-wrap">
+          <img src="KSA/img103.jpg" alt="Happy customer piece 3" class="testimonial-image" />
+        </div>
+        <div class="testimonial-copy">
+          <h2>A Meaningful Gift</h2>
+          <p class="testimonial-quote">
+            “I commissioned this as a gift, and it could not have been more perfect. You can feel the
+            care Karen puts into every stitch and every decision. It became an instant family treasure.”
+          </p>
+          <p class="testimonial-name"><strong>— Client Name</strong>, City or Relationship</p>
+        </div>
+      </article>
+
+      <article class="testimonial-block reverse">
+        <div class="testimonial-photo-wrap">
+          <img src="KSA/img104.jpg" alt="Happy customer piece 4" class="testimonial-image" />
+        </div>
+        <div class="testimonial-copy">
+          <h2>Truly Special Work</h2>
+          <p class="testimonial-quote">
+            “Karen has such a rare ability to make art feel deeply personal. The whole process was
+            thoughtful and collaborative, and the final piece was beautiful beyond words.”
+          </p>
+          <p class="testimonial-name"><strong>— Client Name</strong>, City or Relationship</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <script>
+    const clickableImages = document.querySelectorAll(".testimonial-image");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxClose = document.getElementById("lightboxClose");
+
+    function openLightbox(img) {
+      lightboxImg.src = img.currentSrc || img.src;
+      lightboxImg.alt = img.alt || "";
+      lightbox.hidden = false;
+      lightbox.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightbox.hidden = true;
+      lightboxImg.src = "";
+      lightboxImg.alt = "";
+      document.body.style.overflow = "";
+    }
+
+    clickableImages.forEach((img) => {
+      img.addEventListener("click", () => openLightbox(img));
+    });
+
+    lightboxClose.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !lightbox.hidden) {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>
