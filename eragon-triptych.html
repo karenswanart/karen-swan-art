@@ -1,1 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eragon Triptych | Karen Swan Art</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 2000;
+    }
 
+    .nav-inner {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-menu-wrap {
+      position: relative;
+    }
+
+    .menu-toggle {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+      width: 54px;
+      height: 54px;
+      padding: 0 14px;
+      background: rgba(255, 248, 242, 0.92);
+      border: 1px solid rgba(140, 48, 76, 0.14);
+      border-radius: 16px;
+      cursor: pointer;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--ink);
+    }
+
+    .nav-dropdown {
+      position: absolute;
+      top: calc(100% + 12px);
+      right: 0;
+      min-width: 250px;
+      padding: 10px;
+      background: rgba(255, 248, 242, 0.98);
+      border: 1px solid rgba(140, 48, 76, 0.14);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-dropdown.open {
+      display: flex;
+    }
+
+    .nav-dropdown a {
+      text-decoration: none;
+      color: var(--ink);
+      padding: 12px 14px;
+      border-radius: 12px;
+      transition: background 0.18s ease, color 0.18s ease;
+    }
+
+    .nav-dropdown a:hover {
+      background: rgba(140, 48, 76, 0.08);
+      color: var(--accent-deep);
+    }
+
+    .project-page {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 20px 90px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    @media (max-width: 1100px) {
+      .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav-dropdown {
+        min-width: 220px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="KSA/img111.png" alt="Karen Swan Art logo" class="site-logo">
+      </a>
+
+      <div class="nav-menu-wrap">
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navDropdown">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-dropdown" id="navDropdown">
+          <a href="index.html">Home</a>
+          <a href="about.html">About the Artist</a>
+          <a href="commissions.html">Commission Inquiries</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="swan-mandala.html">Swan Mandala</a>
+          <a href="eragon-triptych.html">Eragon Triptych</a>
+          <a href="octopuss-garden.html">Octopus's Garden</a>
+          <a href="other-fabric-projects.html">Other Fabric Projects</a>
+          <a href="other-mediums.html">Other Mediums</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="project-page">
+    <section class="page-hero">
+      <h1>Eragon Triptych</h1>
+      <p class="page-intro">
+        Sketches, fabric choices, progress images, and the finished Eragon Triptych.
+      </p>
+    </section>
+
+    <section class="project-grid">
+      <article class="art-card">
+        <img src="KSA/img59.jpg" alt="Eragon Triptych Original Sketch" class="project-image" />
+        <div class="art-caption">
+          <h3>Eragon Triptych - The Original Sketch</h3>
+          <p>Initial concept sketch for the triptych.</p>
+        </div>
+      </article>
+
+      <article class="art-card">
+        <img src="KSA/img81.jpeg" alt="Headless progress" class="project-image" />
+        <div class="art-caption">
+          <h3>Headless</h3>
+          <p>Early progress stage as the composition begins to take shape.</p>
+        </div>
+      </article>
+
+      <article class="art-card">
+        <img src="KSA/img82.jpeg" alt="Finding the Fabric" class="project-image" />
+        <div class="art-caption">
+          <h3>Finding the Fabric</h3>
+          <p>Selecting and testing fabrics for the final piece.</p>
+        </div>
+      </article>
+
+      <article class="art-card">
+        <img src="KSA/img83.jpeg" alt="Tupac Twins" class="project-image" />
+        <div class="art-caption">
+          <h3>Tupac Twins</h3>
+          <p>Another step in building the layered composition.</p>
+        </div>
+      </article>
+
+      <article class="art-card">
+        <img src="KSA/img84.jpeg" alt="Et Voila" class="project-image" />
+        <div class="art-caption">
+          <h3>Et Voila!</h3>
+          <p>The piece comes together in its near-final form.</p>
+        </div>
+      </article>
+
+      <article class="art-card">
+        <img src="KSA/img4.jpg" alt="Finished Eragon Triptych" class="project-image" />
+        <div class="art-caption">
+          <h3>Eragon Triptych</h3>
+          <p>The completed finished triptych.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navDropdown = document.getElementById("navDropdown");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navDropdown.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".nav-menu-wrap")) {
+        navDropdown.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        navDropdown.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    const clickableImages = document.querySelectorAll(".project-image");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxClose = document.getElementById("lightboxClose");
+
+    function openLightbox(img) {
+      lightboxImg.src = img.currentSrc || img.src;
+      lightboxImg.alt = img.alt || "";
+      lightbox.hidden = false;
+      lightbox.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightbox.hidden = true;
+      lightboxImg.src = "";
+      lightboxImg.alt = "";
+      document.body.style.overflow = "";
+    }
+
+    clickableImages.forEach((img) => {
+      img.addEventListener("click", () => openLightbox(img));
+    });
+
+    lightboxClose.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !lightbox.hidden) closeLightbox();
+    });
+  </script>
+</body>
+</html>
