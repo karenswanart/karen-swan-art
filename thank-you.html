@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You | Karen Swan Art</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      overflow-x: hidden;
+    }
 
+    .thank-you-wrap {
+      min-height: calc(100vh - 90px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px 80px;
+      position: relative;
+    }
+
+    .thank-you-card {
+      max-width: 760px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(255,250,244,0.94), rgba(245,235,223,0.84));
+      border: 1px solid rgba(184, 139, 74, 0.16);
+      border-radius: 28px;
+      padding: 48px 36px;
+      box-shadow: 0 18px 45px rgba(44, 27, 18, 0.12);
+      position: relative;
+      z-index: 2;
+    }
+
+    .thank-you-card h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      line-height: 1;
+    }
+
+    .thank-you-card p {
+      margin: 0 auto 16px;
+      max-width: 560px;
+      font-size: 1.08rem;
+      color: var(--ink-soft);
+    }
+
+    .confetti {
+      position: fixed;
+      top: -20px;
+      width: 10px;
+      height: 18px;
+      opacity: 0.9;
+      border-radius: 2px;
+      animation: fall linear forwards;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-40px) rotate(0deg);
+      }
+      100% {
+        transform: translateY(110vh) rotate(720deg);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .thank-you-card {
+        padding: 36px 24px;
+      }
+
+      .thank-you-card p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="brand">Karen Swan Art</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About the Artist</a>
+      <a href="commissions.html">Commission Inquiries</a>
+    </div>
+  </nav>
+
+  <main class="thank-you-wrap">
+    <section class="thank-you-card">
+      <h1>Thank You</h1>
+      <p>Your inquiry has been received.</p>
+      <p>Karen looks forward to learning more about your idea and potentially working with you.</p>
+      <a href="index.html" class="primary-button">Return Home</a>
+    </section>
+  </main>
+
+  <script>
+    const colors = ["#7b3f3f", "#b88b4a", "#d8b98f", "#8a6f60", "#ffffff"];
+    const pieces = 80;
+
+    for (let i = 0; i < pieces; i++) {
+      const confetti = document.createElement("div");
+      confetti.className = "confetti";
+      confetti.style.left = Math.random() * 100 + "vw";
+      confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+      confetti.style.animationDuration = 3 + Math.random() * 3 + "s";
+      confetti.style.animationDelay = Math.random() * 1.5 + "s";
+      confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+      document.body.appendChild(confetti);
+    }
+  </script>
+</body>
+</html>
