@@ -692,4 +692,103 @@ img {
     height: auto;
     object-fit: contain;
   }
+
+  .hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-swan-wrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 26px;
+  height: 120px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-swan-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-swan {
+  position: absolute;
+  bottom: 0;
+  left: -220px;
+  width: 190px;
+  animation: swan-swim 18s linear infinite;
+}
+
+.hero-swan img {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 0.9;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.12));
+}
+
+.swan-ripple {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.42);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ripple-1 {
+  bottom: 4px;
+  width: 70px;
+  height: 14px;
+  animation: ripple 2.4s ease-out infinite;
+}
+
+.ripple-2 {
+  bottom: 1px;
+  width: 100px;
+  height: 20px;
+  animation: ripple 2.4s ease-out infinite 0.5s;
+}
+
+.ripple-3 {
+  bottom: -3px;
+  width: 130px;
+  height: 26px;
+  animation: ripple 2.4s ease-out infinite 1s;
+}
+
+@keyframes swan-swim {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(100vw + 440px));
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: translateX(-50%) scale(0.75);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.45;
+  }
+  100% {
+    transform: translateX(-50%) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* desktop only */
+@media (max-width: 980px) {
+  .hero-swan-wrap {
+    display: none;
+  }
+}
+
 }
