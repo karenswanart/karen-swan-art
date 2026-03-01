@@ -78,6 +78,13 @@ img {
   flex-wrap: wrap;
 }
 
+.nav-links {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 .nav-links a {
   color: var(--ink);
   text-decoration: none;
