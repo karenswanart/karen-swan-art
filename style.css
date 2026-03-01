@@ -47,7 +47,8 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 34px;
+  padding: 10px 34px;
+  min-height: 0;
   background: rgba(255, 246, 239, 0.72);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(140, 48, 76, 0.1);
@@ -57,13 +58,18 @@ img {
 .brand {
   display: inline-flex;
   align-items: center;
+  justify-content: flex-start;
   text-decoration: none;
+  flex: 0 0 auto;
+  line-height: 0;
 }
 
 .site-logo {
-  height: 168px;
-  width: auto;
-  display: block;
+  display: block !important;
+  height: 168px !important;
+  width: auto !important;
+  max-width: 320px !important;
+  object-fit: contain !important;
 }
 
 .nav-links {
