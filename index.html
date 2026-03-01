@@ -5,6 +5,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Karen Swan Art</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .featured-projects {
+      max-width: 1280px;
+      margin: 0 auto 50px;
+      padding: 0 20px;
+    }
+
+    .featured-projects-grid {
+      display: flex;
+      gap: 24px;
+      justify-content: space-between;
+      align-items: stretch;
+      flex-wrap: nowrap;
+    }
+
+    .featured-project-card {
+      width: 32%;
+      text-decoration: none;
+      color: inherit;
+      background: rgba(255, 249, 240, 0.9);
+      border: 1px solid rgba(184, 139, 74, 0.16);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(44, 27, 18, 0.12);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      display: block;
+    }
+
+    .featured-project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 48px rgba(44, 27, 18, 0.16);
+    }
+
+    .featured-project-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .featured-project-caption {
+      padding: 18px 18px 20px;
+      text-align: center;
+    }
+
+    .featured-project-caption h3 {
+      margin: 0 0 8px;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .featured-project-caption p {
+      margin: 0;
+      color: #5f4d43;
+      font-size: 0.96rem;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 900px) {
+      .featured-projects-grid {
+        flex-direction: column;
+      }
+
+      .featured-project-card {
+        width: 100%;
+      }
+
+      .featured-project-card img {
+        height: auto;
+      }
+    }
+  </style>
 </head>
 <body>
   <nav class="site-nav">
@@ -26,6 +98,34 @@
   </header>
 
   <main>
+    <section class="featured-projects">
+      <div class="featured-projects-grid">
+        <a href="#project-swan-mandala" class="featured-project-card">
+          <img src="KSA/img31.jpg" alt="Swan Mandala" />
+          <div class="featured-project-caption">
+            <h3>Swan Mandala</h3>
+            <p>Click here to view the making of The Swan Mandala.</p>
+          </div>
+        </a>
+
+        <a href="#project-eragon-triptych" class="featured-project-card">
+          <img src="KSA/img4.jpg" alt="Eragon Triptych" />
+          <div class="featured-project-caption">
+            <h3>Eragon Triptych</h3>
+            <p>Click here to view the making of The Eragon Triptych.</p>
+          </div>
+        </a>
+
+        <a href="#project-under-the-sea" class="featured-project-card">
+          <img src="KSA/img8.jpg" alt="Octopus's Garden" />
+          <div class="featured-project-caption">
+            <h3>Octopus's Garden</h3>
+            <p>Click here to view Octopus's Garden and Under The Sea fabric pieces.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
     <section id="gallery-start" class="projects-wrap">
       <div id="projects-container"></div>
     </section>
@@ -39,22 +139,27 @@
   <script>
     const projects = [
       {
+        id: "project-swan-mandala",
         title: "Swan Mandala",
         images: [70, 33, 34, 35, 71, 31]
       },
       {
+        id: "project-eragon-triptych",
         title: "Eragon Triptych",
         images: [59, 81, 82, 83, 84, 4]
       },
       {
+        id: "project-under-the-sea",
         title: "Under The Sea",
         images: [8, 6, 12, 17, 19, 56]
       },
       {
+        id: "project-more-fabric-pieces",
         title: "More Fabric Pieces",
         images: [37, 38, 39]
       },
       {
+        id: "project-other-mediums",
         title: "Other Mediums",
         images: [49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63]
       }
@@ -173,6 +278,7 @@
     projects.forEach(project => {
       const section = document.createElement("section");
       section.className = "project-section";
+      section.id = project.id;
 
       const header = document.createElement("div");
       header.className = "project-header";
@@ -180,11 +286,7 @@
       const title = document.createElement("h2");
       title.textContent = project.title;
 
-      const desc = document.createElement("p");
-      desc.textContent = project.description;
-
       header.appendChild(title);
-      header.appendChild(desc);
 
       const grid = document.createElement("div");
       grid.className = "art-grid";
