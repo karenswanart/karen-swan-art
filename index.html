@@ -66,6 +66,7 @@
     ];
 
     const imageTitles = {
+      4: "Eragon Triptych",
       6: "Source Fabric - Treasure",
       8: "Octopus's Garden",
       12: "Asian Mermaids",
@@ -84,7 +85,6 @@
       50: "Title for Image 50",
       51: "Title for Image 51",
       52: "Title for Image 52",
-      4: "Eragon Triptych",
       54: "Title for Image 54",
       55: "Title for Image 55",
       56: "Title for Image 56",
@@ -95,19 +95,24 @@
       61: "Title for Image 61",
       62: "Title for Image 62",
       63: "Title for Image 63",
-      64: "Title for Image 51",
-      65: "Title for Image 52",
-      66: "Title for Image 53",
-      67: "Title for Image 54",
-      68: "Title for Image 55",
-      69: "Title for Image 56",
+      64: "Title for Image 64",
+      65: "Title for Image 65",
+      66: "Title for Image 66",
+      67: "Title for Image 67",
+      68: "Title for Image 68",
+      69: "Title for Image 69",
       70: "Swan Source AKA Inspiraswan",
       71: "Tight Mandala",
-      72: "Title for Image 59",
-      73: "Title for Image 60",
-      74: "Title for Image 61",
-      75: "Title for Image 62",
-      76: "Title for Image 63"
+      72: "Title for Image 72",
+      73: "Title for Image 73",
+      74: "Title for Image 74",
+      75: "Title for Image 75",
+      76: "Title for Image 76",
+      80: "Title for Image 80",
+      81: "Title for Image 81",
+      82: "Title for Image 82",
+      83: "Title for Image 83",
+      84: "Title for Image 84"
     };
 
     const imageDescriptions = {
@@ -139,10 +144,36 @@
       60: "Short description for image 60.",
       61: "Short description for image 61.",
       62: "Short description for image 62.",
-      63: "Short description for image 63."
+      63: "Short description for image 63.",
+      70: "Short description for image 70.",
+      71: "Short description for image 71.",
+      80: "Short description for image 80.",
+      81: "Short description for image 81.",
+      82: "Short description for image 82.",
+      83: "Short description for image 83.",
+      84: "Short description for image 84."
     };
 
     const container = document.getElementById("projects-container");
+
+    function setImageSource(img, num) {
+      img.dataset.num = num;
+      img.dataset.extIndex = "0";
+      img.src = `KSA/img${num}.jpg`;
+
+      img.onerror = function () {
+        const exts = ["jpg", "jpeg", "png", "webp"];
+        const currentIndex = Number(this.dataset.extIndex || "0");
+        const nextIndex = currentIndex + 1;
+
+        if (nextIndex < exts.length) {
+          this.dataset.extIndex = String(nextIndex);
+          this.src = `KSA/img${num}.${exts[nextIndex]}`;
+        } else {
+          this.onerror = null;
+        }
+      };
+    }
 
     projects.forEach(project => {
       const section = document.createElement("section");
@@ -168,7 +199,7 @@
         card.className = "art-card";
 
         const img = document.createElement("img");
-        img.src = `KSA/img${num}.jpg`;
+        setImageSource(img, num);
         img.alt = imageTitles[num] || `${project.title} image ${num}`;
         img.loading = "lazy";
 
@@ -194,13 +225,12 @@
       container.appendChild(section);
     });
 
-    const clickableImages = document.querySelectorAll(".art-card img");
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightboxImg");
     const lightboxClose = document.getElementById("lightboxClose");
 
     function openLightbox(img) {
-      lightboxImg.src = img.src;
+      lightboxImg.src = img.currentSrc || img.src;
       lightboxImg.alt = img.alt || "";
       lightbox.hidden = false;
       lightbox.classList.add("open");
@@ -215,8 +245,11 @@
       document.body.style.overflow = "";
     }
 
-    clickableImages.forEach((img) => {
-      img.addEventListener("click", () => openLightbox(img));
+    document.addEventListener("click", (e) => {
+      const clickedImage = e.target.closest(".art-card img");
+      if (clickedImage) {
+        openLightbox(clickedImage);
+      }
     });
 
     lightboxClose.addEventListener("click", closeLightbox);
