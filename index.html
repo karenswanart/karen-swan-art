@@ -38,15 +38,8 @@
       box-shadow: 0 22px 48px rgba(44, 27, 18, 0.16);
     }
 
-    .featured-project-card img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      display: block;
-    }
-
     .featured-project-caption {
-      padding: 18px 18px 20px;
+      padding: 18px 18px 16px;
       text-align: center;
     }
 
@@ -63,6 +56,19 @@
       line-height: 1.45;
     }
 
+    .featured-project-image-wrap {
+      padding: 0 18px 18px;
+    }
+
+    .featured-project-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      display: block;
+      border-radius: 18px;
+      background: transparent;
+    }
+
     @media (max-width: 900px) {
       .featured-projects-grid {
         flex-direction: column;
@@ -72,8 +78,8 @@
         width: 100%;
       }
 
-      .featured-project-card img {
-        height: auto;
+      .featured-project-image-wrap {
+        padding: 0 18px 18px;
       }
     }
   </style>
@@ -101,26 +107,32 @@
     <section class="featured-projects">
       <div class="featured-projects-grid">
         <a href="#project-swan-mandala" class="featured-project-card">
-          <img src="KSA/img31.jpg" alt="Swan Mandala" />
           <div class="featured-project-caption">
             <h3>Swan Mandala</h3>
             <p>Click here to view the making of The Swan Mandala.</p>
           </div>
+          <div class="featured-project-image-wrap">
+            <img src="KSA/img31.jpg" alt="Swan Mandala" />
+          </div>
         </a>
 
         <a href="#project-eragon-triptych" class="featured-project-card">
-          <img src="KSA/img4.jpg" alt="Eragon Triptych" />
           <div class="featured-project-caption">
             <h3>Eragon Triptych</h3>
             <p>Click here to view the making of The Eragon Triptych.</p>
           </div>
+          <div class="featured-project-image-wrap">
+            <img src="KSA/img4.jpg" alt="Eragon Triptych" />
+          </div>
         </a>
 
         <a href="#project-under-the-sea" class="featured-project-card">
-          <img src="KSA/img8.jpg" alt="Octopus's Garden" />
           <div class="featured-project-caption">
             <h3>Octopus's Garden</h3>
             <p>Click here to view Octopus's Garden and Under The Sea fabric pieces.</p>
+          </div>
+          <div class="featured-project-image-wrap">
+            <img src="KSA/img8.jpg" alt="Octopus's Garden" />
           </div>
         </a>
       </div>
