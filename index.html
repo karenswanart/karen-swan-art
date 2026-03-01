@@ -20,6 +20,11 @@
       flex-wrap: nowrap;
     }
 
+    .featured-projects-grid.two-up {
+      max-width: 860px;
+      margin: 24px auto 0;
+    }
+
     .featured-project-card {
       width: 32%;
       text-decoration: none;
@@ -31,6 +36,10 @@
       box-shadow: 0 18px 45px rgba(44, 27, 18, 0.12);
       transition: transform 0.18s ease, box-shadow 0.18s ease;
       display: block;
+    }
+
+    .featured-projects-grid.two-up .featured-project-card {
+      width: 48%;
     }
 
     .featured-project-card:hover {
@@ -70,11 +79,14 @@
     }
 
     @media (max-width: 900px) {
-      .featured-projects-grid {
+      .featured-projects-grid,
+      .featured-projects-grid.two-up {
         flex-direction: column;
+        max-width: none;
       }
 
-      .featured-project-card {
+      .featured-project-card,
+      .featured-projects-grid.two-up .featured-project-card {
         width: 100%;
       }
 
@@ -129,10 +141,32 @@
         <a href="#project-under-the-sea" class="featured-project-card">
           <div class="featured-project-caption">
             <h3>Octopus's Garden</h3>
-            <p>Click here to view Under the Sea Themed projects.</p>
+            <p>Click here to view Under the Sea themed projects.</p>
           </div>
           <div class="featured-project-image-wrap">
             <img src="KSA/img8.jpg" alt="Octopus's Garden" />
+          </div>
+        </a>
+      </div>
+
+      <div class="featured-projects-grid two-up">
+        <a href="#project-more-fabric-pieces" class="featured-project-card">
+          <div class="featured-project-caption">
+            <h3>More Fabric Pieces</h3>
+            <p>Click here to view many more fabric projects.</p>
+          </div>
+          <div class="featured-project-image-wrap">
+            <img src="KSA/img29.jpg" alt="More Fabric Pieces" />
+          </div>
+        </a>
+
+        <a href="#project-other-mediums" class="featured-project-card">
+          <div class="featured-project-caption">
+            <h3>Other Mediums</h3>
+            <p>Click here to view projects in other mediums.</p>
+          </div>
+          <div class="featured-project-image-wrap">
+            <img src="KSA/img49.jpg" alt="Other Mediums" />
           </div>
         </a>
       </div>
@@ -377,3 +411,5 @@
   </script>
 </body>
 </html>
+
+I'd like to make the text smaller on the clickable titles at the top. in the first row with 3 images, make the descriptions below the title smaller. in the 2nd row with 2 images, make both the title and the description smaller. how do I do that?
