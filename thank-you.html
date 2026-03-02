@@ -3,115 +3,352 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thank You | Karen Swan Art</title>
+  <title>Testimonials | Karen Swan Art</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      overflow-x: hidden;
-    }
+    .site-nav { position: sticky; top: 0; z-index: 2000; }
+    .nav-inner { width: 100%; display: flex; justify-content: space-between; align-items: center; }
+    .nav-menu-wrap { position: relative; }
 
-    .thank-you-wrap {
-      min-height: calc(100vh - 90px);
-      display: flex;
-      align-items: center;
+    .menu-toggle {
+      display: inline-flex;
+      flex-direction: column;
       justify-content: center;
-      padding: 40px 20px 80px;
-      position: relative;
+      gap: 6px;
+      width: 54px;
+      height: 54px;
+      padding: 0 14px;
+      background: rgba(255, 248, 242, 0.92);
+      border: 1px solid rgba(140, 48, 76, 0.14);
+      border-radius: 16px;
+      cursor: pointer;
+      box-shadow: var(--shadow-soft);
     }
 
-    .thank-you-card {
-      max-width: 760px;
-      text-align: center;
-      background: linear-gradient(180deg, rgba(255,250,244,0.94), rgba(245,235,223,0.84));
+    .menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--ink);
+    }
+
+    .nav-dropdown {
+      position: absolute;
+      top: calc(100% + 12px);
+      right: 0;
+      min-width: 270px;
+      padding: 10px;
+      background: rgba(255, 248, 242, 0.98);
+      border: 1px solid rgba(140, 48, 76, 0.14);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-dropdown.open { display: flex; }
+
+    .nav-dropdown > a,
+    .submenu-toggle {
+      text-decoration: none;
+      color: var(--ink);
+      padding: 12px 14px;
+      border-radius: 12px;
+      transition: background 0.18s ease, color 0.18s ease;
+      background: transparent;
+      border: none;
+      font: inherit;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .nav-dropdown > a:hover,
+    .submenu-toggle:hover,
+    .submenu a:hover {
+      background: rgba(140, 48, 76, 0.08);
+      color: var(--accent-deep);
+    }
+
+    .submenu-wrap { display: flex; flex-direction: column; gap: 6px; }
+    .submenu-toggle { display: flex; justify-content: space-between; align-items: center; }
+    .submenu-arrow { font-size: 0.9rem; }
+
+    .submenu {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      padding-left: 10px;
+    }
+
+    .submenu.open { display: flex; }
+
+    .submenu a {
+      text-decoration: none;
+      color: var(--ink);
+      padding: 10px 12px;
+      border-radius: 10px;
+      transition: background 0.18s ease, color 0.18s ease;
+    }
+
+    .testimonials-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 20px 90px;
+    }
+
+    .testimonial-block {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 34px;
+      align-items: center;
+      margin-bottom: 46px;
+      padding: 28px;
+      background: linear-gradient(180deg, rgba(255,250,244,0.92), rgba(245,235,223,0.84));
       border: 1px solid rgba(184, 139, 74, 0.16);
       border-radius: 28px;
-      padding: 48px 36px;
-      box-shadow: 0 18px 45px rgba(44, 27, 18, 0.12);
-      position: relative;
-      z-index: 2;
+      box-shadow: var(--shadow);
     }
 
-    .thank-you-card h1 {
+    .testimonial-block.reverse {
+      grid-template-columns: 1fr 360px;
+    }
+
+    .testimonial-block.reverse .testimonial-photo-wrap {
+      order: 2;
+    }
+
+    .testimonial-block.reverse .testimonial-copy {
+      order: 1;
+    }
+
+    .testimonial-photo-wrap img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 22px;
+      border: 1px solid rgba(184, 139, 74, 0.14);
+      box-shadow: var(--shadow-soft);
+      cursor: zoom-in;
+    }
+
+    .testimonial-copy h2 {
+      margin: 0 0 10px;
+      font-size: 1.7rem;
+      line-height: 1.1;
+    }
+
+    .testimonial-quote {
       margin: 0 0 16px;
-      font-size: clamp(2.4rem, 5vw, 4rem);
-      line-height: 1;
-    }
-
-    .thank-you-card p {
-      margin: 0 auto 16px;
-      max-width: 560px;
       font-size: 1.08rem;
       color: var(--ink-soft);
+      line-height: 1.7;
+      font-style: italic;
     }
 
-    .confetti {
-      position: fixed;
-      top: -20px;
-      width: 10px;
-      height: 18px;
-      opacity: 0.9;
-      border-radius: 2px;
-      animation: fall linear forwards;
-      z-index: 1;
-      pointer-events: none;
+    .testimonial-name {
+      margin: 0;
+      font-size: 0.98rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
     }
 
-    @keyframes fall {
-      0% {
-        transform: translateY(-40px) rotate(0deg);
-      }
-      100% {
-        transform: translateY(110vh) rotate(720deg);
-      }
+    .testimonial-name strong {
+      color: var(--ink);
+      font-style: normal;
     }
 
-    @media (max-width: 760px) {
-      .thank-you-card {
-        padding: 36px 24px;
+    @media (max-width: 900px) {
+      .nav-dropdown { min-width: 220px; }
+
+      .testimonial-block,
+      .testimonial-block.reverse {
+        grid-template-columns: 1fr;
       }
 
-      .thank-you-card p {
-        font-size: 1rem;
+      .testimonial-block.reverse .testimonial-photo-wrap,
+      .testimonial-block.reverse .testimonial-copy {
+        order: initial;
       }
     }
   </style>
 </head>
 <body>
- <nav class="site-nav">
-  <a href="index.html" class="brand">
-    <img src="KSA/img111.png" alt="Karen Swan Art logo" class="site-logo">
-  </a>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About the Artist</a>
-    <a href="commissions.html">Commission Inquiries</a>
-    <a href="testimonials.html">Testimonials</a>
-  </div>
-</nav>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="KSA/img111.png" alt="Karen Swan Art logo" class="site-logo">
+      </a>
 
-  <main class="thank-you-wrap">
-    <section class="thank-you-card">
-      <h1>Thank You</h1>
-      <p>Your inquiry has been received.</p>
-      <p>Karen looks forward to learning more about your idea and potentially working with you.</p>
-      <a href="index.html" class="primary-button">Return Home</a>
+      <div class="nav-menu-wrap">
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navDropdown">
+          <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav-dropdown" id="navDropdown">
+          <a href="index.html">Home</a>
+          <a href="about.html">About the Artist</a>
+
+          <div class="submenu-wrap">
+            <button class="submenu-toggle" id="projectsToggle" aria-expanded="false" aria-controls="projectsSubmenu">
+              <span>Projects</span><span class="submenu-arrow">▾</span>
+            </button>
+
+            <div class="submenu" id="projectsSubmenu">
+              <a href="swan-mandala.html">Swan Mandala</a>
+              <a href="eragon-triptych.html">Eragon Triptych</a>
+              <a href="octopuss-garden.html">Octopus's Garden</a>
+              <a href="other-fabric-projects.html">Other Fabric Projects</a>
+              <a href="other-mediums.html">Other Mediums</a>
+            </div>
+          </div>
+
+          <a href="commissions.html">Commission Inquiries</a>
+          <a href="testimonials.html">Testimonials</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page-shell">
+    <section class="page-hero">
+      <h1>Testimonials</h1>
+      <p class="page-intro">
+        Kind words, happy clients, and a few of the special pieces Karen has created for others.
+      </p>
+    </section>
+
+    <section class="testimonials-wrap">
+      <article class="testimonial-block">
+        <div class="testimonial-photo-wrap">
+          <img src="KSA/img100.jpeg" alt="Happy customer piece 1" class="testimonial-image" />
+        </div>
+        <div class="testimonial-copy">
+          <h2>Harry Potter Fan</h2>
+          <p class="testimonial-quote">
+            “This is a snuggle blankie. I love soft blankets!”
+          </p>
+          <p class="testimonial-name"><strong>— Arya</strong></p>
+        </div>
+      </article>
+
+      <article class="testimonial-block reverse">
+        <div class="testimonial-photo-wrap">
+          <img src="KSA/img102.jpg" alt="Happy customer piece 2" class="testimonial-image" />
+        </div>
+        <div class="testimonial-copy">
+          <h2>Even Better Than We Imagined</h2>
+          <p class="testimonial-quote">
+            “The finished piece exceeded every expectation. Karen brought warmth, character, and imagination to the project, and the final result feels completely one-of-a-kind.”
+          </p>
+          <p class="testimonial-name"><strong>— Client Name</strong>, City or Relationship</p>
+        </div>
+      </article>
+
+      <article class="testimonial-block">
+        <div class="testimonial-photo-wrap">
+          <img src="KSA/img103.jpg" alt="Happy customer piece 3" class="testimonial-image" />
+        </div>
+        <div class="testimonial-copy">
+          <h2>A Meaningful Gift</h2>
+          <p class="testimonial-quote">
+            “I commissioned this as a gift, and it could not have been more perfect. You can feel the care Karen puts into every stitch and every decision. It became an instant family treasure.”
+          </p>
+          <p class="testimonial-name"><strong>— Client Name</strong>, City or Relationship</p>
+        </div>
+      </article>
+
+      <article class="testimonial-block reverse">
+        <div class="testimonial-photo-wrap">
+          <img src="KSA/img104.jpg" alt="Happy customer piece 4" class="testimonial-image" />
+        </div>
+        <div class="testimonial-copy">
+          <h2>Truly Special Work</h2>
+          <p class="testimonial-quote">
+            “Karen has such a rare ability to make art feel deeply personal. The whole process was thoughtful and collaborative, and the final piece was beautiful beyond words.”
+          </p>
+          <p class="testimonial-name"><strong>— Client Name</strong>, City or Relationship</p>
+        </div>
+      </article>
     </section>
   </main>
 
-  <script>
-    const colors = ["#7b3f3f", "#b88b4a", "#d8b98f", "#8a6f60", "#ffffff"];
-    const pieces = 80;
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+    <img id="lightboxImg" src="" alt="">
+  </div>
 
-    for (let i = 0; i < pieces; i++) {
-      const confetti = document.createElement("div");
-      confetti.className = "confetti";
-      confetti.style.left = Math.random() * 100 + "vw";
-      confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
-      confetti.style.animationDuration = 3 + Math.random() * 3 + "s";
-      confetti.style.animationDelay = Math.random() * 1.5 + "s";
-      confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
-      document.body.appendChild(confetti);
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navDropdown = document.getElementById("navDropdown");
+    const projectsToggle = document.getElementById("projectsToggle");
+    const projectsSubmenu = document.getElementById("projectsSubmenu");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navDropdown.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    projectsToggle.addEventListener("click", () => {
+      const isOpen = projectsSubmenu.classList.toggle("open");
+      projectsToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".nav-menu-wrap")) {
+        navDropdown.classList.remove("open");
+        projectsSubmenu.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        projectsToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        navDropdown.classList.remove("open");
+        projectsSubmenu.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        projectsToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    const clickableImages = document.querySelectorAll(".testimonial-image");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxClose = document.getElementById("lightboxClose");
+
+    function openLightbox(img) {
+      lightboxImg.src = img.currentSrc || img.src;
+      lightboxImg.alt = img.alt || "";
+      lightbox.hidden = false;
+      lightbox.classList.add("open");
+      document.body.style.overflow = "hidden";
     }
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightbox.hidden = true;
+      lightboxImg.src = "";
+      lightboxImg.alt = "";
+      document.body.style.overflow = "";
+    }
+
+    clickableImages.forEach((img) => {
+      img.addEventListener("click", () => openLightbox(img));
+    });
+
+    lightboxClose.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !lightbox.hidden) closeLightbox();
+    });
   </script>
 </body>
 </html>
