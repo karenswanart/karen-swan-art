@@ -72,6 +72,129 @@ img {
   object-fit: contain !important;
 }
 
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+}
+
+.nav-inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu-wrap {
+  position: relative;
+}
+
+.menu-toggle {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 54px;
+  height: 54px;
+  padding: 0 14px;
+  background: rgba(255, 248, 242, 0.92);
+  border: 1px solid rgba(140, 48, 76, 0.14);
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--ink);
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  min-width: 270px;
+  padding: 10px;
+  background: rgba(255, 248, 242, 0.98);
+  border: 1px solid rgba(140, 48, 76, 0.14);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  backdrop-filter: blur(14px);
+}
+
+.nav-dropdown.open {
+  display: flex;
+}
+
+.nav-dropdown > a,
+.submenu-toggle {
+  text-decoration: none;
+  color: var(--ink);
+  padding: 12px 14px;
+  border-radius: 12px;
+  transition: background 0.18s ease, color 0.18s ease;
+  background: transparent;
+  border: none;
+  font: inherit;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.nav-dropdown > a:hover,
+.submenu-toggle:hover,
+.submenu a:hover {
+  background: rgba(140, 48, 76, 0.08);
+  color: var(--accent-deep);
+}
+
+.submenu-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.submenu-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submenu-arrow {
+  font-size: 0.9rem;
+}
+
+.submenu {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  padding-left: 10px;
+}
+
+.submenu.open {
+  display: flex;
+}
+
+.submenu a {
+  text-decoration: none;
+  color: var(--ink);
+  padding: 10px 12px;
+  border-radius: 10px;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+@media (max-width: 900px) {
+  .nav-dropdown {
+    min-width: 220px;
+  }
+}
+
 .nav-links {
   display: flex;
   gap: 28px;
