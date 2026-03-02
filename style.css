@@ -153,8 +153,8 @@ img {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -0px;
-  height: 100px;
+  bottom: -8px;
+  height: 120px;
   pointer-events: none;
   z-index: 1;
 }
