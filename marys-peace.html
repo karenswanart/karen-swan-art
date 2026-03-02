@@ -1,1 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mary's Peace | Karen Swan Art</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="site-nav"></div>
 
+  <main class="page-shell standalone-page">
+    <header class="page-hero">
+      <p class="eyebrow">Fabric Collage Collection</p>
+      <h1>Mary's Peace</h1>
+      <p class="page-intro">
+        A gentle and reflective project created through Karen Swan’s fabric collage style,
+        centered on beauty, comfort, and quiet detail.
+      </p>
+    </header>
+
+    <section class="project-section">
+      <div class="project-header">
+        <h2>Mary's Peace</h2>
+        <p>
+          Replace these placeholder images with the correct Mary's Peace project photos.
+        </p>
+      </div>
+
+      <div class="art-grid">
+        <article class="art-card">
+          <img src="KSA/marys-peace-1.jpg" alt="Mary's Peace artwork 1" />
+          <div class="art-caption">
+            <h3>Mary's Peace Piece 1</h3>
+            <p>Placeholder image for this project.</p>
+          </div>
+        </article>
+
+        <article class="art-card">
+          <img src="KSA/marys-peace-2.jpg" alt="Mary's Peace artwork 2" />
+          <div class="art-caption">
+            <h3>Mary's Peace Piece 2</h3>
+            <p>Placeholder image for this project.</p>
+          </div>
+        </article>
+
+        <article class="art-card">
+          <img src="KSA/marys-peace-3.jpg" alt="Mary's Peace artwork 3" />
+          <div class="art-caption">
+            <h3>Mary's Peace Piece 3</h3>
+            <p>Placeholder image for this project.</p>
+          </div>
+        </article>
+
+        <article class="art-card">
+          <img src="KSA/marys-peace-4.jpg" alt="Mary's Peace artwork 4" />
+          <div class="art-caption">
+            <h3>Mary's Peace Piece 4</h3>
+            <p>Placeholder image for this project.</p>
+          </div>
+        </article>
+
+        <article class="art-card">
+          <img src="KSA/marys-peace-5.jpg" alt="Mary's Peace artwork 5" />
+          <div class="art-caption">
+            <h3>Mary's Peace Piece 5</h3>
+            <p>Placeholder image for this project.</p>
+          </div>
+        </article>
+
+        <article class="art-card">
+          <img src="KSA/marys-peace-6.jpg" alt="Mary's Peace artwork 6" />
+          <div class="art-caption">
+            <h3>Mary's Peace Piece 6</h3>
+            <p>Placeholder image for this project.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close image view">&times;</button>
+    <img id="lightbox-image" src="" alt="" />
+  </div>
+
+  <script src="nav.js"></script>
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const clickableImages = document.querySelectorAll('.art-card img');
+
+    clickableImages.forEach((img) => {
+      img.addEventListener('click', () => {
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt;
+        lightbox.hidden = false;
+        lightbox.classList.add('open');
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.hidden = true;
+      lightboxImage.src = '';
+      lightboxImage.alt = '';
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !lightbox.hidden) {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>
