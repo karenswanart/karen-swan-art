@@ -50,7 +50,7 @@
       position: absolute;
       top: calc(100% + 12px);
       right: 0;
-      min-width: 250px;
+      min-width: 270px;
       padding: 10px;
       background: rgba(255, 248, 242, 0.98);
       border: 1px solid rgba(140, 48, 76, 0.14);
@@ -66,17 +66,61 @@
       display: flex;
     }
 
-    .nav-dropdown a {
+    .nav-dropdown > a,
+    .submenu-toggle {
       text-decoration: none;
       color: var(--ink);
       padding: 12px 14px;
       border-radius: 12px;
       transition: background 0.18s ease, color 0.18s ease;
+      background: transparent;
+      border: none;
+      font: inherit;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
     }
 
-    .nav-dropdown a:hover {
+    .nav-dropdown > a:hover,
+    .submenu-toggle:hover,
+    .submenu a:hover {
       background: rgba(140, 48, 76, 0.08);
       color: var(--accent-deep);
+    }
+
+    .submenu-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .submenu-toggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .submenu-arrow {
+      font-size: 0.9rem;
+    }
+
+    .submenu {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      padding-left: 10px;
+    }
+
+    .submenu.open {
+      display: flex;
+    }
+
+    .submenu a {
+      text-decoration: none;
+      color: var(--ink);
+      padding: 10px 12px;
+      border-radius: 10px;
+      transition: background 0.18s ease, color 0.18s ease;
     }
 
     .featured-projects {
@@ -190,13 +234,24 @@
         <div class="nav-dropdown" id="navDropdown">
           <a href="index.html">Home</a>
           <a href="about.html">About the Artist</a>
+
+          <div class="submenu-wrap">
+            <button class="submenu-toggle" id="projectsToggle" aria-expanded="false" aria-controls="projectsSubmenu">
+              <span>Projects</span>
+              <span class="submenu-arrow">▾</span>
+            </button>
+
+            <div class="submenu" id="projectsSubmenu">
+              <a href="swan-mandala.html">Swan Mandala</a>
+              <a href="eragon-triptych.html">Eragon Triptych</a>
+              <a href="octopuss-garden.html">Octopus's Garden</a>
+              <a href="other-fabric-projects.html">Other Fabric Projects</a>
+              <a href="other-mediums.html">Other Mediums</a>
+            </div>
+          </div>
+
           <a href="commissions.html">Commission Inquiries</a>
           <a href="testimonials.html">Testimonials</a>
-          <a href="swan-mandala.html">Swan Mandala</a>
-          <a href="eragon-triptych.html">Eragon Triptych</a>
-          <a href="octopuss-garden.html">Octopus's Garden</a>
-          <a href="other-fabric-projects.html">Other Fabric Projects</a>
-          <a href="other-mediums.html">Other Mediums</a>
         </div>
       </div>
     </div>
@@ -283,23 +338,34 @@
   <script>
     const menuToggle = document.getElementById("menuToggle");
     const navDropdown = document.getElementById("navDropdown");
+    const projectsToggle = document.getElementById("projectsToggle");
+    const projectsSubmenu = document.getElementById("projectsSubmenu");
 
     menuToggle.addEventListener("click", () => {
       const isOpen = navDropdown.classList.toggle("open");
       menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
 
+    projectsToggle.addEventListener("click", () => {
+      const isOpen = projectsSubmenu.classList.toggle("open");
+      projectsToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
     document.addEventListener("click", (e) => {
       if (!e.target.closest(".nav-menu-wrap")) {
         navDropdown.classList.remove("open");
+        projectsSubmenu.classList.remove("open");
         menuToggle.setAttribute("aria-expanded", "false");
+        projectsToggle.setAttribute("aria-expanded", "false");
       }
     });
 
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
         navDropdown.classList.remove("open");
+        projectsSubmenu.classList.remove("open");
         menuToggle.setAttribute("aria-expanded", "false");
+        projectsToggle.setAttribute("aria-expanded", "false");
       }
     });
   </script>
