@@ -5,6 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mandalas | Karen Swan Art</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .single-centered-row {
+      max-width: 760px;
+      margin: 0 auto 28px;
+    }
+
+    .single-centered-row .art-card {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+
+    .single-centered-row .art-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      background: transparent;
+    }
+
+    @media (max-width: 760px) {
+      .single-centered-row {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
   <div id="site-nav"></div>
@@ -19,61 +45,109 @@
       </p>
     </header>
 
-    <section class="project-section">
-      <div class="project-header">
-        <h2>Mandalas</h2>
-        <p>
-          Replace these placeholder images with the correct mandala project photos whenever
-          you are ready.
-        </p>
-      </div>
+    <section class="single-centered-row">
+      <article class="art-card">
+        <img src="KSA/img39.jpg" alt="Mandalas featured image" class="project-image" />
+      </article>
+    </section>
 
+    <section class="project-section">
       <div class="art-grid">
         <article class="art-card">
-          <img src="KSA/mandalas-1.jpg" alt="Mandala artwork 1" />
+          <img src="KSA/img31.jpg" alt="Mandala artwork 1" class="project-image" />
           <div class="art-caption">
             <h3>Mandala Piece 1</h3>
-            <p>Placeholder image for this collection.</p>
           </div>
         </article>
 
         <article class="art-card">
-          <img src="KSA/mandalas-2.jpg" alt="Mandala artwork 2" />
+          <img src="KSA/img26.jpg" alt="Mandala artwork 2" class="project-image" />
           <div class="art-caption">
             <h3>Mandala Piece 2</h3>
-            <p>Placeholder image for this collection.</p>
           </div>
         </article>
 
         <article class="art-card">
-          <img src="KSA/mandalas-3.jpg" alt="Mandala artwork 3" />
+          <img src="KSA/img61.jpg" alt="Mandala artwork 3" class="project-image" />
           <div class="art-caption">
             <h3>Mandala Piece 3</h3>
-            <p>Placeholder image for this collection.</p>
           </div>
         </article>
 
         <article class="art-card">
-          <img src="KSA/mandalas-4.jpg" alt="Mandala artwork 4" />
+          <img src="KSA/img30.jpg" alt="Mandala artwork 4" class="project-image" />
           <div class="art-caption">
             <h3>Mandala Piece 4</h3>
-            <p>Placeholder image for this collection.</p>
           </div>
         </article>
 
         <article class="art-card">
-          <img src="KSA/mandalas-5.jpg" alt="Mandala artwork 5" />
+          <img src="KSA/img11.jpg" alt="Mandala artwork 5" class="project-image" />
           <div class="art-caption">
             <h3>Mandala Piece 5</h3>
-            <p>Placeholder image for this collection.</p>
           </div>
         </article>
 
         <article class="art-card">
-          <img src="KSA/mandalas-6.jpg" alt="Mandala artwork 6" />
+          <img src="KSA/img9.jpg" alt="Mandala artwork 6" class="project-image" />
           <div class="art-caption">
             <h3>Mandala Piece 6</h3>
-            <p>Placeholder image for this collection.</p>
+          </div>
+        </article>
+
+        <article class="art-card">
+          <img src="KSA/img1.jpg" alt="Mandala artwork 7" class="project-image" />
+          <div class="art-caption">
+            <h3>Mandala Piece 7</h3>
+          </div>
+        </article>
+
+        <article class="art-card">
+          <img src="KSA/img13.jpg" alt="Mandala artwork 8" class="project-image" />
+          <div class="art-caption">
+            <h3>Mandala Piece 8</h3>
+          </div>
+        </article>
+
+        <article class="art-card">
+          <img src="KSA/img2.jpg" alt="Mandala artwork 9" class="project-image" />
+          <div class="art-caption">
+            <h3>Mandala Piece 9</h3>
+          </div>
+        </article>
+
+        <article class="art-card">
+          <img src="KSA/img800.jpeg" alt="Mandala artwork 10" class="project-image" />
+          <div class="art-caption">
+            <h3>Mandala Piece 10</h3>
+          </div>
+        </article>
+
+        <article class="art-card">
+          <img src="KSA/img801.jpeg" alt="Mandala artwork 11" class="project-image" />
+          <div class="art-caption">
+            <h3>Mandala Piece 11</h3>
+          </div>
+        </article>
+
+        <article class="art-card">
+          <img src="KSA/img802.jpeg" alt="Mandala artwork 12" class="project-image" />
+          <div class="art-caption">
+            <h3>Mandala Piece 12</h3>
+          </div>
+        </article>
+
+        <article class="art-card">
+          <img src="KSA/img803.jpeg" alt="Mandala artwork 13" class="project-image" />
+          <div class="art-caption">
+            <h3>Mandala Piece 13</h3>
+          </div>
+        </article>
+
+        <article class="art-card">
+          <img src="KSA/img804.jpeg" alt="Mandala artwork 14" class="project-image" />
+          <div class="art-caption">
+            <h3>Mandala Piece 14</h3>
           </div>
         </article>
       </div>
@@ -90,7 +164,7 @@
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightbox-image');
     const lightboxClose = document.getElementById('lightbox-close');
-    const clickableImages = document.querySelectorAll('.art-card img');
+    const clickableImages = document.querySelectorAll('.project-image');
 
     clickableImages.forEach((img) => {
       img.addEventListener('click', () => {
@@ -98,6 +172,7 @@
         lightboxImage.alt = img.alt;
         lightbox.hidden = false;
         lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
       });
     });
 
@@ -106,6 +181,7 @@
       lightbox.hidden = true;
       lightboxImage.src = '';
       lightboxImage.alt = '';
+      document.body.style.overflow = '';
     }
 
     lightboxClose.addEventListener('click', closeLightbox);
