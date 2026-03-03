@@ -25,22 +25,17 @@
       background: transparent;
     }
 
-    .owned-piece-card {
-      background: transparent;
-      border: none;
-      box-shadow: none;
-      overflow: visible;
-    }
-
     .owned-image-wrap {
       position: relative;
     }
 
     .mini-collection-stamp {
+      position: absolute;
+      top: 14px;
+      left: 14px;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin: 0 0 12px 0;
       padding: 8px 14px;
       border: 1px solid rgba(140, 48, 76, 0.22);
       border-radius: 999px;
@@ -48,10 +43,12 @@
       backdrop-filter: blur(8px);
       box-shadow: 0 10px 26px rgba(69, 29, 39, 0.08);
       color: var(--accent-deep);
-      font-size: 0.68rem;
+      font-size: 0.66rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       line-height: 1.1;
+      z-index: 3;
+      pointer-events: none;
       white-space: nowrap;
     }
 
@@ -71,7 +68,9 @@
       }
 
       .mini-collection-stamp {
-        font-size: 0.58rem;
+        top: 10px;
+        left: 10px;
+        font-size: 0.56rem;
         padding: 7px 12px;
         letter-spacing: 0.1em;
       }
@@ -102,11 +101,8 @@
           <img src="KSA/img9.jpg" alt="Mandala artwork 1" class="project-image" />
         </article>
 
-        <article class="art-card owned-piece-card">
-          <div class="owned-image-wrap">
-            <div class="mini-collection-stamp">Julia Swan's Collection</div>
-            <img src="KSA/img31.jpg" alt="Mandala artwork 2" class="project-image" />
-          </div>
+        <article class="art-card">
+          <img src="KSA/img31.jpg" alt="Mandala artwork 2" class="project-image" />
         </article>
 
         <article class="art-card">
@@ -117,8 +113,11 @@
           <img src="KSA/img61.jpg" alt="Mandala artwork 4" class="project-image" />
         </article>
 
-        <article class="art-card">
-          <img src="KSA/img11.jpg" alt="Mandala artwork 5" class="project-image" />
+        <article class="art-card owned-piece-card">
+          <div class="owned-image-wrap">
+            <img src="KSA/img11.jpg" alt="Mandala artwork 5" class="project-image" />
+            <div class="mini-collection-stamp">Mikey's Collection</div>
+          </div>
         </article>
 
         <article class="art-card">
@@ -129,12 +128,18 @@
           <img src="KSA/img1.jpg" alt="Mandala artwork 7" class="project-image" />
         </article>
 
-        <article class="art-card">
-          <img src="KSA/img13.jpg" alt="Mandala artwork 8" class="project-image" />
+        <article class="art-card owned-piece-card">
+          <div class="owned-image-wrap">
+            <img src="KSA/img13.jpg" alt="Mandala artwork 8" class="project-image" />
+            <div class="mini-collection-stamp">Ben's Collection</div>
+          </div>
         </article>
 
-        <article class="art-card">
-          <img src="KSA/img2.jpg" alt="Mandala artwork 9" class="project-image" />
+        <article class="art-card owned-piece-card">
+          <div class="owned-image-wrap">
+            <img src="KSA/img2.jpg" alt="Mandala artwork 9" class="project-image" />
+            <div class="mini-collection-stamp">Tom's Collection</div>
+          </div>
         </article>
 
         <article class="art-card">
