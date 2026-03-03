@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", async () => {
+  if (!document.querySelector("link[rel='icon']")) {
+    const favicon = document.createElement("link");
+    favicon.rel = "icon";
+    favicon.type = "image/png";
+    favicon.href = "favicon.png"; // change to KSA/favicon.png if that's where you put it
+    document.head.appendChild(favicon);
+  }
+
   const navTarget = document.getElementById("site-nav");
   if (!navTarget) return;
 
