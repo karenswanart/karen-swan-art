@@ -47,6 +47,21 @@
       flex: 0 0 auto;
     }
 
+    .top-two-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+      margin-bottom: 28px;
+    }
+
+    .top-two-grid .art-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      background: transparent;
+    }
+
     @media (max-width: 900px) {
       .collection-stamp {
         position: static;
@@ -60,6 +75,10 @@
     }
 
     @media (max-width: 760px) {
+      .top-two-grid {
+        grid-template-columns: 1fr;
+      }
+
       .collection-stamp {
         font-size: 0.72rem;
         letter-spacing: 0.1em;
@@ -73,7 +92,7 @@
 
   <main class="project-page">
     <div class="project-hero-wrap">
-      <div class="collection-stamp">Made for the collection of PJ &amp; Beau </div>
+      <div class="collection-stamp">Made for the collection of PJ &amp; Beau</div>
 
       <header class="page-hero">
         <h1>Counting Book</h1>
@@ -83,86 +102,95 @@
       </header>
     </div>
 
-      <div class="art-grid">
-        <article class="art-card">
-          <img src="KSA/img25.jpg" alt="ONE Raptor" />
-          <div class="art-caption">
-            <h3>ONE Raptor</h3>
-          </div>
-        </article>
+    <section class="top-two-grid">
+      <article class="art-card">
+        <img src="KSA/img620.jpeg" alt="Counting Book additional image 1" />
+      </article>
 
-        <article class="art-card">
-          <img src="KSA/img22.jpg" alt="TWO Fish" />
-          <div class="art-caption">
-            <h3>TWO Fish</h3>
-          </div>
-        </article>
+      <article class="art-card">
+        <img src="KSA/img621.jpeg" alt="Counting Book additional image 2" />
+      </article>
+    </section>
 
-        <article class="art-card">
-          <img src="KSA/img21.jpg" alt="THREE Monkeys" />
-          <div class="art-caption">
-            <h3>THREE Monkeys</h3>
-          </div>
-        </article>
+    <section class="art-grid">
+      <article class="art-card">
+        <img src="KSA/img25.jpg" alt="ONE Raptor" />
+        <div class="art-caption">
+          <h3>ONE Raptor</h3>
+        </div>
+      </article>
 
-        <article class="art-card">
-          <img src="KSA/img24.jpg" alt="FOUR T-Rex" />
-          <div class="art-caption">
-            <h3>FOUR T-Rex</h3>
-          </div>
-        </article>
+      <article class="art-card">
+        <img src="KSA/img22.jpg" alt="TWO Fish" />
+        <div class="art-caption">
+          <h3>TWO Fish</h3>
+        </div>
+      </article>
 
-        <article class="art-card">
-          <img src="KSA/img17.jpg" alt="FIVE Octopuses" />
-          <div class="art-caption">
-            <h3>FIVE Octopuses</h3>
-          </div>
-        </article>
+      <article class="art-card">
+        <img src="KSA/img21.jpg" alt="THREE Monkeys" />
+        <div class="art-caption">
+          <h3>THREE Monkeys</h3>
+        </div>
+      </article>
 
-        <article class="art-card">
-          <img src="KSA/img600.jpeg" alt="SIX Spaceships" />
-          <div class="art-caption">
-            <h3>SIX Spaceships</h3>
-          </div>
-        </article>
+      <article class="art-card">
+        <img src="KSA/img24.jpg" alt="FOUR T-Rex" />
+        <div class="art-caption">
+          <h3>FOUR T-Rex</h3>
+        </div>
+      </article>
 
-        <article class="art-card">
-          <img src="KSA/img7.jpg" alt="SEVEN Piranha" />
-          <div class="art-caption">
-            <h3>SEVEN Piranha</h3>
-          </div>
-        </article>
+      <article class="art-card">
+        <img src="KSA/img17.jpg" alt="FIVE Octopuses" />
+        <div class="art-caption">
+          <h3>FIVE Octopuses</h3>
+        </div>
+      </article>
 
-        <article class="art-card">
-          <img src="KSA/img20.jpg" alt="EIGHT Lizards" />
-          <div class="art-caption">
-            <h3>EIGHT Lizards</h3>
-          </div>
-        </article>
+      <article class="art-card">
+        <img src="KSA/img600.jpeg" alt="SIX Spaceships" />
+        <div class="art-caption">
+          <h3>SIX Spaceships</h3>
+        </div>
+      </article>
 
-        <article class="art-card">
-          <img src="KSA/img19.jpg" alt="NINE Fish" />
-          <div class="art-caption">
-            <h3>NINE Fish</h3>
-          </div>
-        </article>
+      <article class="art-card">
+        <img src="KSA/img7.jpg" alt="SEVEN Piranha" />
+        <div class="art-caption">
+          <h3>SEVEN Piranha</h3>
+        </div>
+      </article>
 
-        <article class="art-card">
-          <img src="KSA/img6.jpg" alt="TEN Coins" />
-          <div class="art-caption">
-            <h3>TEN Coins</h3>
-            <p>Counting to TEN, 2 coins at a time.</p>
-          </div>
-        </article>
+      <article class="art-card">
+        <img src="KSA/img20.jpg" alt="EIGHT Lizards" />
+        <div class="art-caption">
+          <h3>EIGHT Lizards</h3>
+        </div>
+      </article>
 
-        <article class="art-card">
-          <img src="KSA/img601.jpeg" alt="ONE HUNDRED Stars" />
-          <div class="art-caption">
-            <h3>ONE HUNDRED Stars</h3>
-            <p>Counting to ONE HUNDRED, TEN stars at a time.</p>
-          </div>
-        </article>
-      </div>
+      <article class="art-card">
+        <img src="KSA/img19.jpg" alt="NINE Fish" />
+        <div class="art-caption">
+          <h3>NINE Fish</h3>
+        </div>
+      </article>
+
+      <article class="art-card">
+        <img src="KSA/img6.jpg" alt="TEN Coins" />
+        <div class="art-caption">
+          <h3>TEN Coins</h3>
+          <p>Counting to TEN, 2 coins at a time.</p>
+        </div>
+      </article>
+
+      <article class="art-card">
+        <img src="KSA/img601.jpeg" alt="ONE HUNDRED Stars" />
+        <div class="art-caption">
+          <h3>ONE HUNDRED Stars</h3>
+          <p>Counting to ONE HUNDRED, TEN stars at a time.</p>
+        </div>
+      </article>
     </section>
   </main>
 
