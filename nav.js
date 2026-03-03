@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const favicon = document.createElement("link");
     favicon.rel = "icon";
     favicon.type = "image/png";
-    favicon.href = "KSA/favicon.png"; // change to KSA/favicon.png if that's where you put it
+    favicon.href = "KSA/favicon.png";
     document.head.appendChild(favicon);
   }
 
