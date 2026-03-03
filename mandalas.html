@@ -25,9 +25,40 @@
       background: transparent;
     }
 
+    .owned-image-wrap {
+      position: relative;
+    }
+
+    .mini-collection-stamp {
+      position: absolute;
+      top: 18px;
+      right: -30px;
+      transform: rotate(45deg);
+      transform-origin: center;
+      background: rgba(255, 248, 242, 0.92);
+      color: var(--accent-deep);
+      border: 1px solid rgba(140, 48, 76, 0.22);
+      box-shadow: 0 8px 20px rgba(69, 29, 39, 0.12);
+      padding: 6px 34px;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      line-height: 1.1;
+      z-index: 3;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
     @media (max-width: 760px) {
       .single-centered-row {
         max-width: 100%;
+      }
+
+      .mini-collection-stamp {
+        top: 14px;
+        right: -34px;
+        font-size: 0.6rem;
+        padding: 5px 30px;
       }
     }
   </style>
@@ -57,7 +88,10 @@
         </article>
 
         <article class="art-card">
-          <img src="KSA/img31.jpg" alt="Mandala artwork 2" class="project-image" />
+          <div class="owned-image-wrap">
+            <img src="KSA/img31.jpg" alt="Mandala artwork 2" class="project-image" />
+            <div class="mini-collection-stamp">Ben's Collection</div>
+          </div>
         </article>
 
         <article class="art-card">
