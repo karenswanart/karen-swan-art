@@ -46,35 +46,26 @@
       box-shadow: 0 0 0 4px rgba(201, 154, 79, 0.12);
       flex: 0 0 auto;
     }
-.top-two-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
-  margin-bottom: 28px;
-  align-items: stretch;
-}
 
-.top-two-grid .art-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 420px;
-  padding: 0;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  overflow: hidden;
-}
+    .single-centered-row {
+      max-width: 760px;
+      margin: 0 auto 28px;
+    }
 
-.top-two-grid .art-card img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: contain;
-  object-position: center;
-  background: transparent;
-}
-    
+    .single-centered-row .art-card {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+
+    .single-centered-row .art-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      background: transparent;
+    }
+
     .project-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -100,9 +91,12 @@
     }
 
     @media (max-width: 760px) {
-      .top-two-grid,
       .project-grid {
         grid-template-columns: 1fr;
+      }
+
+      .single-centered-row {
+        max-width: 100%;
       }
 
       .collection-stamp {
@@ -128,62 +122,31 @@
       </section>
     </div>
 
-    <section class="top-two-grid">
+    <section class="single-centered-row">
       <article class="art-card">
-        <img src="KSA/img633.jpeg" alt="Octopus's Garden additional image 1" class="project-image" />
-      </article>
-
-      <article class="art-card">
-        <img src="KSA/img634.png" alt="Octopus's Garden additional image 2" class="project-image" />
+        <img src="KSA/img63.jpg" alt="Octopus's Garden featured image" class="project-image" />
       </article>
     </section>
 
     <section class="project-grid">
       <article class="art-card">
-        <img src="KSA/img8.jpg" alt="Octopus's Garden" class="project-image" />
+        <img src="KSA/img635.jpeg" alt="The Original Sketch" class="project-image" />
         <div class="art-caption">
-          <h3>Octopus's Garden</h3>
-          <p>Created for her grandnephew — a scene inspired by the imagination of Ringo Starr.</p>
+          <h3>The Original Sketch</h3>
         </div>
       </article>
 
       <article class="art-card">
-        <img src="KSA/img635.jpg" alt="Source Fabric - Treasure" class="project-image" />
+        <img src="KSA/img633.jpeg" alt="PJ &amp; Beau Loving It" class="project-image" />
         <div class="art-caption">
-          <h3>Source Fabric - Treasure</h3>
-          <p>Source fabric showing where the octopus found some of its treasure.</p>
+          <h3>PJ &amp; Beau Loving It</h3>
         </div>
       </article>
 
       <article class="art-card">
-        <img src="KSA/img12.jpg" alt="Asian Mermaids" class="project-image" />
+        <img src="KSA/img634.png" alt="Beau Wishing He Were an Octopus" class="project-image" />
         <div class="art-caption">
-          <h3>Asian Mermaids</h3>
-          <p>Asian mermaids... why not?!</p>
-        </div>
-      </article>
-
-      <article class="art-card">
-        <img src="KSA/img17.jpg" alt="Octopus Pirates" class="project-image" />
-        <div class="art-caption">
-          <h3>Octopus Pirates</h3>
-          <p>“Yar, I’ve got 8 arms and 3 hearts.”</p>
-        </div>
-      </article>
-
-      <article class="art-card">
-        <img src="KSA/img19.jpg" alt="Just Keep Swimming" class="project-image" />
-        <div class="art-caption">
-          <h3>Just Keep Swimming</h3>
-          <p>Another sea-themed piece from the collection.</p>
-        </div>
-      </article>
-
-      <article class="art-card">
-        <img src="KSA/img56.jpg" alt="Mermaid Fun" class="project-image" />
-        <div class="art-caption">
-          <h3>Mermaid Fun</h3>
-          <p>A playful Under the Sea fabric piece.</p>
+          <h3>Beau Wishing He Were an Octopus</h3>
         </div>
       </article>
     </section>
