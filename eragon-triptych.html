@@ -59,6 +59,19 @@
       background: transparent;
     }
 
+    .single-centered-row {
+      max-width: 720px;
+      margin: 0 auto 28px;
+    }
+
+    .single-centered-row .art-card img {
+      width: 100%;
+      height: auto;
+      max-height: 760px;
+      object-fit: contain;
+      background: transparent;
+    }
+
     .project-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -89,6 +102,10 @@
         grid-template-columns: 1fr;
       }
 
+      .single-centered-row {
+        max-width: 100%;
+      }
+
       .collection-stamp {
         font-size: 0.72rem;
         letter-spacing: 0.1em;
@@ -115,6 +132,15 @@
     <section class="featured-row">
       <article class="art-card">
         <img src="KSA/img610.jpeg" alt="Finished Eragon Triptych wide view" class="project-image" />
+      </article>
+    </section>
+
+    <section class="single-centered-row">
+      <article class="art-card">
+        <img src="KSA/img59.jpeg" alt="The Original Sketch" class="project-image" />
+        <div class="art-caption">
+          <h3>The Original Sketch</h3>
+        </div>
       </article>
     </section>
 
