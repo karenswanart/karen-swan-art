@@ -25,37 +25,34 @@
       background: transparent;
     }
 
+    .owned-piece-card {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      overflow: visible;
+    }
+
     .owned-image-wrap {
       position: relative;
-      overflow: hidden;
-      border-radius: 24px;
     }
 
     .mini-collection-stamp {
-      position: absolute;
-      top: 26px;
-      left: -28px;
-      width: 190px;
-      transform: rotate(-45deg);
-      transform-origin: center;
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
       gap: 8px;
-      padding: 8px 18px;
+      margin: 0 0 12px 0;
+      padding: 8px 14px;
       border: 1px solid rgba(140, 48, 76, 0.22);
+      border-radius: 999px;
       background: rgba(255, 248, 242, 0.92);
       backdrop-filter: blur(8px);
       box-shadow: 0 10px 26px rgba(69, 29, 39, 0.08);
       color: var(--accent-deep);
-      font-size: 0.62rem;
+      font-size: 0.68rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       line-height: 1.1;
-      z-index: 3;
-      pointer-events: none;
       white-space: nowrap;
-      text-align: center;
     }
 
     .mini-collection-stamp::before {
@@ -74,11 +71,9 @@
       }
 
       .mini-collection-stamp {
-        top: 20px;
-        left: -34px;
-        width: 175px;
-        font-size: 0.56rem;
-        padding: 7px 14px;
+        font-size: 0.58rem;
+        padding: 7px 12px;
+        letter-spacing: 0.1em;
       }
     }
   </style>
@@ -107,10 +102,10 @@
           <img src="KSA/img9.jpg" alt="Mandala artwork 1" class="project-image" />
         </article>
 
-        <article class="art-card">
+        <article class="art-card owned-piece-card">
           <div class="owned-image-wrap">
+            <div class="mini-collection-stamp">Julia Swan's Collection</div>
             <img src="KSA/img31.jpg" alt="Mandala artwork 2" class="project-image" />
-            <div class="mini-collection-stamp">Ben's Collection</div>
           </div>
         </article>
 
