@@ -12,6 +12,41 @@
       padding: 0 20px 90px;
     }
 
+    .project-hero-wrap {
+      position: relative;
+    }
+
+    .collection-stamp {
+      position: absolute;
+      top: 26px;
+      left: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border: 1px solid rgba(140, 48, 76, 0.22);
+      border-radius: 999px;
+      background: rgba(255, 248, 242, 0.82);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 26px rgba(69, 29, 39, 0.08);
+      color: var(--accent-deep);
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      line-height: 1.2;
+      z-index: 2;
+    }
+
+    .collection-stamp::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--accent-soft));
+      box-shadow: 0 0 0 4px rgba(201, 154, 79, 0.12);
+      flex: 0 0 auto;
+    }
+
     .featured-row {
       margin-bottom: 28px;
     }
@@ -36,9 +71,27 @@
       }
     }
 
+    @media (max-width: 900px) {
+      .collection-stamp {
+        position: static;
+        margin: 26px 0 0;
+        justify-content: center;
+      }
+
+      .project-hero-wrap .page-hero {
+        padding-top: 34px;
+      }
+    }
+
     @media (max-width: 760px) {
       .project-grid {
         grid-template-columns: 1fr;
+      }
+
+      .collection-stamp {
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        padding: 9px 14px;
       }
     }
   </style>
@@ -47,12 +100,16 @@
   <div id="site-nav"></div>
 
   <main class="project-page">
-    <section class="page-hero">
-      <h1>Eragon Triptych</h1>
-      <p class="page-intro">
-        Sketches, fabric choices, progress images, and the finished Eragon Triptych.
-      </p>
-    </section>
+    <div class="project-hero-wrap">
+      <div class="collection-stamp">Made for the Jones Family Collection</div>
+
+      <section class="page-hero">
+        <h1>Eragon Triptych</h1>
+        <p class="page-intro">
+          Eragon is a book by Christopher Paolini. This piece was created for the Jones family.
+        </p>
+      </section>
+    </div>
 
     <section class="featured-row">
       <article class="art-card">
