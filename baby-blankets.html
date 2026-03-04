@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baby Blankets | Karen Swan Art</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .project-page {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 20px 90px;
+    }
+
+    .single-centered-row {
+      max-width: 900px;
+      margin: 0 auto 28px;
+    }
+
+    .single-centered-row .art-card {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      overflow: visible;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .single-centered-row .art-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 520px;
+      object-fit: contain;
+      border-radius: 24px;
+      background: transparent;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    @media (max-width: 1100px) {
+      .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .single-centered-row {
+        max-width: 100%;
+      }
+
+      .single-centered-row .art-card img {
+        max-height: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="site-nav"></div>
+
+  <main class="project-page">
+    <section class="page-hero">
+      <h1>Baby Blankets</h1>
+      <p class="page-intro">
+        A small collection of baby blanket projects created with fabric collage details and love.
+      </p>
+    </section>
+
+    <!-- Top hero image -->
+    <section class="single-centered-row">
+      <article class="art-card">
+        <img src="KSA/img44.jpg" alt="Baby blanket featured" class="project-image" />
+      </article>
+    </section>
+
+    <!-- Grid of 3 -->
+    <section class="project-grid">
+      <article class="art-card">
+        <img src="KSA/img42.jpg" alt="Baby blanket piece 42" class="project-image" />
+        <div class="art-caption">
+          <h3>Baby Blanket 42</h3>
+          <p>Fabric collage detail from the baby blanket collection.</p>
+        </div>
+      </article>
+
+      <article class="art-card">
+        <img src="KSA/img43.jpg" alt="Baby blanket piece 43" class="project-image" />
+        <div class="art-caption">
+          <h3>Baby Blanket 43</h3>
+          <p>Handmade baby blanket work featuring layered fabric textures.</p>
+        </div>
+      </article>
+
+      <article class="art-card">
+        <img src="KSA/img44.jpg" alt="Baby blanket piece 44" class="project-image" />
+        <div class="art-caption">
+          <h3>Baby Blanket 44</h3>
+          <p>A cozy blanket piece with appliquéd fabric collage elements.</p>
+        </div>
+      </article>
+
+      <article class="art-card">
+        <img src="KSA/img41.jpg" alt="Baby blanket piece 41" class="project-image" />
+        <div class="art-caption">
+          <h3>Baby Blanket 41</h3>
+          <p>Fabric collage panel from a baby blanket project.</p>
+        </div>
+      </article>
+
+      <article class="art-card">
+        <img src="KSA/img10.jpg" alt="Baby blanket piece 10" class="project-image" />
+        <div class="art-caption">
+          <h3>Baby Blanket 10</h3>
+          <p>Additional blanket detail in the baby blanket series.</p>
+        </div>
+      </article>
+
+      <article class="art-card">
+        <img src="KSA/img720.jpeg" alt="Baby blanket piece 720" class="project-image" />
+        <div class="art-caption">
+          <h3>Baby Blanket 720</h3>
+          <p>A finished view or detail shot from a baby blanket project.</p>
+        </div>
+      </article>
+
+      <article class="art-card">
+        <img src="KSA/img795.jpeg" alt="Baby blanket piece 795" class="project-image" />
+        <div class="art-caption">
+          <h3>Baby Blanket 795</h3>
+          <p>Another baby blanket piece showcasing Karen’s fabric work.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <script>
+    const clickableImages = document.querySelectorAll(".project-image");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxClose = document.getElementById("lightboxClose");
+
+    function openLightbox(img) {
+      lightboxImg.src = img.currentSrc || img.src;
+      lightboxImg.alt = img.alt || "";
+      lightbox.hidden = false;
+      lightbox.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightbox.hidden = true;
+      lightboxImg.src = "";
+      lightboxImg.alt = "";
+      document.body.style.overflow = "";
+    }
+
+    clickableImages.forEach((img) => {
+      img.addEventListener("click", () => openLightbox(img));
+    });
+
+    lightboxClose.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !lightbox.hidden) closeLightbox();
+    });
+  </script>
+
+  <script src="nav.js"></script>
+</body>
+</html>
