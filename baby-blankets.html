@@ -37,6 +37,43 @@
       background: transparent;
     }
 
+    .owned-image-wrap {
+      position: relative;
+    }
+
+    .mini-collection-stamp {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid rgba(140, 48, 76, 0.22);
+      border-radius: 999px;
+      background: rgba(255, 248, 242, 0.92);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 26px rgba(69, 29, 39, 0.08);
+      color: var(--accent-deep);
+      font-size: 0.66rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      line-height: 1.1;
+      z-index: 3;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .mini-collection-stamp::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--accent-soft));
+      box-shadow: 0 0 0 3px rgba(201, 154, 79, 0.12);
+      flex: 0 0 auto;
+    }
+
     .project-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -61,6 +98,14 @@
       .single-centered-row .art-card img {
         max-height: none;
       }
+
+      .mini-collection-stamp {
+        top: 10px;
+        left: 10px;
+        font-size: 0.56rem;
+        padding: 7px 12px;
+        letter-spacing: 0.1em;
+      }
     }
   </style>
 </head>
@@ -75,67 +120,75 @@
       </p>
     </section>
 
-    <!-- Top hero image -->
     <section class="single-centered-row">
       <article class="art-card">
         <img src="KSA/img44.jpg" alt="Baby blanket featured" class="project-image" />
       </article>
     </section>
 
-    <!-- Grid of 3 -->
     <section class="project-grid">
       <article class="art-card">
-        <img src="KSA/img42.jpg" alt="Baby blanket piece 42" class="project-image" />
+        <div class="owned-image-wrap">
+          <img src="KSA/img42.jpg" alt="The Assassin's Apprentice" class="project-image" />
+          <div class="mini-collection-stamp">Lenny's Collection</div>
+        </div>
         <div class="art-caption">
-          <h3>Baby Blanket 42</h3>
+          <h3>The Assassin's Apprentice</h3>
           <p>place holder.</p>
         </div>
       </article>
 
       <article class="art-card">
-        <img src="KSA/img43.jpg" alt="Baby blanket piece 43" class="project-image" />
-        <div class="art-caption">
-          <h3>Baby Blanket 43</h3>
-          <p>Hplace holder.</p>
+        <div class="owned-image-wrap">
+          <img src="KSA/img43.jpg" alt="The Paper Bag Princess" class="project-image" />
+          <div class="mini-collection-stamp">Ruby's Collection</div>
         </div>
-      </article>
-
-      <article class="art-card">
-        <img src="KSA/img44.jpg" alt="Baby blanket piece 44" class="project-image" />
         <div class="art-caption">
-          <h3>"Hagrid's Dragon"</h3>
+          <h3>The Paper Bag Princess</h3>
           <p>place holder.</p>
         </div>
       </article>
 
       <article class="art-card">
-        <img src="KSA/img795.jpeg" alt="Baby blanket piece 41" class="project-image" />
+        <div class="owned-image-wrap">
+          <img src="KSA/img44.jpg" alt="Hagrid's Dragon" class="project-image" />
+          <div class="mini-collection-stamp">Arya's Collection</div>
+        </div>
         <div class="art-caption">
-          <h3>Baby Blanket 41</h3>
+          <h3>Hagrid's Dragon</h3>
           <p>place holder.</p>
         </div>
       </article>
 
       <article class="art-card">
-        <img src="KSA/img10.jpg" alt="Baby blanket piece 10" class="project-image" />
+        <div class="owned-image-wrap">
+          <img src="KSA/img41.jpg" alt="Ruby in a Paper Bag" class="project-image" />
+          <div class="mini-collection-stamp">Ruby's Collection</div>
+        </div>
         <div class="art-caption">
-          <h3>Baby Blanket 10</h3>
+          <h3>Ruby in a Paper Bag</h3>
           <p>place holder.</p>
         </div>
       </article>
 
       <article class="art-card">
-        <img src="KSA/img720.jpeg" alt="Baby blanket piece 720" class="project-image" />
+        <div class="owned-image-wrap">
+          <img src="KSA/img10.jpg" alt="Little Red Ridinghood" class="project-image" />
+          <div class="mini-collection-stamp">Isabella's Collection</div>
+        </div>
         <div class="art-caption">
-          <h3>Baby Blanket 720</h3>
+          <h3>Little Red Ridinghood</h3>
           <p>place holder.</p>
         </div>
       </article>
 
       <article class="art-card">
-        <img src="KSA/img41.jpg" alt="Baby blanket piece 795" class="project-image" />
+        <div class="owned-image-wrap">
+          <img src="KSA/img720.jpeg" alt="Swan Cuddle" class="project-image" />
+          <div class="mini-collection-stamp">Lula's Collection</div>
+        </div>
         <div class="art-caption">
-          <h3>Baby Blanket 795</h3>
+          <h3>Swan Cuddle</h3>
           <p>place holder.</p>
         </div>
       </article>
