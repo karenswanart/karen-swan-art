@@ -5,121 +5,185 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lifecycle | Karen Swan Art</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .project-page {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 20px 90px;
+    }
+
+    .featured-row {
+      max-width: 1320px;
+      margin: 0 auto 28px;
+    }
+
+    .featured-row .art-card {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      overflow: visible;
+    }
+
+    .featured-row .art-card img {
+      width: 100%;
+      height: auto;
+      max-height: 720px;
+      object-fit: contain;
+      background: transparent;
+      border-radius: 24px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    @media (max-width: 1100px) {
+      .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-row .art-card img {
+        max-height: none;
+      }
+    }
+  </style>
 </head>
 <body>
   <div id="site-nav"></div>
 
-  <main class="page-shell standalone-page">
-    <header class="page-hero">
-      <p class="eyebrow">Fabric Collage Collection</p>
+  <main class="project-page">
+    <section class="page-hero">
       <h1>Lifecycle</h1>
       <p class="page-intro">
-        A project exploring growth, transformation, and the natural beauty of life in motion,
-        expressed through layered fabric collage and stitched detail.
+        A project exploring growth, change, and the seasons of life through fabric collage.
       </p>
-    </header>
+    </section>
 
-    <section class="project-section">
-      <div class="project-header">
-        <h2>Lifecycle</h2>
-        <p>
-          Replace these placeholder images with the correct Lifecycle project photos.
-        </p>
-      </div>
+    <!-- Wide main photo -->
+    <section class="featured-row">
+      <article class="art-card">
+        <img src="KSA/img1000.jpeg" alt="Lifecycle - featured wide image" class="project-image" />
+      </article>
+    </section>
 
-      <div class="art-grid">
-        <article class="art-card">
-          <img src="KSA/lifecycle-1.jpg" alt="Lifecycle artwork 1" />
-          <div class="art-caption">
-            <h3>Lifecycle Piece 1</h3>
-            <p>Placeholder image for this project.</p>
-          </div>
-        </article>
+    <!-- Grid of images -->
+    <section class="project-grid">
+      <article class="art-card">
+        <img src="KSA/img1001.jpeg" alt="Lifecycle image 1001" class="project-image" />
+        <div class="art-caption">
+          <h3>Lifecycle — Panel 1</h3>
+          <p>Placeholder description for this stage of the project.</p>
+        </div>
+      </article>
 
-        <article class="art-card">
-          <img src="KSA/lifecycle-2.jpg" alt="Lifecycle artwork 2" />
-          <div class="art-caption">
-            <h3>Lifecycle Piece 2</h3>
-            <p>Placeholder image for this project.</p>
-          </div>
-        </article>
+      <article class="art-card">
+        <img src="KSA/img1002.jpeg" alt="Lifecycle image 1002" class="project-image" />
+        <div class="art-caption">
+          <h3>Lifecycle — Panel 2</h3>
+          <p>Placeholder description for this stage of the project.</p>
+        </div>
+      </article>
 
-        <article class="art-card">
-          <img src="KSA/lifecycle-3.jpg" alt="Lifecycle artwork 3" />
-          <div class="art-caption">
-            <h3>Lifecycle Piece 3</h3>
-            <p>Placeholder image for this project.</p>
-          </div>
-        </article>
+      <article class="art-card">
+        <img src="KSA/img1003.jpeg" alt="Lifecycle image 1003" class="project-image" />
+        <div class="art-caption">
+          <h3>Lifecycle — Panel 3</h3>
+          <p>Placeholder description for this stage of the project.</p>
+        </div>
+      </article>
 
-        <article class="art-card">
-          <img src="KSA/lifecycle-4.jpg" alt="Lifecycle artwork 4" />
-          <div class="art-caption">
-            <h3>Lifecycle Piece 4</h3>
-            <p>Placeholder image for this project.</p>
-          </div>
-        </article>
+      <article class="art-card">
+        <img src="KSA/img1004.jpeg" alt="Lifecycle image 1004" class="project-image" />
+        <div class="art-caption">
+          <h3>Lifecycle — Panel 4</h3>
+          <p>Placeholder description for this stage of the project.</p>
+        </div>
+      </article>
 
-        <article class="art-card">
-          <img src="KSA/lifecycle-5.jpg" alt="Lifecycle artwork 5" />
-          <div class="art-caption">
-            <h3>Lifecycle Piece 5</h3>
-            <p>Placeholder image for this project.</p>
-          </div>
-        </article>
+      <article class="art-card">
+        <img src="KSA/img1005.jpeg" alt="Lifecycle image 1005" class="project-image" />
+        <div class="art-caption">
+          <h3>Lifecycle — Panel 5</h3>
+          <p>Placeholder description for this stage of the project.</p>
+        </div>
+      </article>
 
-        <article class="art-card">
-          <img src="KSA/lifecycle-6.jpg" alt="Lifecycle artwork 6" />
-          <div class="art-caption">
-            <h3>Lifecycle Piece 6</h3>
-            <p>Placeholder image for this project.</p>
-          </div>
-        </article>
-      </div>
+      <article class="art-card">
+        <img src="KSA/img1006.jpeg" alt="Lifecycle image 1006" class="project-image" />
+        <div class="art-caption">
+          <h3>Lifecycle — Panel 6</h3>
+          <p>Placeholder description for this stage of the project.</p>
+        </div>
+      </article>
+
+      <article class="art-card">
+        <img src="KSA/img1007.jpeg" alt="Lifecycle image 1007" class="project-image" />
+        <div class="art-caption">
+          <h3>Lifecycle — Panel 7</h3>
+          <p>Placeholder description for this stage of the project.</p>
+        </div>
+      </article>
+
+      <article class="art-card">
+        <img src="KSA/img1008.jpeg" alt="Lifecycle image 1010" class="project-image" />
+        <div class="art-caption">
+          <h3>Lifecycle — Panel 10</h3>
+          <p>Placeholder description for this stage of the project.</p>
+        </div>
+      </article>
     </section>
   </main>
 
   <div class="lightbox" id="lightbox" hidden>
-    <button class="lightbox-close" id="lightbox-close" aria-label="Close image view">&times;</button>
-    <img id="lightbox-image" src="" alt="" />
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+    <img id="lightboxImg" src="" alt="">
   </div>
 
-  <script src="nav.js"></script>
   <script>
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImage = document.getElementById('lightbox-image');
-    const lightboxClose = document.getElementById('lightbox-close');
-    const clickableImages = document.querySelectorAll('.art-card img');
+    const clickableImages = document.querySelectorAll(".project-image");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxClose = document.getElementById("lightboxClose");
 
-    clickableImages.forEach((img) => {
-      img.addEventListener('click', () => {
-        lightboxImage.src = img.src;
-        lightboxImage.alt = img.alt;
-        lightbox.hidden = false;
-        lightbox.classList.add('open');
-      });
-    });
-
-    function closeLightbox() {
-      lightbox.classList.remove('open');
-      lightbox.hidden = true;
-      lightboxImage.src = '';
-      lightboxImage.alt = '';
+    function openLightbox(img) {
+      lightboxImg.src = img.currentSrc || img.src;
+      lightboxImg.alt = img.alt || "";
+      lightbox.hidden = false;
+      lightbox.classList.add("open");
+      document.body.style.overflow = "hidden";
     }
 
-    lightboxClose.addEventListener('click', closeLightbox);
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightbox.hidden = true;
+      lightboxImg.src = "";
+      lightboxImg.alt = "";
+      document.body.style.overflow = "";
+    }
 
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        closeLightbox();
-      }
+    clickableImages.forEach((img) => {
+      img.addEventListener("click", () => openLightbox(img));
     });
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !lightbox.hidden) {
-        closeLightbox();
-      }
+    lightboxClose.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !lightbox.hidden) closeLightbox();
     });
   </script>
+
+  <script src="nav.js"></script>
 </body>
 </html>
