@@ -39,6 +39,30 @@
       gap: 28px;
     }
 
+    /* Note box */
+    .note-box {
+      max-width: 980px;
+      margin: 52px auto 0;
+      padding: 26px 26px;
+      border-radius: 24px;
+      background: rgba(255, 248, 242, 0.86);
+      border: 1px solid rgba(140, 48, 76, 0.12);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .note-box h2 {
+      margin: 0 0 10px;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .note-box p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+
     @media (max-width: 1100px) {
       .project-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -52,6 +76,15 @@
 
       .featured-row .art-card img {
         max-height: none;
+      }
+
+      .note-box {
+        padding: 22px 18px;
+        margin-top: 40px;
+      }
+
+      .note-box h2 {
+        font-size: 1.3rem;
       }
     }
   </style>
@@ -133,12 +166,20 @@
       </article>
 
       <article class="art-card">
-        <img src="KSA/img1008.jpeg" alt="Lifecycle image 1010" class="project-image" />
+        <img src="KSA/img1008.jpeg" alt="Lifecycle image 1008" class="project-image" />
         <div class="art-caption">
           <h3>Black to White - Life in Death</h3>
           <p>Her arm extends into the white to black spiral which includes skin tone fabrics from all the stages of her life as she lives on in memories of people who knew her then. The center is a Yin/Yang symbol.</p>
         </div>
       </article>
+    </section>
+
+    <!-- Note box -->
+    <section class="note-box">
+      <h2>Artist’s Note</h2>
+      <p>
+        When Karen had the idea for this piece, she called her friend who managed the Petersham Gallery and asked if she had room for her in 9 months. She did. Karen gave herself one month to complete each panel. The more you look at this work, the more you see. Every pixel of every panel has deep meaning. You could look at this for decades (I have) and still find things you missed (I did while putting this page together).
+      </p>
     </section>
   </main>
 
