@@ -213,7 +213,7 @@
       <div class="submit-testimonial-card">
         <h2>Submit a Testimonial</h2>
         <p>
-          Want to share a kind word and a photo of your piece? Submit it here for the website.
+          Want to share a kind word and photos of your piece? Submit them here for the website.
         </p>
 
         <form
@@ -226,6 +226,7 @@
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_next" value="https://www.karenswanart.com/thank-you.html">
+          <input type="hidden" name="_url" value="https://www.karenswanart.com/testimonials.html">
 
           <div class="form-row">
             <label for="t_title">Testimonial Title</label>
@@ -276,15 +277,48 @@
           </div>
 
           <div class="form-row">
-            <label for="t_photo">Upload a Photo</label>
+            <label for="t_photo_1">Upload Photo 1 (optional)</label>
             <input
-              id="t_photo"
+              id="t_photo_1"
               name="attachment"
               type="file"
-              accept="image/*"
+              accept="image/png, image/jpeg, image/webp"
               class="file-input"
             />
-            <div class="field-note">Upload one image. JPG or PNG recommended.</div>
+          </div>
+
+          <div class="form-row">
+            <label for="t_photo_2">Upload Photo 2 (optional)</label>
+            <input
+              id="t_photo_2"
+              name="attachment2"
+              type="file"
+              accept="image/png, image/jpeg, image/webp"
+              class="file-input"
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="t_photo_3">Upload Photo 3 (optional)</label>
+            <input
+              id="t_photo_3"
+              name="attachment3"
+              type="file"
+              accept="image/png, image/jpeg, image/webp"
+              class="file-input"
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="t_photo_4">Upload Photo 4 (optional)</label>
+            <input
+              id="t_photo_4"
+              name="attachment4"
+              type="file"
+              accept="image/png, image/jpeg, image/webp"
+              class="file-input"
+            />
+            <div class="field-note">You can upload up to 4 images. Total combined file size should stay under 10MB.</div>
           </div>
 
           <button type="submit" class="primary-button submit-button">Submit Testimonial</button>
