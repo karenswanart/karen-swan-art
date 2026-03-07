@@ -9,7 +9,7 @@
     .testimonials-wrap {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 10px 20px 90px;
+      padding: 10px 20px 60px;
     }
 
     .testimonial-block {
@@ -29,13 +29,8 @@
       grid-template-columns: 1fr 360px;
     }
 
-    .testimonial-block.reverse .testimonial-photo-wrap {
-      order: 2;
-    }
-
-    .testimonial-block.reverse .testimonial-copy {
-      order: 1;
-    }
+    .testimonial-block.reverse .testimonial-photo-wrap { order: 2; }
+    .testimonial-block.reverse .testimonial-copy { order: 1; }
 
     .testimonial-photo-wrap img {
       width: 100%;
@@ -59,6 +54,7 @@
       color: var(--ink-soft);
       line-height: 1.7;
       font-style: italic;
+      white-space: pre-line;
     }
 
     .testimonial-name {
@@ -73,20 +69,111 @@
       font-style: normal;
     }
 
+    /* --- Submit testimonial form --- */
+    .submit-testimonial-section {
+      max-width: 920px;
+      margin: 0 auto 90px;
+      padding: 0 20px;
+    }
+
+    .submit-testimonial-card {
+      background: linear-gradient(180deg, rgba(255, 250, 244, 0.96), rgba(246, 234, 226, 0.86));
+      border-radius: 28px;
+      padding: 36px;
+      border: 1px solid rgba(201, 154, 79, 0.16);
+      box-shadow: var(--shadow);
+    }
+
+    .submit-testimonial-card h2 {
+      margin: 0 0 10px;
+      font-size: 1.95rem;
+      text-align: center;
+      letter-spacing: -0.02em;
+    }
+
+    .submit-testimonial-card p {
+      margin: 0 auto 18px;
+      max-width: 680px;
+      text-align: center;
+      color: var(--ink-soft);
+    }
+
+    .testimonial-form {
+      display: grid;
+      gap: 18px;
+    }
+
+    .form-row {
+      display: grid;
+      gap: 8px;
+    }
+
+    .form-row label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .form-row input,
+    .form-row textarea {
+      width: 100%;
+      padding: 14px 16px;
+      font: inherit;
+      color: var(--ink);
+      background: rgba(255, 252, 248, 0.96);
+      border: 1px solid rgba(140, 48, 76, 0.14);
+      border-radius: 16px;
+      outline: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .form-row input:focus,
+    .form-row textarea:focus {
+      border-color: rgba(140, 48, 76, 0.45);
+      box-shadow: 0 0 0 3px rgba(140, 48, 76, 0.09);
+      background: #fffdfa;
+    }
+
+    .form-row textarea {
+      resize: vertical;
+      min-height: 180px;
+    }
+
+    .field-note {
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .file-input {
+      padding: 12px 14px;
+    }
+
+    .submit-button {
+      border: none;
+      cursor: pointer;
+      justify-self: start;
+    }
+
     @media (max-width: 900px) {
       .testimonial-block,
       .testimonial-block.reverse {
         grid-template-columns: 1fr;
       }
-
       .testimonial-block.reverse .testimonial-photo-wrap,
       .testimonial-block.reverse .testimonial-copy {
         order: initial;
       }
     }
+
+    @media (max-width: 760px) {
+      .submit-testimonial-card {
+        padding: 24px 20px;
+      }
+    }
   </style>
 </head>
 <body>
+  <!-- shared nav injected by nav.js -->
   <div id="site-nav"></div>
 
   <main class="page-shell">
@@ -104,26 +191,105 @@
         </div>
         <div class="testimonial-copy">
           <h2>Harry Potter Fan</h2>
-          <p class="testimonial-quote">
-            “This is a snuggle blankie. I love soft blankets!”
-            "We're obviously all Harry Potter Fans in this house. The blanket Karen made for Arya is a beautiful piece of art that you'll often find draped around her shoulders."
-          </p>
-          <p class="testimonial-name"><strong>— Arya & Liz</strong></p>
+          <p class="testimonial-quote">“This is a snuggle blankie. I love soft blankets!”
+“We're obviously all Harry Potter Fans in this house. The blanket Karen made for Arya is a beautiful piece of art that you'll often find draped around her shoulders.”</p>
+          <p class="testimonial-name"><strong>— Arya &amp; Liz</strong></p>
         </div>
       </article>
 
       <article class="testimonial-block reverse">
         <div class="testimonial-photo-wrap">
-          <img src="KSA/wtwta.png" alt="Happy customer piece 2" class="testimonial-image" />
+          <img src="KSA/wtwta.png" alt="Where the Wild Things Are piece" class="testimonial-image" />
         </div>
         <div class="testimonial-copy">
-          <h2>PJ <3</h2>
-          <p class="testimonial-quote">
-            ““Where the Wild Things Are was such a special addition to PJs room early on that resembled what creativity and art meant to our family. As he got older he loved looking at the different characters and placing them in the context of one of his favorite books.”
-          </p>
-          <p class="testimonial-name"><strong>— Client Name</strong>, City or Relationship</p>
+          <h2>PJ &lt;3</h2>
+          <p class="testimonial-quote">“Where the Wild Things Are was such a special addition to PJ’s room early on that resembled what creativity and art meant to our family. As he got older he loved looking at the different characters and placing them in the context of one of his favorite books.”</p>
+          <p class="testimonial-name"><strong>— Client</strong></p>
         </div>
       </article>
+    </section>
+
+    <!-- Submit a testimonial -->
+    <section class="submit-testimonial-section">
+      <div class="submit-testimonial-card">
+        <h2>Submit a Testimonial</h2>
+        <p>
+          Want to share a kind word or a photo of your piece? Submit it here and we’ll review it for the website.
+        </p>
+
+        <form
+          class="testimonial-form"
+          action="https://karenswanart.getform.com/33mrv"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <!-- Optional: helps you identify these emails in Getform -->
+          <input type="hidden" name="form_type" value="Website Testimonial Submission" />
+
+          <div class="form-row">
+            <label for="t_title">Testimonial Title</label>
+            <input
+              id="t_title"
+              name="title"
+              type="text"
+              required
+              maxlength="80"
+              placeholder="Example: Even Better Than We Imagined"
+            />
+            <div class="field-note">Max 80 characters.</div>
+          </div>
+
+          <div class="form-row">
+            <label for="t_name">Name</label>
+            <input
+              id="t_name"
+              name="name"
+              type="text"
+              required
+              maxlength="80"
+              placeholder="How you’d like your name to appear"
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="t_email">Email (so we can follow up if needed)</label>
+            <input
+              id="t_email"
+              name="email"
+              type="email"
+              required
+              maxlength="150"
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="t_quote">Your Quote</label>
+            <textarea
+              id="t_quote"
+              name="quote"
+              required
+              maxlength="1200"
+              placeholder="Write your testimonial here…"
+            ></textarea>
+            <div class="field-note">Max 1200 characters.</div>
+          </div>
+
+          <div class="form-row">
+            <label for="t_photo">Upload a Photo (optional)</label>
+            <input
+              id="t_photo"
+              name="photo"
+              type="file"
+              accept="image/*"
+              class="file-input"
+            />
+            <div class="field-note">JPG/PNG recommended.</div>
+          </div>
+
+          <button type="submit" class="primary-button submit-button">Submit Testimonial</button>
+        </form>
+      </div>
     </section>
   </main>
 
