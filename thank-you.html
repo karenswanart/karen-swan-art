@@ -3,197 +3,137 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Testimonials | Karen Swan Art</title>
+  <title>Thank You | Karen Swan Art</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    .testimonials-wrap {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 10px 20px 90px;
-    }
-
-    .testimonial-block {
-      display: grid;
-      grid-template-columns: 360px 1fr;
-      gap: 34px;
-      align-items: center;
-      margin-bottom: 46px;
-      padding: 28px;
-      background: linear-gradient(180deg, rgba(255,250,244,0.92), rgba(245,235,223,0.84));
-      border: 1px solid rgba(184, 139, 74, 0.16);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-    }
-
-    .testimonial-block.reverse {
-      grid-template-columns: 1fr 360px;
-    }
-
-    .testimonial-block.reverse .testimonial-photo-wrap {
-      order: 2;
-    }
-
-    .testimonial-block.reverse .testimonial-copy {
-      order: 1;
-    }
-
-    .testimonial-photo-wrap img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 22px;
-      border: 1px solid rgba(184, 139, 74, 0.14);
-      box-shadow: var(--shadow-soft);
-      cursor: zoom-in;
-    }
-
-    .testimonial-copy h2 {
-      margin: 0 0 10px;
-      font-size: 1.7rem;
-      line-height: 1.1;
-    }
-
-    .testimonial-quote {
-      margin: 0 0 16px;
-      font-size: 1.08rem;
-      color: var(--ink-soft);
-      line-height: 1.7;
-      font-style: italic;
-    }
-
-    .testimonial-name {
+    body {
       margin: 0;
-      font-size: 0.98rem;
-      color: var(--muted);
-      letter-spacing: 0.02em;
+      overflow: hidden;
     }
 
-    .testimonial-name strong {
-      color: var(--ink);
-      font-style: normal;
+    .thank-you-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 70px;
+      position: relative;
+      z-index: 1;
     }
 
-    @media (max-width: 900px) {
-      .testimonial-block,
-      .testimonial-block.reverse {
-        grid-template-columns: 1fr;
-      }
+    .thank-you-title {
+      margin: 0;
+      font-size: clamp(3rem, 9vw, 6.5rem);
+      line-height: 1;
+      text-align: center;
+      letter-spacing: -0.04em;
+    }
 
-      .testimonial-block.reverse .testimonial-photo-wrap,
-      .testimonial-block.reverse .testimonial-copy {
-        order: initial;
-      }
+    #confetti-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
     }
   </style>
 </head>
 <body>
-  <div id="site-nav"></div>
+  <canvas id="confetti-canvas"></canvas>
 
-  <main class="page-shell">
-    <section class="page-hero">
-      <h1>Testimonials</h1>
-      <p class="page-intro">
-        Kind words, happy clients, and a few of the special pieces Karen has created for others.
-      </p>
-    </section>
-
-    <section class="testimonials-wrap">
-      <article class="testimonial-block">
-        <div class="testimonial-photo-wrap">
-          <img src="KSA/img100.jpeg" alt="Happy customer piece 1" class="testimonial-image" />
-        </div>
-        <div class="testimonial-copy">
-          <h2>Harry Potter Fan</h2>
-          <p class="testimonial-quote">
-            “This is a snuggle blankie. I love soft blankets!”
-          </p>
-          <p class="testimonial-name"><strong>— Arya</strong></p>
-        </div>
-      </article>
-
-      <article class="testimonial-block reverse">
-        <div class="testimonial-photo-wrap">
-          <img src="KSA/img102.jpg" alt="Happy customer piece 2" class="testimonial-image" />
-        </div>
-        <div class="testimonial-copy">
-          <h2>Even Better Than We Imagined</h2>
-          <p class="testimonial-quote">
-            “The finished piece exceeded every expectation. Karen brought warmth, character, and imagination to the project, and the final result feels completely one-of-a-kind.”
-          </p>
-          <p class="testimonial-name"><strong>— Client Name</strong>, City or Relationship</p>
-        </div>
-      </article>
-
-      <article class="testimonial-block">
-        <div class="testimonial-photo-wrap">
-          <img src="KSA/img103.jpg" alt="Happy customer piece 3" class="testimonial-image" />
-        </div>
-        <div class="testimonial-copy">
-          <h2>A Meaningful Gift</h2>
-          <p class="testimonial-quote">
-            “I commissioned this as a gift, and it could not have been more perfect. You can feel the care Karen puts into every stitch and every decision. It became an instant family treasure.”
-          </p>
-          <p class="testimonial-name"><strong>— Client Name</strong>, City or Relationship</p>
-        </div>
-      </article>
-
-      <article class="testimonial-block reverse">
-        <div class="testimonial-photo-wrap">
-          <img src="KSA/img104.jpg" alt="Happy customer piece 4" class="testimonial-image" />
-        </div>
-        <div class="testimonial-copy">
-          <h2>Truly Special Work</h2>
-          <p class="testimonial-quote">
-            “Karen has such a rare ability to make art feel deeply personal. The whole process was thoughtful and collaborative, and the final piece was beautiful beyond words.”
-          </p>
-          <p class="testimonial-name"><strong>— Client Name</strong>, City or Relationship</p>
-        </div>
-      </article>
-    </section>
+  <main class="thank-you-page">
+    <h1 class="thank-you-title">Thank You</h1>
   </main>
 
-  <div class="lightbox" id="lightbox" hidden>
-    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
-    <img id="lightboxImg" src="" alt="">
-  </div>
-
   <script>
-    const clickableImages = document.querySelectorAll(".testimonial-image");
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightboxImg");
-    const lightboxClose = document.getElementById("lightboxClose");
+    const canvas = document.getElementById("confetti-canvas");
+    const ctx = canvas.getContext("2d");
 
-    function openLightbox(img) {
-      lightboxImg.src = img.currentSrc || img.src;
-      lightboxImg.alt = img.alt || "";
-      lightbox.hidden = false;
-      lightbox.classList.add("open");
-      document.body.style.overflow = "hidden";
+    let pieces = [];
+    const colors = [
+      "#8c304c",
+      "#c99a4f",
+      "#f3d9b1",
+      "#f7ede2",
+      "#d99058",
+      "#b56576"
+    ];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     }
 
-    function closeLightbox() {
-      lightbox.classList.remove("open");
-      lightbox.hidden = true;
-      lightboxImg.src = "";
-      lightboxImg.alt = "";
-      document.body.style.overflow = "";
+    function random(min, max) {
+      return Math.random() * (max - min) + min;
     }
 
-    clickableImages.forEach((img) => {
-      img.addEventListener("click", () => openLightbox(img));
+    function createPiece() {
+      return {
+        x: random(0, canvas.width),
+        y: random(-canvas.height, 0),
+        w: random(6, 14),
+        h: random(10, 20),
+        color: colors[Math.floor(Math.random() * colors.length)],
+        speed: random(2, 5),
+        drift: random(-1.5, 1.5),
+        rotation: random(0, Math.PI * 2),
+        rotationSpeed: random(-0.08, 0.08)
+      };
+    }
+
+    function populateConfetti(count) {
+      pieces = [];
+      for (let i = 0; i < count; i++) {
+        pieces.push(createPiece());
+      }
+    }
+
+    function drawPiece(piece) {
+      ctx.save();
+      ctx.translate(piece.x, piece.y);
+      ctx.rotate(piece.rotation);
+      ctx.fillStyle = piece.color;
+      ctx.fillRect(-piece.w / 2, -piece.h / 2, piece.w, piece.h);
+      ctx.restore();
+    }
+
+    function updatePieces() {
+      for (const piece of pieces) {
+        piece.y += piece.speed;
+        piece.x += piece.drift;
+        piece.rotation += piece.rotationSpeed;
+
+        if (piece.y - piece.h > canvas.height) {
+          piece.x = random(0, canvas.width);
+          piece.y = random(-120, -20);
+        }
+
+        if (piece.x < -30) piece.x = canvas.width + 30;
+        if (piece.x > canvas.width + 30) piece.x = -30;
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      updatePieces();
+
+      for (const piece of pieces) {
+        drawPiece(piece);
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    window.addEventListener("resize", () => {
+      resizeCanvas();
+      populateConfetti(180);
     });
 
-    lightboxClose.addEventListener("click", closeLightbox);
-
-    lightbox.addEventListener("click", (e) => {
-      if (e.target === lightbox) closeLightbox();
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && !lightbox.hidden) closeLightbox();
-    });
+    resizeCanvas();
+    populateConfetti(180);
+    animate();
   </script>
-
-  <script src="nav.js"></script>
 </body>
 </html>
