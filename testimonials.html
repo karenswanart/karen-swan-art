@@ -1,74 +1,340 @@
-<form
-  action="https://formsubmit.co/ksa@karenswanart.com"
-  method="POST"
-  enctype="multipart/form-data"
-  class="testimonial-form"
->
-  <input type="hidden" name="_subject" value="New Testimonial Submission - Karen Swan Art">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_next" value="https://www.karenswanart.com/thank-you.html">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonials | Karen Swan Art</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .testimonials-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 20px 60px;
+    }
 
-  <div class="form-row">
-    <label for="t_title">Testimonial Title</label>
-    <input
-      id="t_title"
-      name="title"
-      type="text"
-      required
-      maxlength="80"
-    />
-    <div class="field-note">Max 80 characters.</div>
+    .testimonial-block {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 34px;
+      align-items: center;
+      margin-bottom: 46px;
+      padding: 28px;
+      background: linear-gradient(180deg, rgba(255,250,244,0.92), rgba(245,235,223,0.84));
+      border: 1px solid rgba(184, 139, 74, 0.16);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .testimonial-block.reverse {
+      grid-template-columns: 1fr 360px;
+    }
+
+    .testimonial-block.reverse .testimonial-photo-wrap { order: 2; }
+    .testimonial-block.reverse .testimonial-copy { order: 1; }
+
+    .testimonial-photo-wrap img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 22px;
+      border: 1px solid rgba(184, 139, 74, 0.14);
+      box-shadow: var(--shadow-soft);
+      cursor: zoom-in;
+    }
+
+    .testimonial-copy h2 {
+      margin: 0 0 10px;
+      font-size: 1.7rem;
+      line-height: 1.1;
+    }
+
+    .testimonial-quote {
+      margin: 0 0 16px;
+      font-size: 1.08rem;
+      color: var(--ink-soft);
+      line-height: 1.7;
+      font-style: italic;
+      white-space: pre-line;
+    }
+
+    .testimonial-name {
+      margin: 0;
+      font-size: 0.98rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+
+    .testimonial-name strong {
+      color: var(--ink);
+      font-style: normal;
+    }
+
+    .submit-testimonial-section {
+      max-width: 920px;
+      margin: 0 auto 90px;
+      padding: 0 20px;
+    }
+
+    .submit-testimonial-card {
+      background: linear-gradient(180deg, rgba(255, 250, 244, 0.96), rgba(246, 234, 226, 0.86));
+      border-radius: 28px;
+      padding: 36px;
+      border: 1px solid rgba(201, 154, 79, 0.16);
+      box-shadow: var(--shadow);
+    }
+
+    .submit-testimonial-card h2 {
+      margin: 0 0 10px;
+      font-size: 1.95rem;
+      text-align: center;
+      letter-spacing: -0.02em;
+    }
+
+    .submit-testimonial-card p {
+      margin: 0 auto 18px;
+      max-width: 680px;
+      text-align: center;
+      color: var(--ink-soft);
+    }
+
+    .testimonial-form {
+      display: grid;
+      gap: 18px;
+    }
+
+    .form-row {
+      display: grid;
+      gap: 8px;
+    }
+
+    .form-row label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .form-row input,
+    .form-row textarea {
+      width: 100%;
+      padding: 14px 16px;
+      font: inherit;
+      color: var(--ink);
+      background: rgba(255, 252, 248, 0.96);
+      border: 1px solid rgba(140, 48, 76, 0.14);
+      border-radius: 16px;
+      outline: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      box-sizing: border-box;
+    }
+
+    .form-row input:focus,
+    .form-row textarea:focus {
+      border-color: rgba(140, 48, 76, 0.45);
+      box-shadow: 0 0 0 3px rgba(140, 48, 76, 0.09);
+      background: #fffdfa;
+    }
+
+    .form-row textarea {
+      resize: vertical;
+      min-height: 180px;
+    }
+
+    .field-note {
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .file-input {
+      padding: 12px 14px;
+    }
+
+    .submit-button {
+      border: none;
+      cursor: pointer;
+      justify-self: start;
+    }
+
+    @media (max-width: 900px) {
+      .testimonial-block,
+      .testimonial-block.reverse {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonial-block.reverse .testimonial-photo-wrap,
+      .testimonial-block.reverse .testimonial-copy {
+        order: initial;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .submit-testimonial-card {
+        padding: 24px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="site-nav"></div>
+
+  <main class="page-shell">
+    <section class="page-hero">
+      <h1>Testimonials</h1>
+      <p class="page-intro">
+        Kind words, happy clients, and a few of the special pieces Karen has created for others.
+      </p>
+    </section>
+
+    <section class="testimonials-wrap">
+      <article class="testimonial-block">
+        <div class="testimonial-photo-wrap">
+          <img src="KSA/img100.jpeg" alt="Happy customer piece 1" class="testimonial-image" />
+        </div>
+        <div class="testimonial-copy">
+          <h2>Harry Potter Fan</h2>
+          <p class="testimonial-quote">“This is a snuggle blankie. I love soft blankets!”
+“We're obviously all Harry Potter fans in this house. The blanket Karen made for Arya is a beautiful piece of art that you'll often find draped around her shoulders.”</p>
+          <p class="testimonial-name"><strong>— Arya &amp; Liz</strong></p>
+        </div>
+      </article>
+
+      <article class="testimonial-block reverse">
+        <div class="testimonial-photo-wrap">
+          <img src="KSA/wtwta.png" alt="Where the Wild Things Are piece" class="testimonial-image" />
+        </div>
+        <div class="testimonial-copy">
+          <h2>PJ &lt;3</h2>
+          <p class="testimonial-quote">“Where the Wild Things Are was such a special addition to PJ’s room early on that resembled what creativity and art meant to our family. As he got older he loved looking at the different characters and placing them in the context of one of his favorite books.”</p>
+          <p class="testimonial-name"><strong>— Letarte Family</strong></p>
+        </div>
+      </article>
+    </section>
+
+    <section class="submit-testimonial-section">
+      <div class="submit-testimonial-card">
+        <h2>Submit a Testimonial</h2>
+        <p>
+          Want to share a kind word and a photo of your piece? Submit it here for the website.
+        </p>
+
+        <form
+          action="https://formsubmit.co/ksa@karenswanart.com"
+          method="POST"
+          enctype="multipart/form-data"
+          class="testimonial-form"
+        >
+          <input type="hidden" name="_subject" value="New Testimonial Submission - Karen Swan Art">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://www.karenswanart.com/thank-you.html">
+
+          <div class="form-row">
+            <label for="t_title">Testimonial Title</label>
+            <input
+              id="t_title"
+              name="title"
+              type="text"
+              required
+              maxlength="80"
+            />
+            <div class="field-note">Max 80 characters.</div>
+          </div>
+
+          <div class="form-row">
+            <label for="t_name">Name</label>
+            <input
+              id="t_name"
+              name="name"
+              type="text"
+              required
+              maxlength="80"
+              placeholder="How you’d like your name to appear"
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="t_email">Email (so we can follow up if needed)</label>
+            <input
+              id="t_email"
+              name="email"
+              type="email"
+              required
+              maxlength="150"
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="t_quote">Your Note</label>
+            <textarea
+              id="t_quote"
+              name="quote"
+              required
+              maxlength="1200"
+              placeholder="Write your testimonial here…"
+            ></textarea>
+            <div class="field-note">Max 1200 characters.</div>
+          </div>
+
+          <div class="form-row">
+            <label for="t_photo">Upload a Photo</label>
+            <input
+              id="t_photo"
+              name="attachment"
+              type="file"
+              accept="image/*"
+              class="file-input"
+            />
+            <div class="field-note">Upload one image. JPG or PNG recommended.</div>
+          </div>
+
+          <button type="submit" class="primary-button submit-button">Submit Testimonial</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+    <img id="lightboxImg" src="" alt="">
   </div>
 
-  <div class="form-row">
-    <label for="t_name">Name</label>
-    <input
-      id="t_name"
-      name="name"
-      type="text"
-      required
-      maxlength="80"
-      placeholder="How you’d like your name to appear"
-    />
-  </div>
+  <script>
+    const clickableImages = document.querySelectorAll(".testimonial-image");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxClose = document.getElementById("lightboxClose");
 
-  <div class="form-row">
-    <label for="t_email">Email (so we can follow up if needed)</label>
-    <input
-      id="t_email"
-      name="email"
-      type="email"
-      required
-      maxlength="150"
-    />
-  </div>
+    function openLightbox(img) {
+      lightboxImg.src = img.currentSrc || img.src;
+      lightboxImg.alt = img.alt || "";
+      lightbox.hidden = false;
+      lightbox.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
 
-  <div class="form-row">
-    <label for="t_quote">Your Note</label>
-    <textarea
-      id="t_quote"
-      name="quote"
-      required
-      maxlength="1200"
-      placeholder="Write your testimonial here…"
-    ></textarea>
-    <div class="field-note">Max 1200 characters.</div>
-  </div>
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightbox.hidden = true;
+      lightboxImg.src = "";
+      lightboxImg.alt = "";
+      document.body.style.overflow = "";
+    }
 
-  <div class="form-row">
-    <label for="t_photo">Upload a Photo</label>
-    <input
-      id="t_photo"
-      name="attachment"
-      type="file"
-      accept="image/*"
-      class="file-input"
-    />
-    <div class="field-note">JPG/PNG recommended.</div>
-  </div>
+    clickableImages.forEach((img) => {
+      img.addEventListener("click", () => openLightbox(img));
+    });
 
-  <button type="submit" class="primary-button submit-button">
-    Submit Testimonial
-  </button>
-</form>
+    lightboxClose.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !lightbox.hidden) closeLightbox();
+    });
+  </script>
+
+  <script src="nav.js"></script>
+</body>
+</html>
