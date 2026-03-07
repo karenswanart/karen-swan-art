@@ -107,7 +107,8 @@
       gap: 8px;
     }
 
-    .form-row label {
+    .form-row label,
+    .upload-row > label {
       font-size: 0.95rem;
       font-weight: 600;
       color: var(--ink);
@@ -157,14 +158,18 @@
 
     .upload-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
-      align-items: start;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px 16px;
     }
 
-    .upload-grid input[type="file"] {
+    .file-field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .file-field input[type="file"] {
       width: 100%;
-      padding: 10px 12px;
+      padding: 12px 14px;
       font: inherit;
       color: var(--ink);
       background: rgba(255, 252, 248, 0.96);
@@ -182,10 +187,6 @@
       .testimonial-block.reverse .testimonial-photo-wrap,
       .testimonial-block.reverse .testimonial-copy {
         order: initial;
-      }
-
-      .upload-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
@@ -305,32 +306,45 @@
 
           <div class="upload-row">
             <label>Upload Photos</label>
+
             <div class="upload-grid">
-              <input
-                id="t_photo_1"
-                name="attachment"
-                type="file"
-                accept="image/png, image/jpeg, image/webp"
-              />
-              <input
-                id="t_photo_2"
-                name="attachment2"
-                type="file"
-                accept="image/png, image/jpeg, image/webp"
-              />
-              <input
-                id="t_photo_3"
-                name="attachment3"
-                type="file"
-                accept="image/png, image/jpeg, image/webp"
-              />
-              <input
-                id="t_photo_4"
-                name="attachment4"
-                type="file"
-                accept="image/png, image/jpeg, image/webp"
-              />
+              <div class="file-field">
+                <input
+                  id="t_photo_1"
+                  name="attachment"
+                  type="file"
+                  accept="image/png, image/jpeg, image/webp"
+                />
+              </div>
+
+              <div class="file-field">
+                <input
+                  id="t_photo_2"
+                  name="attachment2"
+                  type="file"
+                  accept="image/png, image/jpeg, image/webp"
+                />
+              </div>
+
+              <div class="file-field">
+                <input
+                  id="t_photo_3"
+                  name="attachment3"
+                  type="file"
+                  accept="image/png, image/jpeg, image/webp"
+                />
+              </div>
+
+              <div class="file-field">
+                <input
+                  id="t_photo_4"
+                  name="attachment4"
+                  type="file"
+                  accept="image/png, image/jpeg, image/webp"
+                />
+              </div>
             </div>
+
             <div class="field-note">You can upload up to 4 images. Total combined file size should stay under 10MB.</div>
           </div>
 
