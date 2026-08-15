@@ -3,84 +3,299 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Friends by Karen Swan, a textile portrait of Karen and Kelly built from childhood memories, shared history, and meaningful fabric." />
   <title>Friends | Karen Swan Art</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    .project-hero-wrap {
-      position: relative;
+    .friends-feature,
+    .friends-story,
+    .friends-details,
+    .friends-archive,
+    .friends-process {
+      width: min(1180px, 100%);
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .collection-stamp {
-      position: absolute;
-      top: 26px;
-      left: 0;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 16px;
-      border: 1px solid rgba(140, 48, 76, 0.22);
-      border-radius: 999px;
-      background: rgba(255, 248, 242, 0.82);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 10px 26px rgba(69, 29, 39, 0.08);
-      color: var(--accent-deep);
-      font-size: 0.8rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      line-height: 1.2;
-      z-index: 2;
+    .friends-feature {
+      margin-bottom: clamp(52px, 6vw, 84px);
     }
 
-    .collection-stamp::before {
-      content: "";
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold), var(--accent-soft));
-      box-shadow: 0 0 0 4px rgba(201, 154, 79, 0.12);
-      flex: 0 0 auto;
+    .friends-feature .art-card,
+    .friends-photo .art-card,
+    .archive-card .art-card,
+    .process-card .art-card {
+      background: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
     }
 
-    .single-centered-row {
-      max-width: 760px;
-      margin: 0 auto 28px;
-    }
-
-    .single-centered-row .art-card {
-      background: transparent;
-      border: none;
-      box-shadow: none;
-    }
-
-    .single-centered-row .art-card img {
+    .friends-feature img,
+    .friends-photo img,
+    .archive-card img,
+    .process-card img {
       width: 100%;
-      height: auto;
       display: block;
       object-fit: contain;
-      background: transparent;
+      padding: 0 !important;
+      background: transparent !important;
     }
 
-    @media (max-width: 900px) {
-      .collection-stamp {
-        position: static;
-        margin: 26px 0 0;
-        justify-content: center;
-      }
+    .friends-feature img {
+      height: auto;
+    }
 
-      .project-hero-wrap .page-hero {
-        padding-top: 34px;
+    .friends-story {
+      padding: clamp(34px, 4vw, 54px) 0 clamp(74px, 8vw, 108px);
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.7fr);
+      gap: clamp(48px, 7vw, 104px);
+      align-items: center;
+      border-top: 1px solid var(--line);
+    }
+
+    .friends-story-copy {
+      max-width: 690px;
+    }
+
+    .section-label {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 0.67rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .friends-story h2,
+    .friends-details h2,
+    .friends-archive h2,
+    .friends-process h2 {
+      margin: 0;
+      font-family: var(--display);
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      line-height: 0.98;
+      text-wrap: balance;
+    }
+
+    .friends-story h2 {
+      font-size: clamp(2.7rem, 4.4vw, 4.8rem);
+    }
+
+    .friends-story-copy p {
+      margin: 25px 0 0;
+      color: var(--ink-soft);
+      font-size: 1.04rem;
+      line-height: 1.82;
+    }
+
+    .friends-photo .art-card {
+      height: clamp(390px, 43vw, 620px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .friends-photo img {
+      height: 100%;
+    }
+
+    .image-caption {
+      margin: 12px 0 0;
+      padding-top: 10px;
+      color: var(--muted);
+      border-top: 1px solid var(--line-light);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .friends-details {
+      padding: clamp(34px, 4vw, 54px) 0 clamp(86px, 9vw, 124px);
+      border-top: 1px solid var(--line);
+    }
+
+    .friends-details-heading {
+      display: grid;
+      grid-template-columns: minmax(120px, 0.22fr) minmax(0, 1fr);
+      gap: clamp(36px, 6vw, 86px);
+      align-items: end;
+      margin-bottom: clamp(48px, 6vw, 76px);
+    }
+
+    .friends-details-heading .section-label,
+    .archive-heading .section-label,
+    .process-heading .section-label {
+      margin: 0;
+    }
+
+    .friends-details h2,
+    .friends-archive h2,
+    .friends-process h2 {
+      font-size: clamp(2.5rem, 3.8vw, 4.1rem);
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .detail-item {
+      min-height: 230px;
+      padding: clamp(30px, 4vw, 50px);
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .detail-number {
+      display: block;
+      margin-bottom: 24px;
+      color: var(--accent);
+      font-family: var(--display);
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    .detail-item h3 {
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(1.85rem, 2.6vw, 2.7rem);
+      font-weight: 400;
+      letter-spacing: -0.025em;
+      line-height: 1;
+    }
+
+    .detail-item p {
+      margin: 17px 0 0;
+      color: var(--ink-soft);
+      font-size: 0.96rem;
+      line-height: 1.72;
+    }
+
+    .friends-archive,
+    .friends-process {
+      padding-top: clamp(34px, 4vw, 54px);
+      border-top: 1px solid var(--line);
+    }
+
+    .friends-archive {
+      padding-bottom: clamp(86px, 9vw, 124px);
+    }
+
+    .archive-heading,
+    .process-heading {
+      display: grid;
+      grid-template-columns: minmax(120px, 0.22fr) minmax(0, 1fr);
+      gap: clamp(36px, 6vw, 86px);
+      align-items: end;
+      margin-bottom: clamp(48px, 6vw, 76px);
+    }
+
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(54px, 6vw, 88px) 30px;
+    }
+
+    .archive-card,
+    .process-card {
+      margin: 0;
+    }
+
+    .archive-card .art-card {
+      height: clamp(360px, 38vw, 560px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .archive-card img {
+      height: 100%;
+    }
+
+    .friends-process {
+      padding-bottom: clamp(100px, 11vw, 150px);
+    }
+
+    .sketch-row {
+      width: min(820px, 100%);
+      margin: 0 auto clamp(70px, 8vw, 108px);
+    }
+
+    .sketch-row .art-card {
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sketch-row img {
+      max-height: 720px;
+    }
+
+    .progress-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .process-card .art-card {
+      height: clamp(300px, 29vw, 430px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .process-card img {
+      height: 100%;
+    }
+
+    @media (min-width: 1000px) {
+      .friends-story h2,
+      .friends-details h2,
+      .friends-archive h2,
+      .friends-process h2 {
+        white-space: nowrap;
       }
     }
 
-    @media (max-width: 760px) {
-      .single-centered-row {
-        max-width: 100%;
+    @media (max-width: 860px) {
+      .friends-story,
+      .friends-details-heading,
+      .archive-heading,
+      .process-heading {
+        grid-template-columns: 1fr;
+        gap: 22px;
       }
 
-      .collection-stamp {
-        font-size: 0.72rem;
-        letter-spacing: 0.1em;
-        padding: 9px 14px;
+      .friends-story {
+        align-items: start;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .detail-grid,
+      .archive-grid,
+      .progress-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .friends-photo .art-card,
+      .archive-card .art-card,
+      .process-card .art-card,
+      .sketch-row .art-card {
+        height: auto;
+        min-height: 0;
+      }
+
+      .friends-photo img,
+      .archive-card img,
+      .process-card img {
+        height: auto;
       }
     }
   </style>
@@ -94,13 +309,127 @@
 
       <header class="page-hero">
         <h1>Friends</h1>
+        <p class="page-intro">A textile portrait of Karen and Kelly, built from childhood memories, shared objects, and a friendship that found its way back.</p>
       </header>
     </div>
 
-    <section class="single-centered-row">
+    <section class="friends-feature">
       <article class="art-card">
-        <img src="KSA/friends.png" alt="Friends featured image" class="project-image" />
+        <img src="KSA/friends.png" alt="Friends by Karen Swan" class="project-image" />
       </article>
+    </section>
+
+    <section class="friends-story" aria-labelledby="friends-story-heading">
+      <div class="friends-story-copy">
+        <p class="section-label">Karen &amp; Kelly</p>
+        <h2 id="friends-story-heading">A friendship stitched back together.</h2>
+        <p>
+          Karen and Kelly were childhood best friends. When they were little, they even created their own club, the K&amp;KACC: the Karen and Kelly Arts and Crafts Club. Years later, Kelly found her old Brownie uniform and decided to send it to Karen. That small act brought them back into each other's lives. Now they text every day.
+        </p>
+        <p>
+          <em>Friends</em> is full of that history. It is not simply a picture of the two of them. The materials and symbols carry pieces of their lives together, from childhood clothes to one of their earliest shared memories.
+        </p>
+      </div>
+
+      <figure class="friends-photo">
+        <article class="art-card">
+          <img src="KSA/fr2.jpeg" alt="Karen and Kelly together" class="project-image" />
+        </article>
+        <figcaption class="image-caption">Karen, left, and Kelly</figcaption>
+      </figure>
+    </section>
+
+    <section class="friends-details" aria-labelledby="friends-details-heading">
+      <div class="friends-details-heading">
+        <p class="section-label">Inside the piece</p>
+        <h2 id="friends-details-heading">Small details, decades of history.</h2>
+      </div>
+
+      <div class="detail-grid">
+        <article class="detail-item">
+          <span class="detail-number">01</span>
+          <h3>The dress</h3>
+          <p>The fabric used for Karen's clothing in the piece comes from the first dress she ever made, in sixth grade.</p>
+        </article>
+
+        <article class="detail-item">
+          <span class="detail-number">02</span>
+          <h3>The 35</h3>
+          <p>The number 35 comes from Kelly's Brownie uniform, the same uniform Kelly later found and sent to Karen when the two reconnected.</p>
+        </article>
+
+        <article class="detail-item">
+          <span class="detail-number">03</span>
+          <h3>The fish</h3>
+          <p>One of their earliest memories is from when they were five. Karen was eating dinner at Kelly's house and, for the first time, was served a fish with the bones still in it. That memory became the fish in the piece.</p>
+        </article>
+
+        <article class="detail-item">
+          <span class="detail-number">04</span>
+          <h3>K&amp;KACC</h3>
+          <p>The Karen and Kelly Arts and Crafts Club began when they were children. Decades later, art and making remain part of the language of their friendship.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="friends-archive" aria-labelledby="friends-archive-heading">
+      <div class="archive-heading">
+        <p class="section-label">Memory &amp; inspiration</p>
+        <h2 id="friends-archive-heading">The history behind the portrait.</h2>
+      </div>
+
+      <div class="archive-grid">
+        <figure class="archive-card">
+          <article class="art-card">
+            <img src="KSA/fr1.jpeg" alt="Inspiration photograph for Friends" class="project-image" />
+          </article>
+          <figcaption class="image-caption">Inspiration photograph</figcaption>
+        </figure>
+
+        <figure class="archive-card">
+          <article class="art-card">
+            <img src="KSA/fr2.jpeg" alt="Karen and Kelly together" class="project-image" />
+          </article>
+          <figcaption class="image-caption">Karen and Kelly</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="friends-process" aria-labelledby="friends-process-heading">
+      <div class="process-heading">
+        <p class="section-label">The making</p>
+        <h2 id="friends-process-heading">From sketch to finished piece.</h2>
+      </div>
+
+      <figure class="process-card sketch-row">
+        <article class="art-card">
+          <img src="KSA/fr3.jpeg" alt="Original sketch for Friends" class="project-image" />
+        </article>
+        <figcaption class="image-caption">Original sketch</figcaption>
+      </figure>
+
+      <div class="progress-grid">
+        <figure class="process-card">
+          <article class="art-card">
+            <img src="KSA/fr4.jpeg" alt="Friends work in progress, first stage" class="project-image" />
+          </article>
+          <figcaption class="image-caption">Progression 01 / 03</figcaption>
+        </figure>
+
+        <figure class="process-card">
+          <article class="art-card">
+            <img src="KSA/fr5.jpeg" alt="Friends work in progress, second stage" class="project-image" />
+          </article>
+          <figcaption class="image-caption">Progression 02 / 03</figcaption>
+        </figure>
+
+        <figure class="process-card">
+          <article class="art-card">
+            <img src="KSA/fr6.jpeg" alt="Friends work in progress, third stage" class="project-image" />
+          </article>
+          <figcaption class="image-caption">Progression 03 / 03</figcaption>
+        </figure>
+      </div>
     </section>
   </main>
 
@@ -135,17 +464,11 @@
     }
 
     lightboxClose.addEventListener('click', closeLightbox);
-
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        closeLightbox();
-      }
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) closeLightbox();
     });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !lightbox.hidden) {
-        closeLightbox();
-      }
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !lightbox.hidden) closeLightbox();
     });
   </script>
 </body>
