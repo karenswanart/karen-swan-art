@@ -48,14 +48,22 @@
     .friends-story {
       padding: clamp(34px, 4vw, 54px) 0 clamp(74px, 8vw, 108px);
       display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.7fr);
-      gap: clamp(48px, 7vw, 104px);
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);
+      gap: clamp(42px, 6vw, 88px);
       align-items: center;
       border-top: 1px solid var(--line);
     }
 
+    .friends-story.story-photo-missing {
+      grid-template-columns: 1fr;
+    }
+
     .friends-story-copy {
-      max-width: 690px;
+      max-width: 760px;
+    }
+
+    .friends-story.story-photo-missing .friends-story-copy {
+      max-width: 900px;
     }
 
     .section-label {
@@ -80,7 +88,8 @@
     }
 
     .friends-story h2 {
-      font-size: clamp(2.7rem, 4.4vw, 4.8rem);
+      max-width: 700px;
+      font-size: clamp(2.45rem, 3.55vw, 3.85rem);
     }
 
     .friends-story-copy p {
@@ -91,7 +100,7 @@
     }
 
     .friends-photo .art-card {
-      height: clamp(390px, 43vw, 620px);
+      height: clamp(360px, 39vw, 560px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -112,12 +121,18 @@
       text-transform: uppercase;
     }
 
+    .image-missing {
+      display: none !important;
+    }
+
     .friends-details {
       padding: clamp(34px, 4vw, 54px) 0 clamp(86px, 9vw, 124px);
       border-top: 1px solid var(--line);
     }
 
-    .friends-details-heading {
+    .friends-details-heading,
+    .archive-heading,
+    .process-heading {
       display: grid;
       grid-template-columns: minmax(120px, 0.22fr) minmax(0, 1fr);
       gap: clamp(36px, 6vw, 86px);
@@ -134,7 +149,8 @@
     .friends-details h2,
     .friends-archive h2,
     .friends-process h2 {
-      font-size: clamp(2.5rem, 3.8vw, 4.1rem);
+      max-width: 900px;
+      font-size: clamp(2.35rem, 3.35vw, 3.7rem);
     }
 
     .detail-grid {
@@ -186,15 +202,6 @@
       padding-bottom: clamp(86px, 9vw, 124px);
     }
 
-    .archive-heading,
-    .process-heading {
-      display: grid;
-      grid-template-columns: minmax(120px, 0.22fr) minmax(0, 1fr);
-      gap: clamp(36px, 6vw, 86px);
-      align-items: end;
-      margin-bottom: clamp(48px, 6vw, 76px);
-    }
-
     .archive-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -207,7 +214,7 @@
     }
 
     .archive-card .art-card {
-      height: clamp(360px, 38vw, 560px);
+      height: clamp(340px, 36vw, 520px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -252,15 +259,6 @@
 
     .process-card img {
       height: 100%;
-    }
-
-    @media (min-width: 1000px) {
-      .friends-story h2,
-      .friends-details h2,
-      .friends-archive h2,
-      .friends-process h2 {
-        white-space: nowrap;
-      }
     }
 
     @media (max-width: 860px) {
@@ -322,7 +320,7 @@
     <section class="friends-story" aria-labelledby="friends-story-heading">
       <div class="friends-story-copy">
         <p class="section-label">Karen &amp; Kelly</p>
-        <h2 id="friends-story-heading">A friendship stitched back together.</h2>
+        <h2 id="friends-story-heading">A friendship stitched<br />back together.</h2>
         <p>
           Karen and Kelly were childhood best friends. When they were little, they even created their own club, the K&amp;KACC: the Karen and Kelly Arts and Crafts Club. Years later, Kelly found her old Brownie uniform and decided to send it to Karen. That small act brought them back into each other's lives. Now they text every day.
         </p>
@@ -445,8 +443,22 @@
     const lightboxClose = document.getElementById('lightbox-close');
     const clickableImages = document.querySelectorAll('.project-image');
 
+    function hideBrokenFriendImage(img) {
+      const figure = img.closest('figure');
+      if (figure) figure.classList.add('image-missing');
+
+      const story = img.closest('.friends-story');
+      if (story) story.classList.add('story-photo-missing');
+    }
+
+    document.querySelectorAll('img[src^="KSA/fr"]').forEach((img) => {
+      img.addEventListener('error', () => hideBrokenFriendImage(img));
+      if (img.complete && img.naturalWidth === 0) hideBrokenFriendImage(img);
+    });
+
     clickableImages.forEach((img) => {
       img.addEventListener('click', () => {
+        if (!img.naturalWidth) return;
         lightboxImage.src = img.src;
         lightboxImage.alt = img.alt;
         lightbox.hidden = false;
