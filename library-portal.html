@@ -3,84 +3,118 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Library Portal by Karen Swan — a textile piece about the way reading can dissolve the world around us and carry us somewhere else." />
   <title>Library Portal | Karen Swan Art</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    .project-hero-wrap {
-      position: relative;
+    .library-feature,
+    .library-story,
+    .process-section {
+      width: min(1180px, 100%);
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .collection-stamp {
-      position: absolute;
-      top: 26px;
-      left: 0;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 16px;
-      border: 1px solid rgba(140, 48, 76, 0.22);
-      border-radius: 999px;
-      background: rgba(255, 248, 242, 0.82);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 10px 26px rgba(69, 29, 39, 0.08);
-      color: var(--accent-deep);
-      font-size: 0.8rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      line-height: 1.2;
-      z-index: 2;
+    .library-feature {
+      margin-bottom: clamp(84px, 9vw, 140px);
     }
 
-    .collection-stamp::before {
-      content: "";
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold), var(--accent-soft));
-      box-shadow: 0 0 0 4px rgba(201, 154, 79, 0.12);
-      flex: 0 0 auto;
+    .library-feature .art-card,
+    .process-shot .art-card {
+      background: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
     }
 
-    .single-centered-row {
-      max-width: 760px;
-      margin: 0 auto 28px;
-    }
-
-    .single-centered-row .art-card {
-      background: transparent;
-      border: none;
-      box-shadow: none;
-    }
-
-    .single-centered-row .art-card img {
+    .library-feature .art-card img,
+    .process-shot .art-card img {
       width: 100%;
       height: auto;
       display: block;
       object-fit: contain;
-      background: transparent;
+      padding: 0 !important;
+      background: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
     }
 
-    @media (max-width: 900px) {
-      .collection-stamp {
-        position: static;
-        margin: 26px 0 0;
-        justify-content: center;
-      }
+    .library-story {
+      padding: clamp(58px, 7vw, 96px) 0 clamp(76px, 9vw, 124px);
+      display: grid;
+      grid-template-columns: minmax(150px, 0.34fr) minmax(0, 1fr);
+      gap: clamp(42px, 7vw, 110px);
+      border-top: 1px solid var(--line);
+    }
 
-      .project-hero-wrap .page-hero {
-        padding-top: 34px;
-      }
+    .story-label,
+    .process-label {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.67rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .library-story blockquote {
+      max-width: 900px;
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(2rem, 3.35vw, 3.75rem);
+      font-weight: 400;
+      letter-spacing: -0.035em;
+      line-height: 1.08;
+    }
+
+    .process-heading {
+      margin-bottom: clamp(48px, 6vw, 82px);
+      padding-top: 24px;
+      display: grid;
+      grid-template-columns: minmax(150px, 0.34fr) minmax(0, 1fr);
+      gap: clamp(42px, 7vw, 110px);
+      align-items: end;
+      border-top: 1px solid var(--line);
+    }
+
+    .process-heading h2 {
+      max-width: 760px;
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(3rem, 5.4vw, 6rem);
+      font-weight: 400;
+      letter-spacing: -0.045em;
+      line-height: 0.92;
+    }
+
+    .process-shot {
+      width: 100%;
+      margin: 0 auto clamp(64px, 8vw, 118px);
+    }
+
+    .process-shot:last-child {
+      margin-bottom: 0;
+    }
+
+    .process-number {
+      margin: 13px 0 0;
+      padding-top: 11px;
+      color: var(--muted);
+      border-top: 1px solid var(--line-light);
+      font-size: 0.64rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
     }
 
     @media (max-width: 760px) {
-      .single-centered-row {
-        max-width: 100%;
+      .library-story,
+      .process-heading {
+        grid-template-columns: 1fr;
+        gap: 22px;
       }
 
-      .collection-stamp {
-        font-size: 0.72rem;
-        letter-spacing: 0.1em;
-        padding: 9px 14px;
+      .library-story blockquote {
+        font-size: clamp(1.8rem, 8vw, 2.7rem);
       }
     }
   </style>
@@ -94,13 +128,68 @@
 
       <header class="page-hero">
         <h1>Library Portal</h1>
+        <p class="page-intro">A textile doorway into the worlds we enter when a book makes the room around us disappear.</p>
       </header>
     </div>
 
-    <section class="single-centered-row">
+    <section class="library-feature">
       <article class="art-card">
-        <img src="KSA/library-portal.png" alt="Library Portal featured image" class="project-image" />
+        <img src="KSA/library-portal.png" alt="Library Portal finished textile artwork" class="project-image" />
       </article>
+    </section>
+
+    <section class="library-story" aria-labelledby="library-story-label">
+      <p class="story-label" id="library-story-label">The idea</p>
+      <blockquote>
+        I’ve talked to people who love reading and people who don’t. What I’ve found is that those who don’t often never quite leave the room they’re sitting in; their imagination doesn’t fully take over. They’re reading words printed on paper. But for people who do get pulled in, the room disappears. Everything around them dissolves and is replaced by the world being described on the page. That feeling — of leaving one world and stepping into another — is the idea behind Library Portal.
+      </blockquote>
+    </section>
+
+    <section class="process-section" aria-labelledby="process-heading">
+      <div class="process-heading">
+        <p class="process-label">The making</p>
+        <h2 id="process-heading">Building the portal, one layer at a time.</h2>
+      </div>
+
+      <figure class="process-shot">
+        <article class="art-card"><img src="KSA/drag6.jpeg" alt="Library Portal process image 1" class="project-image" /></article>
+        <figcaption class="process-number">01 / 08</figcaption>
+      </figure>
+
+      <figure class="process-shot">
+        <article class="art-card"><img src="KSA/drag1.jpeg" alt="Library Portal process image 2" class="project-image" /></article>
+        <figcaption class="process-number">02 / 08</figcaption>
+      </figure>
+
+      <figure class="process-shot">
+        <article class="art-card"><img src="KSA/drag5.jpeg" alt="Library Portal process image 3" class="project-image" /></article>
+        <figcaption class="process-number">03 / 08</figcaption>
+      </figure>
+
+      <figure class="process-shot">
+        <article class="art-card"><img src="KSA/drag8.jpeg" alt="Library Portal process image 4" class="project-image" /></article>
+        <figcaption class="process-number">04 / 08</figcaption>
+      </figure>
+
+      <figure class="process-shot">
+        <article class="art-card"><img src="KSA/drag7.jpeg" alt="Library Portal process image 5" class="project-image" /></article>
+        <figcaption class="process-number">05 / 08</figcaption>
+      </figure>
+
+      <figure class="process-shot">
+        <article class="art-card"><img src="KSA/drag4.jpeg" alt="Library Portal process image 6" class="project-image" /></article>
+        <figcaption class="process-number">06 / 08</figcaption>
+      </figure>
+
+      <figure class="process-shot">
+        <article class="art-card"><img src="KSA/drag2.jpeg" alt="Library Portal process image 7" class="project-image" /></article>
+        <figcaption class="process-number">07 / 08</figcaption>
+      </figure>
+
+      <figure class="process-shot">
+        <article class="art-card"><img src="KSA/drag3.jpeg" alt="Library Portal process image 8" class="project-image" /></article>
+        <figcaption class="process-number">08 / 08</figcaption>
+      </figure>
     </section>
   </main>
 
@@ -137,15 +226,11 @@
     lightboxClose.addEventListener('click', closeLightbox);
 
     lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        closeLightbox();
-      }
+      if (e.target === lightbox) closeLightbox();
     });
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !lightbox.hidden) {
-        closeLightbox();
-      }
+      if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
     });
   </script>
 </body>
