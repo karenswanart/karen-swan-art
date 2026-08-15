@@ -1,0 +1,70 @@
+.project-hero-wrap .collection-stamp {
+  position: relative !important;
+  width: fit-content !important;
+  margin: 58px 0 -42px !important;
+  padding: 12px 15px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  color: var(--ink) !important;
+  background: var(--paper-strong) !important;
+  border: 1px solid rgba(23, 23, 22, 0.28) !important;
+  border-radius: 0 !important;
+  box-shadow: 0 7px 18px rgba(23, 23, 22, 0.08) !important;
+  backdrop-filter: none !important;
+  font-family: var(--sans) !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.11em !important;
+  line-height: 1.25 !important;
+  text-transform: uppercase !important;
+  transform: rotate(-0.4deg);
+}
+
+.project-hero-wrap .collection-stamp::before {
+  content: "" !important;
+  width: 9px !important;
+  height: 9px !important;
+  flex: 0 0 9px !important;
+  display: block !important;
+  background: var(--accent) !important;
+  border-radius: 50% !important;
+  box-shadow: none !important;
+}
+
+.project-hero-wrap .collection-stamp::after {
+  content: "PRIVATE COLLECTION";
+  margin-left: 4px;
+  padding-left: 12px;
+  color: var(--muted);
+  border-left: 1px solid var(--line);
+  font-size: 0.56rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .project-hero-wrap .collection-stamp {
+    margin: 48px 0 -30px !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .project-hero-wrap .collection-stamp {
+    max-width: 100%;
+    margin: 38px 0 -24px !important;
+    padding: 10px 12px !important;
+    flex-wrap: wrap;
+    font-size: 0.66rem !important;
+    transform: none;
+  }
+
+  .project-hero-wrap .collection-stamp::after {
+    width: 100%;
+    margin: 2px 0 0 19px;
+    padding: 5px 0 0;
+    border-top: 1px solid var(--line-light);
+    border-left: 0;
+  }
+}
