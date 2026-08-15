@@ -25,22 +25,18 @@
 
 .lifecycle-preview-grid {
   display: grid;
-  grid-template-columns: 0.92fr 1.16fr 0.92fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(12px, 1.4vw, 24px);
-  align-items: center;
+  align-items: stretch;
 }
 
 .lifecycle-preview-grid img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  aspect-ratio: 1 / 1.45;
+  object-fit: contain;
   display: block;
   transition: transform 0.55s cubic-bezier(.2,.75,.2,1);
-}
-
-.lifecycle-preview-grid img:nth-child(1),
-.lifecycle-preview-grid img:nth-child(3) {
-  width: 92%;
-  justify-self: center;
 }
 
 .lifecycle-preview:hover .lifecycle-preview-grid img:nth-child(1) {
@@ -159,10 +155,5 @@
   .lifecycle-preview-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 8px;
-  }
-
-  .lifecycle-preview-grid img:nth-child(1),
-  .lifecycle-preview-grid img:nth-child(3) {
-    width: 100%;
   }
 }
