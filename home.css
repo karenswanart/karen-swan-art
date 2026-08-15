@@ -103,6 +103,30 @@
   margin-top: 20px;
 }
 
+/* Keep every project that shares a row aligned to the same image height. */
+@media (min-width: 681px) {
+  .work-grid .work-card:not(.work-card--full) .work-image {
+    height: clamp(360px, 36vw, 560px);
+    aspect-ratio: auto;
+  }
+}
+
+/* Eragon is a panoramic triptych: let the artwork itself define the row. */
+.work-card--eragon .work-image {
+  width: 100%;
+  height: auto !important;
+  aspect-ratio: auto !important;
+  padding: 0 !important;
+  background: transparent !important;
+  overflow: visible;
+}
+
+.work-card--eragon .work-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
 @media (max-width: 1100px) {
   .home-hero-top {
     grid-template-columns: minmax(340px, 0.85fr) minmax(0, 1.15fr);
