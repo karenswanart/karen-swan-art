@@ -53,16 +53,17 @@
     }
 
     .ruby-story-copy {
-      max-width: 900px;
+      max-width: none;
     }
 
     .ruby-story-copy h2 {
       margin: 0;
       font-family: var(--display);
-      font-size: clamp(2.6rem, 4.6vw, 5.2rem);
+      font-size: clamp(2.4rem, 3.8vw, 4.4rem);
       font-weight: 400;
       letter-spacing: -0.04em;
       line-height: 0.96;
+      white-space: nowrap;
     }
 
     .ruby-story-copy p {
@@ -91,13 +92,14 @@
     }
 
     .ruby-gallery-heading h2 {
-      max-width: 780px;
+      max-width: none;
       margin: 0;
       font-family: var(--display);
-      font-size: clamp(2.8rem, 5vw, 5.6rem);
+      font-size: clamp(2.5rem, 4vw, 4.7rem);
       font-weight: 400;
       letter-spacing: -0.045em;
       line-height: 0.94;
+      white-space: nowrap;
     }
 
     .ruby-gallery {
@@ -142,6 +144,11 @@
       .ruby-gallery-heading {
         grid-template-columns: 1fr;
         gap: 20px;
+      }
+
+      .ruby-story-copy h2,
+      .ruby-gallery-heading h2 {
+        white-space: normal;
       }
 
       .ruby-gallery {
