@@ -7,6 +7,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.head.appendChild(favicon);
   }
 
+  if (!document.querySelector("link[href='collection-tags.css']")) {
+    const collectionTags = document.createElement("link");
+    collectionTags.rel = "stylesheet";
+    collectionTags.href = "collection-tags.css";
+    document.head.appendChild(collectionTags);
+  }
+
   const navTarget = document.getElementById("site-nav");
 
   if (navTarget) {
@@ -63,6 +70,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         "library-portal.html",
         "friends.html",
         "wedding-portal.html",
+        "rubys-portal.html",
         "baby-blankets.html",
         "other-fabric-projects.html",
         "other-mediums.html"
