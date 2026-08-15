@@ -3,48 +3,284 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Wedding Portal by Karen Swan, inspired by photographs from Brenda and Kelly's pre-wedding trip to Venice." />
   <title>Wedding Portal | Karen Swan Art</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    .project-hero-wrap { position: relative; }
-    .collection-stamp { position: absolute; top: 26px; left: 0; display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px; border: 1px solid rgba(140,48,76,.22); border-radius: 999px; background: rgba(255,248,242,.82); backdrop-filter: blur(8px); box-shadow: 0 10px 26px rgba(69,29,39,.08); color: var(--accent-deep); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; line-height: 1.2; z-index: 2; }
-    .collection-stamp::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--accent-soft)); box-shadow: 0 0 0 4px rgba(201,154,79,.12); flex: 0 0 auto; }
-    .single-centered-row { max-width: 760px; margin: 0 auto 28px; }
-    .single-centered-row .art-card { background: transparent; border: none; box-shadow: none; }
-    .single-centered-row .art-card img { width: 100%; height: auto; display: block; object-fit: contain; background: transparent; }
-    @media (max-width: 900px) { .collection-stamp { position: static; margin: 26px 0 0; justify-content: center; } .project-hero-wrap .page-hero { padding-top: 34px; } }
-    @media (max-width: 760px) { .single-centered-row { max-width: 100%; } .collection-stamp { font-size: .72rem; letter-spacing: .1em; padding: 9px 14px; } }
+    .wedding-feature,
+    .wedding-story,
+    .wedding-sources {
+      width: min(1180px, 100%);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .wedding-feature {
+      margin-bottom: clamp(48px, 5vw, 72px);
+    }
+
+    .wedding-feature .art-card,
+    .source-feature .art-card,
+    .source-grid .art-card {
+      background: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
+    }
+
+    .wedding-feature img,
+    .source-feature img,
+    .source-grid img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      padding: 0 !important;
+      background: transparent !important;
+    }
+
+    .wedding-feature img {
+      height: auto;
+    }
+
+    .wedding-story {
+      padding: clamp(30px, 3.5vw, 48px) 0 clamp(62px, 7vw, 94px);
+      display: grid;
+      grid-template-columns: minmax(120px, 0.22fr) minmax(0, 1fr);
+      gap: clamp(36px, 6vw, 86px);
+      border-top: 1px solid var(--line);
+    }
+
+    .wedding-label {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.67rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .wedding-story-copy h2,
+    .sources-heading h2 {
+      margin: 0;
+      font-family: var(--display);
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      line-height: 0.98;
+    }
+
+    .wedding-story-copy h2 {
+      font-size: clamp(2.7rem, 4.5vw, 5rem);
+    }
+
+    .wedding-story-copy p {
+      max-width: 820px;
+      margin: 24px 0 0;
+      color: var(--ink-soft);
+      font-size: 1.04rem;
+      line-height: 1.8;
+    }
+
+    .wedding-sources {
+      padding-top: 26px;
+      border-top: 1px solid var(--line);
+    }
+
+    .sources-heading {
+      margin-bottom: clamp(42px, 5vw, 68px);
+      display: grid;
+      grid-template-columns: minmax(120px, 0.22fr) minmax(0, 1fr);
+      gap: clamp(36px, 6vw, 86px);
+      align-items: end;
+    }
+
+    .sources-heading h2 {
+      max-width: 900px;
+      font-size: clamp(2.8rem, 4.8vw, 5.4rem);
+    }
+
+    .source-feature {
+      width: min(900px, 100%);
+      margin: 0 auto clamp(68px, 8vw, 110px);
+    }
+
+    .source-feature .art-card {
+      height: min(68vw, 720px);
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(58px, 7vw, 96px) 30px;
+    }
+
+    .source-grid figure,
+    .source-feature figure {
+      margin: 0;
+    }
+
+    .source-grid .art-card {
+      height: clamp(320px, 35vw, 520px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .source-caption {
+      margin: 12px 0 0;
+      padding-top: 10px;
+      color: var(--muted);
+      border-top: 1px solid var(--line-light);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .source-caption strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    @media (max-width: 760px) {
+      .wedding-story,
+      .sources-heading {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .source-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .source-feature .art-card,
+      .source-grid .art-card {
+        height: auto;
+        min-height: 0;
+      }
+
+      .source-feature img,
+      .source-grid img {
+        height: auto;
+      }
+    }
   </style>
 </head>
 <body>
   <div id="site-nav"></div>
+
   <main class="page-shell standalone-page">
     <div class="project-hero-wrap">
       <div class="collection-stamp">Brenda Folkert Collection</div>
-      <header class="page-hero"><h1>Wedding Portal</h1></header>
+      <header class="page-hero">
+        <h1>Wedding Portal</h1>
+        <p class="page-intro">A portrait of friendship and a pre-wedding trip to Venice, translated into fabric.</p>
+      </header>
     </div>
-    <section class="single-centered-row">
-      <article class="art-card"><img src="KSA/wedding-portal.png" alt="Wedding Portal featured image" class="project-image" /></article>
+
+    <section class="wedding-feature">
+      <article class="art-card">
+        <img src="KSA/wedding-portal.png" alt="Wedding Portal by Karen Swan" class="project-image" />
+      </article>
+    </section>
+
+    <section class="wedding-story" aria-labelledby="wedding-story-heading">
+      <p class="wedding-label">The story</p>
+      <div class="wedding-story-copy">
+        <h2 id="wedding-story-heading">Venice, before the wedding.</h2>
+        <p>
+          Brenda was about to get married when she and Kelly traveled to Venice for a bachelorette party of sorts. Photographs from that trip became the source material for Wedding Portal. Karen used those images to carry the memory of the trip into fabric, including the challenge of capturing Kelly's unmistakable '70s perm. The photograph of Brenda shown below was specifically cited as one of the inspirations for the finished piece.
+        </p>
+      </div>
+    </section>
+
+    <section class="wedding-sources" aria-labelledby="wedding-sources-heading">
+      <div class="sources-heading">
+        <p class="wedding-label">Source photographs</p>
+        <h2 id="wedding-sources-heading">The photographs behind the piece.</h2>
+      </div>
+
+      <div class="source-feature">
+        <figure>
+          <article class="art-card">
+            <img src="KSA/wp4.jpeg" alt="Brenda in a source photograph from the Venice trip" class="project-image" />
+          </article>
+          <figcaption class="source-caption"><strong>Brenda in Venice</strong> · cited source of inspiration</figcaption>
+        </figure>
+      </div>
+
+      <div class="source-grid">
+        <figure>
+          <article class="art-card">
+            <img src="KSA/wp1.jpeg" alt="Reference photograph from Brenda and Kelly's Venice trip" class="project-image" />
+          </article>
+          <figcaption class="source-caption">Venice reference photograph</figcaption>
+        </figure>
+
+        <figure>
+          <article class="art-card">
+            <img src="KSA/wp2.jpeg" alt="Reference photograph from Brenda and Kelly's Venice trip" class="project-image" />
+          </article>
+          <figcaption class="source-caption">Venice reference photograph</figcaption>
+        </figure>
+
+        <figure>
+          <article class="art-card">
+            <img src="KSA/wp3.jpeg" alt="Reference photograph from Brenda and Kelly's Venice trip" class="project-image" />
+          </article>
+          <figcaption class="source-caption">Venice reference photograph</figcaption>
+        </figure>
+
+        <figure>
+          <article class="art-card">
+            <img src="KSA/wp5.jpeg" alt="Reference photograph from Brenda and Kelly's Venice trip" class="project-image" />
+          </article>
+          <figcaption class="source-caption">Venice reference photograph</figcaption>
+        </figure>
+      </div>
     </section>
   </main>
+
   <div class="lightbox" id="lightbox" hidden>
     <button class="lightbox-close" id="lightbox-close" aria-label="Close image view">&times;</button>
     <img id="lightbox-image" src="" alt="" />
   </div>
+
   <script src="nav.js"></script>
   <script>
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightbox-image');
     const lightboxClose = document.getElementById('lightbox-close');
-    document.querySelectorAll('.project-image').forEach((img) => {
+    const clickableImages = document.querySelectorAll('.project-image');
+
+    clickableImages.forEach((img) => {
       img.addEventListener('click', () => {
-        lightboxImage.src = img.src; lightboxImage.alt = img.alt; lightbox.hidden = false; lightbox.classList.add('open'); document.body.style.overflow = 'hidden';
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt;
+        lightbox.hidden = false;
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
       });
     });
-    function closeLightbox() { lightbox.classList.remove('open'); lightbox.hidden = true; lightboxImage.src = ''; lightboxImage.alt = ''; document.body.style.overflow = ''; }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.hidden = true;
+      lightboxImage.src = '';
+      lightboxImage.alt = '';
+      document.body.style.overflow = '';
+    }
+
     lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !lightbox.hidden) closeLightbox(); });
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !lightbox.hidden) closeLightbox();
+    });
   </script>
 </body>
 </html>
