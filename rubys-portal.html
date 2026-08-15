@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ruby's Portal | Karen Swan Art</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .single-centered-row {
+      max-width: 900px;
+      margin: 0 auto 28px;
+    }
+
+    .single-centered-row .art-card {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+
+    .single-centered-row .art-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      background: transparent;
+    }
+
+    @media (max-width: 760px) {
+      .single-centered-row {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="site-nav"></div>
+
+  <main class="page-shell standalone-page">
+    <header class="page-hero">
+      <h1>Ruby's Portal</h1>
+    </header>
+
+    <section class="single-centered-row">
+      <article class="art-card">
+        <img src="KSA/Image%20(49).jpeg" alt="Ruby's Portal featured image" class="project-image" />
+      </article>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close image view">&times;</button>
+    <img id="lightbox-image" src="" alt="" />
+  </div>
+
+  <script src="nav.js"></script>
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const clickableImages = document.querySelectorAll('.project-image');
+
+    clickableImages.forEach((img) => {
+      img.addEventListener('click', () => {
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt;
+        lightbox.hidden = false;
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.hidden = true;
+      lightboxImage.src = '';
+      lightboxImage.alt = '';
+      document.body.style.overflow = '';
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
+    });
+  </script>
+</body>
+</html>
