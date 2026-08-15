@@ -31,8 +31,7 @@
       box-shadow: none !important;
     }
 
-    .library-feature .art-card img,
-    .process-shot .art-card img {
+    .library-feature .art-card img {
       width: 100%;
       height: auto;
       display: block;
@@ -72,7 +71,7 @@
     }
 
     .process-heading {
-      margin-bottom: clamp(48px, 6vw, 82px);
+      margin-bottom: clamp(42px, 5vw, 68px);
       padding-top: 24px;
       display: grid;
       grid-template-columns: minmax(150px, 0.34fr) minmax(0, 1fr);
@@ -91,13 +90,35 @@
       line-height: 0.92;
     }
 
-    .process-shot {
-      width: 100%;
-      margin: 0 auto clamp(64px, 8vw, 118px);
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: clamp(22px, 3vw, 38px);
+      row-gap: clamp(48px, 6vw, 78px);
     }
 
-    .process-shot:last-child {
-      margin-bottom: 0;
+    .process-shot {
+      width: 100%;
+      margin: 0;
+    }
+
+    .process-shot .art-card {
+      width: 100%;
+      height: clamp(300px, 36vw, 500px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .process-shot .art-card img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      padding: 0 !important;
+      background: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
     }
 
     .process-number {
@@ -121,6 +142,19 @@
       .library-story blockquote {
         font-size: clamp(1.35rem, 6vw, 1.8rem);
         line-height: 1.3;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+        row-gap: 48px;
+      }
+
+      .process-shot .art-card {
+        height: auto;
+      }
+
+      .process-shot .art-card img {
+        height: auto;
       }
     }
   </style>
@@ -157,45 +191,47 @@
         <h2 id="process-heading">Building the portal, one layer at a time.</h2>
       </div>
 
-      <figure class="process-shot">
-        <article class="art-card"><img src="KSA/drag6.jpeg" alt="Library Portal process image 1" class="project-image" /></article>
-        <figcaption class="process-number">01 / 08</figcaption>
-      </figure>
+      <div class="process-grid">
+        <figure class="process-shot">
+          <article class="art-card"><img src="KSA/drag6.jpeg" alt="Library Portal process image 1" class="project-image" /></article>
+          <figcaption class="process-number">01 / 08</figcaption>
+        </figure>
 
-      <figure class="process-shot">
-        <article class="art-card"><img src="KSA/drag1.jpeg" alt="Library Portal process image 2" class="project-image" /></article>
-        <figcaption class="process-number">02 / 08</figcaption>
-      </figure>
+        <figure class="process-shot">
+          <article class="art-card"><img src="KSA/drag1.jpeg" alt="Library Portal process image 2" class="project-image" /></article>
+          <figcaption class="process-number">02 / 08</figcaption>
+        </figure>
 
-      <figure class="process-shot">
-        <article class="art-card"><img src="KSA/drag5.jpeg" alt="Library Portal process image 3" class="project-image" /></article>
-        <figcaption class="process-number">03 / 08</figcaption>
-      </figure>
+        <figure class="process-shot">
+          <article class="art-card"><img src="KSA/drag5.jpeg" alt="Library Portal process image 3" class="project-image" /></article>
+          <figcaption class="process-number">03 / 08</figcaption>
+        </figure>
 
-      <figure class="process-shot">
-        <article class="art-card"><img src="KSA/drag8.jpeg" alt="Library Portal process image 4" class="project-image" /></article>
-        <figcaption class="process-number">04 / 08</figcaption>
-      </figure>
+        <figure class="process-shot">
+          <article class="art-card"><img src="KSA/drag8.jpeg" alt="Library Portal process image 4" class="project-image" /></article>
+          <figcaption class="process-number">04 / 08</figcaption>
+        </figure>
 
-      <figure class="process-shot">
-        <article class="art-card"><img src="KSA/drag7.jpeg" alt="Library Portal process image 5" class="project-image" /></article>
-        <figcaption class="process-number">05 / 08</figcaption>
-      </figure>
+        <figure class="process-shot">
+          <article class="art-card"><img src="KSA/drag7.jpeg" alt="Library Portal process image 5" class="project-image" /></article>
+          <figcaption class="process-number">05 / 08</figcaption>
+        </figure>
 
-      <figure class="process-shot">
-        <article class="art-card"><img src="KSA/drag4.jpeg" alt="Library Portal process image 6" class="project-image" /></article>
-        <figcaption class="process-number">06 / 08</figcaption>
-      </figure>
+        <figure class="process-shot">
+          <article class="art-card"><img src="KSA/drag4.jpeg" alt="Library Portal process image 6" class="project-image" /></article>
+          <figcaption class="process-number">06 / 08</figcaption>
+        </figure>
 
-      <figure class="process-shot">
-        <article class="art-card"><img src="KSA/drag2.jpeg" alt="Library Portal process image 7" class="project-image" /></article>
-        <figcaption class="process-number">07 / 08</figcaption>
-      </figure>
+        <figure class="process-shot">
+          <article class="art-card"><img src="KSA/drag2.jpeg" alt="Library Portal process image 7" class="project-image" /></article>
+          <figcaption class="process-number">07 / 08</figcaption>
+        </figure>
 
-      <figure class="process-shot">
-        <article class="art-card"><img src="KSA/drag3.jpeg" alt="Library Portal process image 8" class="project-image" /></article>
-        <figcaption class="process-number">08 / 08</figcaption>
-      </figure>
+        <figure class="process-shot">
+          <article class="art-card"><img src="KSA/drag3.jpeg" alt="Library Portal process image 8" class="project-image" /></article>
+          <figcaption class="process-number">08 / 08</figcaption>
+        </figure>
+      </div>
     </section>
   </main>
 
