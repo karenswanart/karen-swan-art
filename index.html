@@ -7,6 +7,18 @@
   <title>Karen Swan Art</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="home.css" />
+  <style>
+    .work-card--other-mediums {
+      width: min(1080px, 78%);
+      justify-self: center;
+    }
+
+    @media (max-width: 680px) {
+      .work-card--other-mediums {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body class="home-page">
   <div id="site-nav"></div>
@@ -127,7 +139,7 @@
         <div class="work-meta"><span class="work-number">13</span><h3>More Fabric Pieces</h3><span class="work-arrow" aria-hidden="true">↗</span></div>
       </a>
 
-      <a href="other-mediums.html" class="work-card work-card--full">
+      <a href="other-mediums.html" class="work-card work-card--full work-card--other-mediums">
         <div class="work-image work-image--landscape"><img src="KSA/img48.jpg" alt="Other Mediums" /></div>
         <div class="work-meta"><span class="work-number">14</span><h3>Other Mediums</h3><span class="work-arrow" aria-hidden="true">↗</span></div>
       </a>
