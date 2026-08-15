@@ -20,6 +20,7 @@
     }
 
     .wedding-feature .art-card,
+    .source-feature .art-card,
     .source-grid .art-card {
       background: transparent !important;
       border: 0 !important;
@@ -27,6 +28,7 @@
     }
 
     .wedding-feature img,
+    .source-feature img,
     .source-grid img {
       width: 100%;
       height: 100%;
@@ -97,6 +99,39 @@
       font-size: clamp(2.5rem, 3.7vw, 4rem);
     }
 
+    .source-feature {
+      width: min(900px, 100%);
+      margin: 0 auto clamp(68px, 8vw, 110px);
+    }
+
+    .source-feature figure {
+      margin: 0;
+    }
+
+    .source-feature .art-card {
+      height: min(68vw, 720px);
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .source-caption {
+      margin: 12px 0 0;
+      padding-top: 10px;
+      color: var(--muted);
+      border-top: 1px solid var(--line-light);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .source-caption strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
     .source-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -132,10 +167,13 @@
         grid-template-columns: 1fr;
       }
 
+      .source-feature .art-card,
       .source-grid .art-card {
         height: auto;
+        min-height: 0;
       }
 
+      .source-feature img,
       .source-grid img {
         height: auto;
       }
@@ -165,7 +203,7 @@
       <div class="wedding-story-copy">
         <h2 id="wedding-story-heading">Venice, before the wedding.</h2>
         <p>
-          Brenda was about to get married when she and Kelly traveled to Venice for a bachelorette party of sorts. Pictures from that trip helped inspire Wedding Portal and preserve the memory Karen was translating into fabric. Karen also worked to capture Kelly's unmistakable '70s perm in the piece, which proved especially difficult.
+          Brenda was about to get married when she and Kelly traveled to Venice for a bachelorette party of sorts. Pictures from that trip helped inspire Wedding Portal and preserve the memory Karen was translating into fabric. Karen also worked to capture Kelly's unmistakable '70s perm in the piece, which proved especially difficult. The photograph of Brenda shown below was specifically cited as one source of inspiration for the finished work.
         </p>
       </div>
     </section>
@@ -174,6 +212,15 @@
       <div class="sources-heading">
         <p class="wedding-label">More photographs</p>
         <h2 id="wedding-sources-heading">The people and story around the piece.</h2>
+      </div>
+
+      <div class="source-feature">
+        <figure>
+          <article class="art-card">
+            <img src="KSA/wp4.jpeg" alt="Brenda in the cited source photograph" class="project-image" />
+          </article>
+          <figcaption class="source-caption"><strong>Brenda</strong> · cited source of inspiration</figcaption>
+        </figure>
       </div>
 
       <div class="source-grid">
