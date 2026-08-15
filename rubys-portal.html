@@ -3,31 +3,157 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ruby's Portal by Karen Swan, connected to the Paper Bag Princess baby blanket Karen made for Ruby using the same fabric." />
   <title>Ruby's Portal | Karen Swan Art</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    .single-centered-row {
-      max-width: 900px;
-      margin: 0 auto 28px;
+    .ruby-feature,
+    .ruby-story,
+    .ruby-gallery-section {
+      width: min(1180px, 100%);
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .single-centered-row .art-card {
-      background: transparent;
-      border: none;
-      box-shadow: none;
+    .ruby-feature {
+      margin-bottom: clamp(54px, 6vw, 82px);
     }
 
-    .single-centered-row .art-card img {
+    .ruby-feature .art-card,
+    .ruby-gallery .art-card {
+      background: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
+    }
+
+    .ruby-feature .art-card img {
       width: 100%;
       height: auto;
       display: block;
       object-fit: contain;
-      background: transparent;
+      padding: 0 !important;
+      background: transparent !important;
+    }
+
+    .ruby-story {
+      padding: clamp(36px, 4vw, 58px) 0 clamp(64px, 7vw, 96px);
+      display: grid;
+      grid-template-columns: minmax(120px, 0.22fr) minmax(0, 1fr);
+      gap: clamp(36px, 6vw, 86px);
+      border-top: 1px solid var(--line);
+    }
+
+    .ruby-label {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.67rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .ruby-story-copy {
+      max-width: 900px;
+    }
+
+    .ruby-story-copy h2 {
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(2.6rem, 4.6vw, 5.2rem);
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      line-height: 0.96;
+    }
+
+    .ruby-story-copy p {
+      max-width: 790px;
+      margin: 24px 0 0;
+      color: var(--ink-soft);
+      font-size: 1.04rem;
+      line-height: 1.8;
+    }
+
+    .ruby-story-copy .text-link {
+      margin-top: 28px;
+    }
+
+    .ruby-gallery-section {
+      padding-top: 26px;
+      border-top: 1px solid var(--line);
+    }
+
+    .ruby-gallery-heading {
+      margin-bottom: clamp(38px, 5vw, 62px);
+      display: grid;
+      grid-template-columns: minmax(120px, 0.22fr) minmax(0, 1fr);
+      gap: clamp(36px, 6vw, 86px);
+      align-items: end;
+    }
+
+    .ruby-gallery-heading h2 {
+      max-width: 780px;
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(2.8rem, 5vw, 5.6rem);
+      font-weight: 400;
+      letter-spacing: -0.045em;
+      line-height: 0.94;
+    }
+
+    .ruby-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(52px, 6vw, 88px) 30px;
+    }
+
+    .ruby-gallery figure {
+      margin: 0;
+    }
+
+    .ruby-gallery .art-card {
+      height: clamp(320px, 35vw, 520px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ruby-gallery .art-card img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      padding: 0 !important;
+      background: transparent !important;
+    }
+
+    .ruby-caption {
+      margin: 12px 0 0;
+      padding-top: 10px;
+      color: var(--muted);
+      border-top: 1px solid var(--line-light);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
     @media (max-width: 760px) {
-      .single-centered-row {
-        max-width: 100%;
+      .ruby-story,
+      .ruby-gallery-heading {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .ruby-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .ruby-gallery .art-card {
+        height: auto;
+      }
+
+      .ruby-gallery .art-card img {
+        height: auto;
       }
     }
   </style>
@@ -36,14 +162,67 @@
   <div id="site-nav"></div>
 
   <main class="page-shell standalone-page">
-    <header class="page-hero">
-      <h1>Ruby's Portal</h1>
-    </header>
+    <div class="project-hero-wrap">
+      <div class="collection-stamp">Ruby's Collection</div>
 
-    <section class="single-centered-row">
+      <header class="page-hero">
+        <h1>Ruby's Portal</h1>
+        <p class="page-intro">A later piece for Ruby, connected by fabric to the blanket Karen made for her as a baby.</p>
+      </header>
+    </div>
+
+    <section class="ruby-feature">
       <article class="art-card">
-        <img src="KSA/Image%20(49).jpeg" alt="Ruby's Portal featured image" class="project-image" />
+        <img src="KSA/Image%20(49).jpeg" alt="Ruby's Portal featured artwork" class="project-image" />
       </article>
+    </section>
+
+    <section class="ruby-story" aria-labelledby="ruby-story-heading">
+      <p class="ruby-label">The connection</p>
+      <div class="ruby-story-copy">
+        <h2 id="ruby-story-heading">The same fabric, carried forward.</h2>
+        <p>
+          Ruby is the daughter of Jess, Karen's daughter Anna's best friend. Karen first made Ruby a baby blanket inspired by The Paper Bag Princess. When she later created Ruby's Portal, she brought fabric from that original blanket into the new piece. The two works were made at different moments in Ruby's life, but they are literally connected by the material they share.
+        </p>
+        <a href="baby-blankets.html" class="text-link">See The Paper Bag Princess blanket <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="ruby-gallery-section" aria-labelledby="ruby-gallery-heading">
+      <div class="ruby-gallery-heading">
+        <p class="ruby-label">Ruby's story</p>
+        <h2 id="ruby-gallery-heading">From baby blanket to portal.</h2>
+      </div>
+
+      <div class="ruby-gallery">
+        <figure>
+          <article class="art-card">
+            <img src="KSA/img43.jpg" alt="The Paper Bag Princess baby blanket made for Ruby" class="project-image" />
+          </article>
+          <figcaption class="ruby-caption">The Paper Bag Princess blanket</figcaption>
+        </figure>
+
+        <figure>
+          <article class="art-card">
+            <img src="KSA/img795.jpeg" alt="Ruby wrapped in her Paper Bag Princess baby blanket" class="project-image" />
+          </article>
+          <figcaption class="ruby-caption">Ruby with her blanket</figcaption>
+        </figure>
+
+        <figure>
+          <article class="art-card">
+            <img src="KSA/rub1.jpeg" alt="Ruby's Portal detail" class="project-image" />
+          </article>
+          <figcaption class="ruby-caption">Ruby's Portal</figcaption>
+        </figure>
+
+        <figure>
+          <article class="art-card">
+            <img src="KSA/rub2.jpeg" alt="Ruby's Portal detail" class="project-image" />
+          </article>
+          <figcaption class="ruby-caption">Ruby's Portal</figcaption>
+        </figure>
+      </div>
     </section>
   </main>
 
@@ -79,12 +258,12 @@
 
     lightboxClose.addEventListener('click', closeLightbox);
 
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) closeLightbox();
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) closeLightbox();
     });
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !lightbox.hidden) closeLightbox();
     });
   </script>
 </body>
