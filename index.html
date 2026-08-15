@@ -3,217 +3,124 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Karen Swan creates hand appliquéd textile collages, narrative fabric art, commissioned pieces, and work across other mediums." />
   <title>Karen Swan Art</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .featured-projects {
-      max-width: 1280px;
-      margin: 0 auto 80px;
-      padding: 0 20px;
-    }
-
-    .featured-projects-grid {
-      display: flex;
-      gap: 24px;
-      justify-content: flex-start;
-      align-items: stretch;
-      flex-wrap: wrap;
-    }
-    .featured-project-card {
-      width: calc(25% - 18px);
-      text-decoration: none;
-      color: inherit;
-      background: rgba(255, 249, 240, 0.9);
-      border: 1px solid rgba(184, 139, 74, 0.16);
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 18px 45px rgba(44, 27, 18, 0.12);
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-      display: block;
-    }
-    .featured-project-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 22px 48px rgba(44, 27, 18, 0.16);
-    }
-
-    .featured-project-caption {
-      padding: 18px 18px 16px;
-      text-align: center;
-    }
-
-    .featured-project-caption h3 {
-      margin: 0 0 8px;
-      font-size: 1.2rem;
-      font-weight: 600;
-    }
-
-    .featured-project-image-wrap {
-      padding: 0 18px 18px;
-    }
-    .featured-project-card img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: contain;
-      display: block;
-      border-radius: 18px;
-      background: transparent;
-    }
-
-    .hero {
-      padding-top: 48px;
-      padding-bottom: 120px;
-    }
-
-    @media (max-width: 1100px) {
-      .featured-project-card {
-        width: calc(50% - 12px);
-      }
-    }
-
-    @media (max-width: 760px) {
-      .featured-projects-grid {
-        flex-direction: column;
-      }
-      .featured-project-card {
-        width: 100%;
-      }
-
-      .featured-project-image-wrap {
-        padding: 0 18px 18px;
-      }
-    }
-  </style>
 </head>
-<body>
+<body class="home-page">
   <div id="site-nav"></div>
 
-  <header class="hero">
-    <div class="hero-inner">
-      <h1>Karen Swan Art</h1>
-      <p class="hero-copy">
-        A curated collection of hand appliquéd fabric collages designed and created by Karen.
-      </p>
-    </div>
-    <div class="hero-swan-wrap" aria-hidden="true">
-      <div class="hero-swan-track">
-        <div class="hero-swan">
-          <img src="KSA/swan.png" alt="" />
-          <div class="swan-ripple ripple-1"></div>
-          <div class="swan-ripple ripple-2"></div>
-          <div class="swan-ripple ripple-3"></div>
+  <main>
+    <header class="home-hero">
+      <div class="home-hero-copy">
+        <p class="hero-kicker">Karen Swan · Textile Artist</p>
+        <h1>Stories made<br><em>in fabric.</em></h1>
+        <p class="home-hero-intro">
+          Hand appliquéd textile collage shaped by memory, imagination, family, books, and the lives of the people each piece is made for.
+        </p>
+        <div class="hero-actions">
+          <a href="#selected-work" class="primary-button">Explore the work</a>
+          <a href="commissions.html" class="text-link">Commission a piece <span aria-hidden="true">↗</span></a>
         </div>
       </div>
-    </div>
-  </header>
-  <main>
-    <section class="featured-projects">
-      <div class="featured-projects-grid">
-        <a href="lifecycle.html" class="featured-project-card">
-          <div class="featured-project-caption">
-            <h3>Lifecycle</h3>
-          </div>
-          <div class="featured-project-image-wrap">
-            <img src="KSA/img1005.jpeg" alt="Lifecycle" />
-          </div>
-        </a>
-        <a href="swan-mandala.html" class="featured-project-card">
-          <div class="featured-project-caption">
-            <h3>Swan Mandala</h3>
-          </div>
-          <div class="featured-project-image-wrap">
-            <img src="KSA/img31.jpg" alt="Swan Mandala" />
-          </div>
-        </a>
-        <a href="eragon-triptych.html" class="featured-project-card">
-          <div class="featured-project-caption">
-            <h3>Eragon Triptych</h3>
-          </div>
-          <div class="featured-project-image-wrap">
-            <img src="KSA/img613.jpeg" alt="Eragon Triptych" />
-          </div>
-        </a>
-        <a href="octopuss-garden.html" class="featured-project-card">
-          <div class="featured-project-caption">
-            <h3>Octopus's Garden</h3>
-          </div>
-          <div class="featured-project-image-wrap">
-            <img src="KSA/img8.jpg" alt="Octopus's Garden" />
-          </div>
-        </a>
-        <a href="mandalas.html" class="featured-project-card">
-          <div class="featured-project-caption">
-            <h3>Mandalas</h3>
-          </div>
-          <div class="featured-project-image-wrap">
-            <img src="KSA/img30.jpg" alt="Mandalas" />
-          </div>
-        </a>
-        <a href="counting-book.html" class="featured-project-card">
-          <div class="featured-project-caption">
-            <h3>Counting Book</h3>
-          </div>
-          <div class="featured-project-image-wrap">
-            <img src="KSA/img25.jpg" alt="Counting Book" />
-          </div>
-        </a>
-        <a href="marys-peace.html" class="featured-project-card">
-          <div class="featured-project-caption">
-            <h3>Mary's Peace</h3>
-          </div>
-          <div class="featured-project-image-wrap">
-            <img src="KSA/img820.jpeg" alt="Mary's Peace" />
-          </div>
-        </a>
 
-        <a href="library-portal.html" class="featured-project-card">
-          <div class="featured-project-caption">
-            <h3>Library Portal</h3>
-          </div>
-          <div class="featured-project-image-wrap">
-            <img src="KSA/library-portal.png" alt="Library Portal" />
-          </div>
-        </a>
-        <a href="friends.html" class="featured-project-card">
-          <div class="featured-project-caption">
-            <h3>Friends</h3>
-          </div>
-          <div class="featured-project-image-wrap">
-            <img src="KSA/friends.png" alt="Friends" />
-          </div>
-        </a>
-        <a href="wedding-portal.html" class="featured-project-card">
-          <div class="featured-project-caption">
-            <h3>Wedding Portal</h3>
-          </div>
-          <div class="featured-project-image-wrap">
-            <img src="KSA/wedding-portal.png" alt="Wedding Portal" />
-          </div>
-        </a>
+      <a href="lifecycle.html" class="hero-feature" aria-label="View Lifecycle">
+        <div class="hero-feature-image">
+          <img src="KSA/img1000.jpeg" alt="Lifecycle by Karen Swan" />
+        </div>
+        <div class="hero-feature-meta">
+          <span class="work-number">01 / Featured</span>
+          <h2>Lifecycle</h2>
+          <span class="work-arrow" aria-hidden="true">↗</span>
+        </div>
+      </a>
+    </header>
 
-        <a href="baby-blankets.html" class="featured-project-card">
-          <div class="featured-project-caption">
-            <h3>Baby Blankets</h3>
-          </div>
-          <div class="featured-project-image-wrap">
-            <img src="KSA/img44.jpg" alt="Baby Blankets" />
-          </div>
-        </a>
-        <a href="other-fabric-projects.html" class="featured-project-card">
-          <div class="featured-project-caption">
-            <h3>More Fabric Pieces</h3>
-          </div>
-          <div class="featured-project-image-wrap">
-            <img src="KSA/img29.jpg" alt="More Fabric Pieces" />
-          </div>
-        </a>
-        <a href="other-mediums.html" class="featured-project-card">
-          <div class="featured-project-caption">
-            <h3>Other Mediums</h3>
-          </div>
-          <div class="featured-project-image-wrap">
-            <img src="KSA/img48.jpg" alt="Other Mediums" />
-          </div>
-        </a>
+    <section class="work-heading" id="selected-work">
+      <div>
+        <p class="section-kicker">Selected &amp; Recent Work</p>
+        <h2>A body of work built slowly, one piece at a time.</h2>
+      </div>
+      <p>
+        Narrative collages, mandalas, books, blankets, commissions, and experiments across other mediums.
+      </p>
+    </section>
+
+    <section class="work-grid" aria-label="Karen Swan projects">
+      <a href="lifecycle.html" class="work-card work-card--wide">
+        <div class="work-image"><img src="KSA/img1005.jpeg" alt="Lifecycle" /></div>
+        <div class="work-meta"><span class="work-number">01</span><h3>Lifecycle</h3><span class="work-arrow" aria-hidden="true">↗</span></div>
+      </a>
+
+      <a href="swan-mandala.html" class="work-card work-card--narrow">
+        <div class="work-image"><img src="KSA/img31.jpg" alt="Swan Mandala" /></div>
+        <div class="work-meta"><span class="work-number">02</span><h3>Swan Mandala</h3><span class="work-arrow" aria-hidden="true">↗</span></div>
+      </a>
+
+      <a href="eragon-triptych.html" class="work-card work-card--narrow">
+        <div class="work-image"><img src="KSA/img613.jpeg" alt="Eragon Triptych" /></div>
+        <div class="work-meta"><span class="work-number">03</span><h3>Eragon Triptych</h3><span class="work-arrow" aria-hidden="true">↗</span></div>
+      </a>
+
+      <a href="octopuss-garden.html" class="work-card work-card--wide">
+        <div class="work-image"><img src="KSA/img8.jpg" alt="Octopus's Garden" /></div>
+        <div class="work-meta"><span class="work-number">04</span><h3>Octopus's Garden</h3><span class="work-arrow" aria-hidden="true">↗</span></div>
+      </a>
+
+      <a href="mandalas.html" class="work-card work-card--half">
+        <div class="work-image"><img src="KSA/img30.jpg" alt="Mandalas" /></div>
+        <div class="work-meta"><span class="work-number">05</span><h3>Mandalas</h3><span class="work-arrow" aria-hidden="true">↗</span></div>
+      </a>
+
+      <a href="counting-book.html" class="work-card work-card--half">
+        <div class="work-image"><img src="KSA/img25.jpg" alt="Counting Book" /></div>
+        <div class="work-meta"><span class="work-number">06</span><h3>Counting Book</h3><span class="work-arrow" aria-hidden="true">↗</span></div>
+      </a>
+
+      <a href="marys-peace.html" class="work-card work-card--narrow">
+        <div class="work-image"><img src="KSA/img820.jpeg" alt="Mary's Peace" /></div>
+        <div class="work-meta"><span class="work-number">07</span><h3>Mary's Peace</h3><span class="work-arrow" aria-hidden="true">↗</span></div>
+      </a>
+
+      <a href="library-portal.html" class="work-card work-card--wide">
+        <div class="work-image"><img src="KSA/library-portal.png" alt="Library Portal" /></div>
+        <div class="work-meta"><span class="work-number">08</span><h3>Library Portal</h3><span class="work-arrow" aria-hidden="true">↗</span></div>
+      </a>
+
+      <a href="friends.html" class="work-card work-card--half">
+        <div class="work-image"><img src="KSA/friends.png" alt="Friends" /></div>
+        <div class="work-meta"><span class="work-number">09</span><h3>Friends</h3><span class="work-arrow" aria-hidden="true">↗</span></div>
+      </a>
+
+      <a href="wedding-portal.html" class="work-card work-card--half">
+        <div class="work-image"><img src="KSA/wedding-portal.png" alt="Wedding Portal" /></div>
+        <div class="work-meta"><span class="work-number">10</span><h3>Wedding Portal</h3><span class="work-arrow" aria-hidden="true">↗</span></div>
+      </a>
+
+      <a href="baby-blankets.html" class="work-card work-card--wide">
+        <div class="work-image"><img src="KSA/img44.jpg" alt="Baby Blankets" /></div>
+        <div class="work-meta"><span class="work-number">11</span><h3>Baby Blankets</h3><span class="work-arrow" aria-hidden="true">↗</span></div>
+      </a>
+
+      <a href="other-fabric-projects.html" class="work-card work-card--narrow">
+        <div class="work-image"><img src="KSA/img29.jpg" alt="More Fabric Pieces" /></div>
+        <div class="work-meta"><span class="work-number">12</span><h3>More Fabric Pieces</h3><span class="work-arrow" aria-hidden="true">↗</span></div>
+      </a>
+
+      <a href="other-mediums.html" class="work-card work-card--full">
+        <div class="work-image work-image--landscape"><img src="KSA/img48.jpg" alt="Other Mediums" /></div>
+        <div class="work-meta"><span class="work-number">13</span><h3>Other Mediums</h3><span class="work-arrow" aria-hidden="true">↗</span></div>
+      </a>
+    </section>
+
+    <section class="home-commission">
+      <p class="section-kicker">Commissioned Work</p>
+      <div class="home-commission-grid">
+        <h2>A piece can begin with a memory, a person, a book, or a place.</h2>
+        <div>
+          <p>Karen works directly with clients to turn meaningful ideas into one-of-a-kind pieces made by hand.</p>
+          <a href="commissions.html" class="text-link">Start a conversation <span aria-hidden="true">↗</span></a>
+        </div>
       </div>
     </section>
   </main>
