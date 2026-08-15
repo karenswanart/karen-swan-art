@@ -1,45 +1,46 @@
-<nav class="site-nav">
+<nav class="site-nav" aria-label="Primary navigation">
   <div class="nav-inner">
-    <a href="index.html" class="brand">
-      <img src="KSA/img111.png" alt="Karen Swan Art logo" class="site-logo">
+    <a href="index.html" class="brand" aria-label="Karen Swan Art home">
+      <span class="brand-name">Karen Swan</span>
+      <span class="brand-role">Textile Artist</span>
     </a>
-    <div class="nav-menu-wrap">
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navDropdown">
-        <span class="menu-label">Menu</span>
-        <span class="menu-icon" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
-      </button>
 
-      <div class="nav-dropdown" id="navDropdown">
-        <a href="index.html">Home</a>
-        <a href="about.html">About the Artist</a>
-        <div class="submenu-wrap">
-          <button class="submenu-toggle" id="projectsToggle" aria-expanded="false" aria-controls="projectsSubmenu">
-            <span>Projects</span>
-            <span class="submenu-arrow">▾</span>
-          </button>
-          <div class="submenu" id="projectsSubmenu">
-            <a href="lifecycle.html">Lifecycle</a>
-            <a href="swan-mandala.html">Swan Mandala</a>
-            <a href="eragon-triptych.html">Eragon Triptych</a>
-            <a href="octopuss-garden.html">Octopus's Garden</a>
-            <a href="mandalas.html">Mandalas</a>
-            <a href="counting-book.html">Counting Book</a>
-            <a href="marys-peace.html">Mary's Peace</a>
-            <a href="library-portal.html">Library Portal</a>
-            <a href="friends.html">Friends</a>
-            <a href="wedding-portal.html">Wedding Portal</a>
-            <a href="baby-blankets.html">Baby Blankets</a>
-            <a href="other-fabric-projects.html">More Fabric Pieces</a>
-            <a href="other-mediums.html">Other Mediums</a>
-          </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navDropdown">
+      <span class="menu-label">Menu</span>
+      <span class="menu-icon" aria-hidden="true">
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+
+    <div class="nav-dropdown" id="navDropdown">
+      <a href="index.html" class="nav-link">Home</a>
+
+      <div class="submenu-wrap">
+        <button class="submenu-toggle nav-link" id="projectsToggle" aria-expanded="false" aria-controls="projectsSubmenu">
+          <span>Work</span>
+          <span class="submenu-arrow" aria-hidden="true">+</span>
+        </button>
+        <div class="submenu" id="projectsSubmenu">
+          <a href="lifecycle.html">Lifecycle</a>
+          <a href="swan-mandala.html">Swan Mandala</a>
+          <a href="eragon-triptych.html">Eragon Triptych</a>
+          <a href="octopuss-garden.html">Octopus's Garden</a>
+          <a href="mandalas.html">Mandalas</a>
+          <a href="counting-book.html">Counting Book</a>
+          <a href="marys-peace.html">Mary's Peace</a>
+          <a href="library-portal.html">Library Portal</a>
+          <a href="friends.html">Friends</a>
+          <a href="wedding-portal.html">Wedding Portal</a>
+          <a href="baby-blankets.html">Baby Blankets</a>
+          <a href="other-fabric-projects.html">More Fabric Pieces</a>
+          <a href="other-mediums.html">Other Mediums</a>
         </div>
-        <a href="commissions.html">Commission Inquiries</a>
-        <a href="testimonials.html">Testimonials</a>
       </div>
+
+      <a href="about.html" class="nav-link">Artist</a>
+      <a href="commissions.html" class="nav-link">Commissions</a>
+      <a href="testimonials.html" class="nav-link">Testimonials</a>
     </div>
   </div>
 </nav>
