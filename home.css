@@ -227,15 +227,11 @@
   }
 
   .hero-side-actions {
-    width: 100%;
-    max-width: 430px;
+    width: min(220px, 100%);
+    max-width: none;
     margin-top: 0;
-    flex-direction: row;
+    flex-direction: column;
     justify-self: start;
-  }
-
-  .hero-side-button {
-    flex: 1;
   }
 
   .lifecycle-preview {
