@@ -8,14 +8,57 @@
 
 .home-hero-top {
   display: grid;
-  grid-template-columns: minmax(420px, 0.78fr) minmax(0, 1.22fr);
-  gap: clamp(60px, 8vw, 140px);
+  grid-template-columns: minmax(420px, 0.78fr) minmax(150px, 0.24fr) minmax(0, 1.22fr);
+  gap: clamp(28px, 3vw, 52px);
   align-items: center;
   margin-bottom: 18px;
 }
 
 .home-hero-copy {
   max-width: 620px;
+}
+
+.hero-side-actions {
+  width: min(190px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-self: center;
+  justify-self: center;
+}
+
+.hero-side-button {
+  min-height: 54px;
+  padding: 13px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--ink);
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.hero-side-button:hover {
+  color: var(--paper);
+  background: var(--ink);
+}
+
+.hero-side-button--filled {
+  color: var(--paper);
+  background: var(--ink);
+}
+
+.hero-side-button--filled:hover {
+  color: var(--ink);
+  background: transparent;
 }
 
 .lifecycle-preview {
@@ -127,12 +170,34 @@
   object-fit: contain;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1260px) {
   .home-hero-top {
     grid-template-columns: minmax(340px, 0.85fr) minmax(0, 1.15fr);
     gap: 48px;
+    align-items: center;
   }
 
+  .home-hero-copy {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .hero-side-actions {
+    grid-column: 1;
+    grid-row: 2;
+    width: 190px;
+    justify-self: start;
+    align-self: start;
+    margin-top: -20px;
+  }
+
+  .lifecycle-preview {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+}
+
+@media (max-width: 1100px) {
   .lifecycle-preview-grid {
     gap: 12px;
   }
@@ -146,12 +211,31 @@
 
   .home-hero-top {
     grid-template-columns: 1fr;
-    gap: 52px;
+    gap: 34px;
     margin-bottom: 18px;
+  }
+
+  .home-hero-copy,
+  .hero-side-actions,
+  .lifecycle-preview {
+    grid-column: auto;
+    grid-row: auto;
   }
 
   .home-hero-copy {
     max-width: 760px;
+  }
+
+  .hero-side-actions {
+    width: 100%;
+    max-width: 430px;
+    margin-top: 0;
+    flex-direction: row;
+    justify-self: start;
+  }
+
+  .hero-side-button {
+    flex: 1;
   }
 
   .lifecycle-preview {
@@ -179,5 +263,10 @@
   .lifecycle-preview-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 8px;
+  }
+
+  .hero-side-actions {
+    max-width: 100%;
+    flex-direction: column;
   }
 }
