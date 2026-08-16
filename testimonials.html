@@ -6,6 +6,21 @@
   <title>Testimonials | Karen Swan Art</title>
   <link rel="stylesheet" href="style.css" />
   <style>
+    .testimonial-hero-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+    }
+
+    .testimonial-hero-actions .page-intro {
+      margin-bottom: 0;
+    }
+
+    #submit-testimonial {
+      scroll-margin-top: 120px;
+    }
+
     .testimonials-wrap {
       max-width: 1200px;
       margin: 0 auto;
@@ -207,9 +222,12 @@
   <main class="page-shell">
     <section class="page-hero">
       <h1>Testimonials</h1>
-      <p class="page-intro">
-        Kind words, happy clients, and a few of the special pieces Karen has created for others.
-      </p>
+      <div class="testimonial-hero-actions">
+        <p class="page-intro">
+          Kind words, happy clients, and a few of the special pieces Karen has created for others.
+        </p>
+        <a href="#submit-testimonial" class="primary-button">Submit a testimonial</a>
+      </div>
     </section>
 
     <section class="testimonials-wrap">
@@ -221,7 +239,7 @@
           <h2>Harry Potter Fan</h2>
           <p class="testimonial-quote">“This is a snuggle blankie. I love soft blankets!”
 “We're obviously all Harry Potter fans in this house. The blanket Karen made for Arya is a beautiful piece of art that you'll often find draped around her shoulders.”</p>
-          <p class="testimonial-name"><strong>— Arya &amp; Liz</strong></p>
+          <p class="testimonial-name"><strong>- Arya &amp; Liz</strong></p>
         </div>
       </article>
 
@@ -232,7 +250,7 @@
         <div class="testimonial-copy">
           <h2>PJ &lt;3</h2>
           <p class="testimonial-quote">“Where the Wild Things Are was such a special addition to PJ’s room early on that resembled what creativity and art meant to our family. As he got older he loved looking at the different characters and placing them in the context of one of his favorite books.”</p>
-          <p class="testimonial-name"><strong>— Letarte Family</strong></p>
+          <p class="testimonial-name"><strong>- Letarte Family</strong></p>
         </div>
       </article>
 
@@ -243,12 +261,12 @@
         <div class="testimonial-copy">
           <h2>Paperbag Princess &lt;3</h2>
           <p class="testimonial-quote">“Karen made this Paper Bag Princess piece for our girl. She's been using it as a blanket since she was born and we plan to eventually hang it on her wall to continue to enjoy it in a different format. It is such a whimsical rendering of a fun and empowering story and it is dearly loved by our dragon-loving toddler.”</p>
-          <p class="testimonial-name"><strong>— Ruby (and parents)</strong></p>
+          <p class="testimonial-name"><strong>- Ruby (and parents)</strong></p>
         </div>
-      </article>      
+      </article>
     </section>
 
-    <section class="submit-testimonial-section">
+    <section class="submit-testimonial-section" id="submit-testimonial">
       <div class="submit-testimonial-card">
         <h2>Submit a Testimonial</h2>
         <p>
